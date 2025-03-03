@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f0f0f0"
+    android:padding="16dp">
+
+    <!-- כותרת ניהול מלאי -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ניהול מלאי"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- חיפוש במלאי -->
+    <EditText
+        android:id="@+id/search_inventory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="חפש מוצר..."
+        android:padding="12dp"
+        android:layout_marginBottom="12dp"
+        android:background="@android:drawable/editbox_background"
+        android:textDirection="rtl"
+        android:gravity="right"/>
+
+    <!-- רשימת מוצרים עם זמינות במלאי -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- פריט לדוגמה -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:background="#ffffff"
+                android:elevation="5dp"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/product_placeholder"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="שם המוצר"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#000"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₪1,999"
+                        android:textSize="14sp"
+                        android:textColor="#007bff"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/product_stock_status"
+                        android:text="במלאי"
+                        android:textSize="14sp"
+                        android:textColor="#008000"
+                        android:textStyle="bold"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <!-- כפתור עדכון מלאי לכל מוצר -->
+                <Button
+                    android:id="@+id/update_stock_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="עדכן מלאי"
+                    android:backgroundTint="#007bff"
+                    android:textColor="#ffffff"
+                    android:padding="8dp"
+                    android:textSize="14sp"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- כפתור הוספת מוצר חדש -->
+    <Button
+        android:id="@+id/add_new_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="הוסף מוצר חדש"
+        android:backgroundTint="#28a745"
+        android:textColor="#ffffff"
+        android:padding="12dp"
+        android:textSize="18sp"
+        android:layout_marginBottom="12dp"/>
+</LinearLayout>

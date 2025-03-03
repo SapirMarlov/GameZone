@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f0f0f0"
+    android:padding="16dp">
+
+    <!-- כותרת מסך פניות לקוח -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="שלח פנייה לשירות לקוחות"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- שדה שם לקוח -->
+    <EditText
+        android:id="@+id/customer_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="שם מלא"
+        android:padding="12dp"
+        android:background="@android:drawable/editbox_background"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- שדה אימייל -->
+    <EditText
+        android:id="@+id/customer_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="אימייל"
+        android:inputType="textEmailAddress"
+        android:padding="12dp"
+        android:background="@android:drawable/editbox_background"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- שדה תוכן הפנייה -->
+    <EditText
+        android:id="@+id/customer_message"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:hint="כתוב כאן את הפנייה שלך"
+        android:gravity="top"
+        android:padding="12dp"
+        android:background="@android:drawable/editbox_background"
+        android:layout_marginBottom="12dp"
+        android:inputType="textMultiLine"/>
+
+    <!-- כפתור שליחת פנייה -->
+    <Button
+        android:id="@+id/send_message_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="שלח פנייה"
+        android:backgroundTint="#007bff"
+        android:textColor="#ffffff"
+        android:padding="12dp"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>
