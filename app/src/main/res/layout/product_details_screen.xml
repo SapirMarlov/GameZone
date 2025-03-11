@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f0f0f0"
+    android:padding="16dp">
+
+    <!-- כותרת פרטי המוצר -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="פרטי המוצר"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- תמונה של המוצר -->
+    <ImageView
+        android:id="@+id/product_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/ps5"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- שם המוצר -->
+    <TextView
+        android:id="@+id/product_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="שם המוצר: מחשב נייד גיימינג ASUS"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- תיאור המוצר -->
+    <TextView
+        android:id="@+id/product_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="תיאור המוצר: מחשב נייד גיימינג עם מעבד Intel i7, 16GB RAM, 512GB SSD, ומסך 15 אינץ' ברזולוציית 4K."
+        android:textSize="16sp"
+        android:textColor="#000"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- מחיר המוצר -->
+    <TextView
+        android:id="@+id/product_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="מחיר: ₪5,499"
+        android:textSize="18sp"
+        android:textColor="#007bff"
+        android:layout_marginBottom="16dp"
+        android:textStyle="bold"/>
+
+    <!-- כפתור הוספה לעגלה -->
+    <Button
+        android:id="@+id/add_to_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="הוסף לעגלה"
+        android:backgroundTint="#28a745"
+        android:textColor="#ffffff"
+        android:padding="12dp"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"/>
+
+    <!-- כפתור חזרה למסך הראשי -->
+    <Button
+        android:id="@+id/back_to_inventory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="חזור למלאי"
+        android:backgroundTint="#f44336"
+        android:textColor="#ffffff"
+        android:padding="12dp"
+        android:textSize="18sp"
+        android:layout_marginTop="8dp"/>
+
+</LinearLayout>

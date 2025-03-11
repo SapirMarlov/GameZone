@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F3F4F6"
+    android:padding="16dp"
+    android:gravity="right">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2D3748"
+        android:padding="12dp"
+        android:gravity="center_vertical"
+        android:layoutDirection="rtl">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🎮 GameZone 🎮         "
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#3182CE"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="דוחות עסקיים"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#CBD5E1"
+        android:layout_marginTop="4dp"/>
+
+    <!-- כותרת -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📊 דוח מכירות חודשי"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#1E293B"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:layoutDirection="rtl"/>
+
+    <!-- בחירת סוג דוח -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="בחר סוג דוח"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="8dp"/>
+
+    <Spinner
+        android:id="@+id/report_type_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:padding="8dp"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- כפתור הצגת דוח -->
+    <Button
+        android:id="@+id/generate_report_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="הצג דוח"
+        android:backgroundTint="#007bff"
+        android:textColor="#ffffff"
+        android:padding="12dp"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- תצוגת דוח -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingVertical="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="right"
+            android:layoutDirection="rtl"
+            android:background="#ffffff"
+            android:elevation="5dp"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/total_sales"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="💰 סהכ מכירות: 120,000₪"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/total_transactions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🛒 מספר עסקאות: 450"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/best_selling_product"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🔥 המוצר הכי נמכר: עכבר גיימינג X-Pro"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/total_profit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📈 רווח כולל: 45,000₪"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333"
+                android:layout_marginBottom="8dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#CBD5E1"
+        android:layout_marginTop="8dp"/>
+</LinearLayout>

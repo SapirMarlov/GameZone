@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="#F7FAFC">
+
+    <!-- כותרת מסך לקוח עם שם החברה -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="start"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🎮 GameZone 🎮"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#3182CE"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+
+    </LinearLayout>
+
+    <!-- כותרת ברוך הבא -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ברוך הבא ישראל כהן!"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#2D3748"
+        android:layout_gravity="center"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- כפתורים להצגת פרופיל, הזמנות, ותמיכה ללקוח -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginBottom="20dp">
+
+        <!-- כפתור הצגת פרופיל -->
+        <Button
+            android:id="@+id/view_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📇 הצגת פרופיל"
+            android:backgroundTint="#3182CE"
+            android:textColor="#ffffff"
+            android:padding="14dp"
+            android:textSize="18sp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- כפתור הצגת הזמנות -->
+        <Button
+            android:id="@+id/view_orders"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📦 הצגת הזמנות"
+            android:backgroundTint="#38A169"
+            android:textColor="#ffffff"
+            android:padding="14dp"
+            android:textSize="18sp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- כפתור תמיכה ללקוח -->
+        <Button
+            android:id="@+id/customer_support"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="💬 תמיכה ללקוח"
+            android:backgroundTint="#DD6B20"
+            android:textColor="#ffffff"
+            android:padding="14dp"
+            android:textSize="18sp"
+            android:layout_marginBottom="12dp"/>
+    </LinearLayout>
+
+</LinearLayout>
