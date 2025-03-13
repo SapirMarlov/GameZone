@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="#F7FAFC">
+
+    <!-- כותרת עם שם החברה -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="start"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🎮 GameZone 🎮"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#3182CE"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"/>
+    </LinearLayout>
+
+    <!-- הצגת הזמנות -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="היסטוריית הזמנות"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#2D3748"
+        android:layout_gravity="center"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- כפתור הצגת הזמנות -->
+
+</LinearLayout>
