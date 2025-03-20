@@ -1,17 +1,12 @@
 package com.example.firstapp;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class CustomerRequestsActivity extends AppCompatActivity {
-
+public class EmployeeInquiriesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.customer_requests);  // קישור ל-XML של פניות לקוחות
-
-
+        setContentView(R.layout.employee_inquiries); // קישור ל-XML של פניות עובדים
     }
 }

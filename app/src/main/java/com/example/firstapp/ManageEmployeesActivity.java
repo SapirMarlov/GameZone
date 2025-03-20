@@ -12,7 +12,7 @@ public class ManageEmployeesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.manage_employees);  // קישור ל-XML של ניהול עובדים
 
-        Button manageEmployeeButton = findViewById(R.id.manage_employee_button);
+        Button manageEmployeeButton = findViewById(R.id.create_schedule_button);
 
         // מאזין ללחיצה על כפתור ניהול עובד
         manageEmployeeButton.setOnClickListener(new View.OnClickListener() {

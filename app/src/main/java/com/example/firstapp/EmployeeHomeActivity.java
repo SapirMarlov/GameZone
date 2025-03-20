@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class EmployeeHomeActivity extends AppCompatActivity {
@@ -12,7 +11,7 @@ public class EmployeeHomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.employee_home);
+        setContentView(R.layout.employee_home); // קישור ל-XML של מסך עובדים
 
         // כפתור ניהול משימות
         Button manageTasksButton = findViewById(R.id.manage_tasks);

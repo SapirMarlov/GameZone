@@ -32,7 +32,6 @@
         <activity android:name=".ViewScheduleActivity" android:exported="false" />
         <activity android:name=".CommunicateWithAdminActivity" android:exported="false" />
 
-        <!-- Activities חדשות -->
         <activity android:name=".ManageOrdersActivity" android:exported="false" />
         <activity android:name=".InventoryManagementActivity" android:exported="false" />
         <activity android:name=".CustomerRequestsActivity" android:exported="false" />
@@ -42,6 +41,10 @@
         <activity android:name=".ViewProfileActivity" android:exported="false" />
         <activity android:name=".ViewOrdersActivity" android:exported="false" />
         <activity android:name=".CustomerSupportActivity" android:exported="false" />
+        <activity android:name=".EmployeeInquiriesActivity" android:exported="false" />
+        <activity android:name=".ProductDetailsActivity" android:exported="true" />
+        <activity android:name=".CartActivity" android:exported="true" />
+        <activity android:name=".PaymentActivity" android:exported="true" />
 
 
 

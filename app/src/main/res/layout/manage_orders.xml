@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -41,7 +42,19 @@
         android:background="#CBD5E1"
         android:layout_marginTop="4dp"/>
 
-    <!-- רשימת הזמנות -->
+    <!-- כותרת לפני רשימת ההזמנות -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="לוח הזמנות למוצרים"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- גלגלת עם רשימת ההזמנות -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -55,38 +68,295 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="8dp"
                 android:background="#ffffff"
                 android:elevation="6dp"
-                android:layout_marginBottom="8dp">
+                android:layout_marginBottom="8dp"
+                tools:ignore="ExtraText">
 
+                <!-- כותרת פרטי ההזמנה -->
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="הזמנה #1234"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="תאריך אספקה: 14/03/2025"
+                    android:textSize="16sp"
+                    android:textColor="#3182CE"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="עלות: ₪2,499"
+                    android:textSize="16sp"
+                    android:textColor="#3182CE"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="מספר מוצרים: 3"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:layout_marginBottom="4dp"/>
+
+                <!-- רשימת המוצרים -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="מוצרים בהזמנה:"
                     android:textSize="16sp"
                     android:textStyle="bold"
-                    android:textColor="#000"/>
+                    android:textColor="#000000"
+                    android:layout_marginBottom="8dp"/>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="• משחק מחשב - 1 יחידה"
+                        android:textSize="16sp"
+                        android:textColor="#000000"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="• כרטיס גיימינג - 2 יחידות"
+                        android:textSize="16sp"
+                        android:textColor="#000000"/>
+                </LinearLayout>
+
+                <!-- סטטוס ההזמנה -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="₪2,499"
-                    android:textSize="14sp"
-                    android:textColor="#3182CE"
-                    android:textStyle="bold"/>
+                    android:text="סטטוס: בעבודה"
+                    android:textSize="16sp"
+                    android:textColor="#FF6347"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"/>
 
                 <Button
-                    android:id="@+id/manage_order_button"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/manage_order_button_1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="ניהול הזמנה"
                     android:backgroundTint="#3182CE"
                     android:textColor="#ffffff"
                     android:padding="8dp"
                     android:textSize="14sp"
-                    android:layout_marginStart="8dp"/>
+                    android:layout_marginTop="16dp"/>
+
+            </LinearLayout>
+
+            <!-- פריט הזמנה 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:background="#ffffff"
+                android:elevation="6dp"
+                android:layout_marginBottom="8dp">
+
+                <!-- כותרת פרטי ההזמנה -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="הזמנה #5678"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="תאריך אספקה: 15/03/2025"
+                    android:textSize="16sp"
+                    android:textColor="#3182CE"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="עלות: ₪1,199"
+                    android:textSize="16sp"
+                    android:textColor="#3182CE"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="מספר מוצרים: 2"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:layout_marginBottom="4dp"/>
+
+                <!-- רשימת המוצרים -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="מוצרים בהזמנה:"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:layout_marginBottom="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="• קונסולת משחק - 1 יחידה"
+                        android:textSize="16sp"
+                        android:textColor="#000000"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="• אוזניות גיימינג - 1 יחידה"
+                        android:textSize="16sp"
+                        android:textColor="#000000"/>
+                </LinearLayout>
+
+                <!-- סטטוס ההזמנה -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="סטטוס: הושלם"
+                    android:textSize="16sp"
+                    android:textColor="#32CD32"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"/>
+
+                <Button
+                    android:id="@+id/manage_order_button_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ניהול הזמנה"
+                    android:backgroundTint="#3182CE"
+                    android:textColor="#ffffff"
+                    android:padding="8dp"
+                    android:textSize="14sp"
+                    android:layout_marginTop="16dp"/>
+
+            </LinearLayout>
+
+            <!-- פריט הזמנה 3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:background="#ffffff"
+                android:elevation="6dp"
+                android:layout_marginBottom="8dp">
+
+                <!-- כותרת פרטי ההזמנה -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="הזמנה #9101"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="תאריך אספקה: 16/03/2025"
+                    android:textSize="16sp"
+                    android:textColor="#3182CE"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="עלות: ₪1,599"
+                    android:textSize="16sp"
+                    android:textColor="#3182CE"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="מספר מוצרים: 4"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:layout_marginBottom="4dp"/>
+
+                <!-- רשימת המוצרים -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="מוצרים בהזמנה:"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:layout_marginBottom="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="• גיימפד - 2 יחידות"
+                        android:textSize="16sp"
+                        android:textColor="#000000"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="• משחק מחשב - 2 יחידות"
+                        android:textSize="16sp"
+                        android:textColor="#000000"/>
+                </LinearLayout>
+
+                <!-- סטטוס ההזמנה -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="סטטוס: בדרך לשליחה"
+                    android:textSize="16sp"
+                    android:textColor="#FFD700"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"/>
+
+                <Button
+                    android:id="@+id/manage_order_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ניהול הזמנה"
+                    android:backgroundTint="#3182CE"
+                    android:textColor="#ffffff"
+                    android:padding="8dp"
+                    android:textSize="14sp"
+                    android:layout_marginTop="16dp"/>
+
             </LinearLayout>
 
         </LinearLayout>

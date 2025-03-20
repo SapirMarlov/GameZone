@@ -1,65 +1,294 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#F3F4F6"
-    android:padding="16dp"
-    android:gravity="right">
+    android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.Toolbar
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#2D3748"
-        android:padding="12dp"
-        android:gravity="center_vertical"
-        android:layoutDirection="rtl">
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="right"
+        android:layoutDirection="rtl"> <!-- מציב את כל התוכן בימין לשמאל -->
 
+        <!-- כותרת GameZone -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="🎮 GameZone 🎮       "
+            android:text="🎮 GameZone סידור עבודה 🎮"
             android:textSize="26sp"
             android:textStyle="bold"
             android:textColor="#3182CE"
             android:layout_gravity="center"
             android:layout_marginBottom="16dp"/>
 
+        <!-- שם העובד -->
+        <EditText
+            android:id="@+id/name_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ספיר מרלאוב"
+            android:layout_marginBottom="16dp"
+            android:inputType="textPersonName"
+            android:layoutDirection="rtl"/>
+
+        <!-- קו הפרדה -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#CBD5E1"
+            android:layout_marginTop="16dp"/>
+
+        <!-- יום ראשון -->
+        <CheckBox
+            android:id="@+id/monday_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ראשון"
+            android:layout_marginBottom="8dp"
+            android:layoutDirection="rtl"
+            android:gravity="right"/>
+
+        <!-- שעת התחלה וסיום ליום ראשון -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="הגשת משמרות"
-            android:textColor="@android:color/white"
-            android:textSize="22sp"
-            android:textStyle="bold"/>
-    </androidx.appcompat.widget.Toolbar>
+            android:text="בחר שעת התחלה וסיום"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="8dp"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="#CBD5E1"
-        android:layout_marginTop="4dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    <!-- כותרת ראשית -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="🕒 הגש משמרות לשבוע"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        android:textColor="#1E293B"
-        android:gravity="center"
-        android:layout_marginTop="16dp"
-        android:layoutDirection="rtl"/>
+            <TimePicker
+                android:id="@+id/monday_start_time_picker"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:timePickerMode="spinner"/>
 
-    <!-- תוכן הגשת משמרות -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="כאן תוכל להגיש את המשמרות לשבוע הקרוב."
-        android:textSize="18sp"
-        android:textColor="#475569"
-        android:gravity="center"
-        android:layout_marginTop="8dp"
-        android:layoutDirection="rtl"/>
-</LinearLayout>
+            <TimePicker
+                android:id="@+id/monday_end_time_picker"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:timePickerMode="spinner"/>
+        </LinearLayout>
+
+        <!-- קו הפרדה בין הימים -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#CBD5E1"
+            android:layout_marginTop="8dp"/>
+
+        <!-- יום שני -->
+        <CheckBox
+            android:id="@+id/tuesday_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="שני"
+            android:layout_marginBottom="8dp"
+            android:layoutDirection="rtl"
+            android:gravity="right"/>
+
+        <!-- שעת התחלה וסיום ליום שני -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="בחר שעת התחלה וסיום"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TimePicker
+                android:id="@+id/tuesday_start_time_picker"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:timePickerMode="spinner"/>
+
+            <TimePicker
+                android:id="@+id/tuesday_end_time_picker"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:timePickerMode="spinner"/>
+        </LinearLayout>
+
+        <!-- קו הפרדה בין הימים -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#CBD5E1"
+            android:layout_marginTop="8dp"/>
+
+        <!-- יום שלישי -->
+        <CheckBox
+            android:id="@+id/wednesday_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="שלישי"
+            android:layout_marginBottom="8dp"
+            android:layoutDirection="rtl"
+            android:gravity="right"/>
+
+        <!-- שעת התחלה וסיום ליום שלישי -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="בחר שעת התחלה וסיום"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TimePicker
+                android:id="@+id/wednesday_start_time_picker"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:timePickerMode="spinner"/>
+
+            <TimePicker
+                android:id="@+id/wednesday_end_time_picker"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:timePickerMode="spinner"/>
+        </LinearLayout>
+
+        <!-- קו הפרדה בין הימים -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#CBD5E1"
+            android:layout_marginTop="8dp"/>
+
+        <!-- יום רביעי -->
+        <CheckBox
+            android:id="@+id/thursday_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="רביעי"
+            android:layout_marginBottom="8dp"
+            android:layoutDirection="rtl"
+            android:gravity="right"/>
+
+        <!-- שעת התחלה וסיום ליום רביעי -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="בחר שעת התחלה וסיום"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TimePicker
+                android:id="@+id/thursday_start_time_picker"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:timePickerMode="spinner"/>
+
+            <TimePicker
+                android:id="@+id/thursday_end_time_picker"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:timePickerMode="spinner"/>
+        </LinearLayout>
+
+        <!-- קו הפרדה בין הימים -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#CBD5E1"
+            android:layout_marginTop="8dp"/>
+
+        <!-- יום חמישי -->
+        <CheckBox
+            android:id="@+id/friday_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="חמישי"
+            android:layout_marginBottom="8dp"
+            android:layoutDirection="rtl"
+            android:gravity="right"/>
+
+        <!-- שעת התחלה וסיום ליום חמישי -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="בחר שעת התחלה וסיום"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TimePicker
+                android:id="@+id/friday_start_time_picker"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:timePickerMode="spinner"/>
+
+            <TimePicker
+                android:id="@+id/friday_end_time_picker"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:timePickerMode="spinner"/>
+        </LinearLayout>
+
+        <!-- קו הפרדה בין הימים -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#CBD5E1"
+            android:layout_marginTop="8dp"/>
+
+        <!-- כפתור שליחה -->
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="הגש סידור עבודה"
+            android:textColor="#ffffff"
+            android:backgroundTint="#3182CE"
+            android:layout_marginTop="16dp"/>
+
+        <!-- הצגת המשמרות שנבחרו -->
+        <TextView
+            android:id="@+id/selected_shifts_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"
+            android:textColor="#007bff"/>
+
+    </LinearLayout>
+
+</ScrollView>

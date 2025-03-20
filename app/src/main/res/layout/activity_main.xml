@@ -1,105 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.drawerlayout.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#f0f0f0">
+    android:layout_height="match_parent">
 
-    <!-- באנר עליון -->
-    <ImageView
-        android:id="@+id/banner"
+    <!-- תוכן ראשי בתוך ScrollView -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ps5"/>
-
-    <!-- כפתורים: התחברות ואזור אישי -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="end"
-        android:padding="16dp">
-
-        <Button
-            android:id="@+id/login_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/holo_blue_dark"
-            android:padding="8dp"
-            android:text="התחברות"
-            android:textColor="@android:color/white"
-            android:layout_marginEnd="8dp" />
-
-        <Button
-            android:id="@+id/user_profile_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/holo_blue_dark"
-            android:padding="8dp"
-            android:text="אזור אישי"
-            android:textColor="@android:color/white" />
-    </LinearLayout>
-
-    <!-- שורת חיפוש -->
-    <EditText
-        android:id="@+id/search_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="12dp"
-        android:background="@android:drawable/editbox_background"
-        android:gravity="right"
-        android:hint="חפש מוצר..."
-        android:padding="12dp"
-        android:textDirection="rtl" />
-
-    <!-- המשך עיצוב קטגוריות ומוצרים - יישור הכפתורים למרכז -->
-
-    <!-- רשת מוצרים -->
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="36dp">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"> <!-- יישור הכפתורים למרכז -->
+            android:orientation="vertical"
+            android:background="#ffffff">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:backgroundTint="#007bff"
-                android:text="קונסולות"
-                android:textColor="#ffffff" />
+            <!-- באנר עליון -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp">
+                <ImageView
+                    android:id="@+id/banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/banner_promo" />
+            </FrameLayout>
 
-            <Button
-                android:layout_width="wrap_content"
+            <!-- כפתורים -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:backgroundTint="#007bff"
-                android:text="מחשבים"
-                android:textColor="#ffffff" />
+                android:orientation="horizontal"
+                android:gravity="end"
+                android:padding="8dp">
 
-            <Button
-                android:layout_width="wrap_content"
+                <Button
+                    android:id="@+id/login_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:backgroundTint="#6366F1"
+                    android:text="🔑 התחברות"
+                    android:textColor="#ffffff" />
+
+                <Button
+                    android:id="@+id/user_profile_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:backgroundTint="#34D399"
+                    android:text="👤 אזור אישי"
+                    android:textColor="#ffffff" />
+            </LinearLayout>
+
+            <!-- חיפוש -->
+            <EditText
+                android:id="@+id/search_bar"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:backgroundTint="#007bff"
-                android:text="אביזרים"
-                android:textColor="#ffffff" />
+                android:layout_margin="12dp"
+                android:background="@android:drawable/editbox_background"
+                android:hint="חפש מוצר..."
+                android:padding="14dp"
+                android:textDirection="rtl"/>
+
+            <!-- קטלוג מוצרים -->
+            <GridLayout
+                android:id="@+id/product_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:padding="12dp"
+                android:orientation="horizontal"
+                android:horizontalSpacing="8dp"
+                android:verticalSpacing="8dp">
+
+                <!-- תמונת PS5 לחיצה -->
+                <ImageView
+                    android:id="@+id/ps5_image"
+                    android:layout_width="158dp"
+                    android:layout_height="135dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:contentDescription="PS5"
+                    android:src="@drawable/ps5"
+                    android:clickable="true"
+                    android:focusable="true"/>
+
+                <!-- תמונות נוספות (לא לחיצות) -->
+                <ImageView
+                    android:layout_width="168dp"
+                    android:layout_height="133dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:contentDescription="Nintendo"
+                    android:src="@drawable/nintendo" />
+
+                <ImageView
+                    android:layout_width="166dp"
+                    android:layout_height="131dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:contentDescription="Asus"
+                    android:src="@drawable/asus" />
+
+                <ImageView
+                    android:layout_width="153dp"
+                    android:layout_height="132dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:contentDescription="Razer"
+                    android:src="@drawable/raze" />
+
+                <ImageView
+                    android:layout_width="153dp"
+                    android:layout_height="106dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:contentDescription="controller"
+                    android:src="@drawable/controller" />
+            </GridLayout>
         </LinearLayout>
-    </HorizontalScrollView>
-
-    <GridView
-        android:id="@+id/product_grid"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:horizontalSpacing="8dp"
-        android:numColumns="2"
-        android:padding="12dp"
-        android:verticalSpacing="8dp" />
-</LinearLayout>
+    </ScrollView>
+</androidx.drawerlayout.widget.DrawerLayout>

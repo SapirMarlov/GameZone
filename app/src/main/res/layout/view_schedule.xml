@@ -1,65 +1,237 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#F3F4F6"
-    android:padding="16dp"
-    android:gravity="right">
+    android:background="#F3F4F6">
 
-    <androidx.appcompat.widget.Toolbar
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#2D3748"
-        android:padding="12dp"
-        android:gravity="center_vertical"
-        android:layoutDirection="rtl">
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="right"
+        android:layoutDirection="rtl"> <!-- הוספתי כאן את layoutDirection -->
 
-        <TextView
-            android:layout_width="wrap_content"
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="🎮 GameZone 🎮       "
+            android:background="#2D3748"
+            android:padding="12dp"
+            android:gravity="center_vertical"
+            android:layoutDirection="rtl"> <!-- הוספתי כאן את layoutDirection -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🎮 GameZone 🎮            לוח זמנים"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layoutDirection="rtl"/> <!-- הוספתי כאן את layoutDirection -->
+        </androidx.appcompat.widget.Toolbar>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#CBD5E1"
+            android:layout_marginTop="4dp"/>
+
+        <!-- כותרת ראשית -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="היי שירלי, אלו הם המשימות שלך לשבוע הקרוב"
             android:textSize="26sp"
             android:textStyle="bold"
-            android:textColor="#3182CE"
-            android:layout_gravity="center"
-            android:layout_marginBottom="16dp"/>
+            android:textColor="#1E293B"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:layoutDirection="rtl"/> <!-- הוספתי כאן את layoutDirection -->
 
-        <TextView
-            android:layout_width="wrap_content"
+        <!-- תוכן הצגת לוח זמנים -->
+        <!-- הוספתי כאן את layoutDirection -->
+
+        <!-- פרטי המשימות עבור יום ראשון -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="לוח זמנים"
-            android:textColor="@android:color/white"
-            android:textSize="22sp"
-            android:textStyle="bold"/>
-    </androidx.appcompat.widget.Toolbar>
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:background="#FFFFFF"
+            android:elevation="3dp"
+            android:layout_marginTop="10dp">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="#CBD5E1"
-        android:layout_marginTop="4dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="יום ראשון"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#2D3748"
+                android:layoutDirection="rtl"/> <!-- הוספתי כאן את layoutDirection -->
 
-    <!-- כותרת ראשית -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="📅 הצגת לוח זמנים"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        android:textColor="#1E293B"
-        android:gravity="center"
-        android:layout_marginTop="16dp"
-        android:layoutDirection="rtl"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="משימה 1: טיוב נתונים"
+                android:textSize="16sp"
+                android:textColor="#475569"
+                android:layoutDirection="rtl"/> <!-- הוספתי כאן את layoutDirection -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="משימה 2: הכנסת פריטים למערכת"
+                android:textSize="16sp"
+                android:textColor="#475569"
+                android:layoutDirection="rtl"/> <!-- הוספתי כאן את layoutDirection -->
+        </LinearLayout>
 
-    <!-- תוכן הצגת לוח זמנים -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="כאן תוכל לצפות בלוח הזמנים שלך."
-        android:textSize="18sp"
-        android:textColor="#475569"
-        android:gravity="center"
-        android:layout_marginTop="8dp"
-        android:layoutDirection="rtl"/>
-</LinearLayout>
+        <!-- פרטי המשימות עבור יום שני -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:background="#FFFFFF"
+            android:elevation="3dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="יום שני"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#2D3748"
+                android:layoutDirection="rtl"/> <!-- הוספתי כאן את layoutDirection -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="משימה 1: עדכון מלאי"
+                android:textSize="16sp"
+                android:textColor="#475569"
+                android:layoutDirection="rtl"/> <!-- הוספתי כאן את layoutDirection -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="משימה 2: יצירת ממשקים למערכת"
+                android:textSize="16sp"
+                android:textColor="#475569"
+                android:layoutDirection="rtl"/> <!-- הוספתי כאן את layoutDirection -->
+        </LinearLayout>
+
+        <!-- פרטי המשימות עבור יום שלישי -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:background="#FFFFFF"
+            android:elevation="3dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="יום שלישי"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#2D3748"
+                android:layoutDirection="rtl"/> <!-- הוספתי כאן את layoutDirection -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="משימה 1: ניהול ממשקים"
+                android:textSize="16sp"
+                android:textColor="#475569"
+                android:layoutDirection="rtl"/> <!-- הוספתי כאן את layoutDirection -->
+        </LinearLayout>
+
+        <!-- פרטי המשימות עבור יום רביעי -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:background="#FFFFFF"
+            android:elevation="3dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="יום רביעי"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#2D3748"
+                android:layoutDirection="rtl"/> <!-- הוספתי כאן את layoutDirection -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="משימה 1: תמיכה טכנית"
+                android:textSize="16sp"
+                android:textColor="#475569"
+                android:layoutDirection="rtl"/> <!-- הוספתי כאן את layoutDirection -->
+        </LinearLayout>
+
+        <!-- פרטי המשימות עבור יום חמישי -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:background="#FFFFFF"
+            android:elevation="3dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="יום חמישי"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#2D3748"
+                android:layoutDirection="rtl"/> <!-- הוספתי כאן את layoutDirection -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="משימה 1: ביצוע בדיקות מערכת"
+                android:textSize="16sp"
+                android:textColor="#475569"
+                android:layoutDirection="rtl"/> <!-- הוספתי כאן את layoutDirection -->
+        </LinearLayout>
+
+        <!-- פרטי המשימות עבור יום שישי -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:background="#FFFFFF"
+            android:elevation="3dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="יום שישי"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#2D3748"
+                android:layoutDirection="rtl"/> <!-- הוספתי כאן את layoutDirection -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="משימה 1: עדכון דוחות מערכת"
+                android:textSize="16sp"
+                android:textColor="#475569"
+                android:layoutDirection="rtl"/> <!-- הוספתי כאן את layoutDirection -->
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

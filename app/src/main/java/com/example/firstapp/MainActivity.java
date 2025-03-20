@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,6 +29,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, CustomerHomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // הפיכת תמונת ה-PS5 ללחיצה
+        ImageView ps5Image = findViewById(R.id.ps5_image);
+        ps5Image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ProductDetailsActivity.class);
                 startActivity(intent);
             }
         });

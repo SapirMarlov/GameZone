@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#F3F4F6"
-    android:padding="16dp"
-    android:gravity="right">
+    android:padding="16dp">
 
+    <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,48 +18,107 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="🎮 GameZone 🎮       "
-            android:textSize="26sp"
+            android:text="📞 יצירת קשר עם המנהל                  🎮 GameZone 🎮"
+            android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="#3182CE"
-            android:layout_gravity="center"
-            android:layout_marginBottom="16dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="צור קשר עם המנהל"
-            android:textColor="@android:color/white"
-            android:textSize="22sp"
-            android:textStyle="bold"/>
+            android:layout_gravity="center" />
     </androidx.appcompat.widget.Toolbar>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="#CBD5E1"
-        android:layout_marginTop="4dp"/>
+        android:layout_marginTop="4dp" />
 
-    <!-- כותרת ראשית -->
+    <!-- שם המנהל במשמרת -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="📞 יצירת קשר עם המנהל"
-        android:textSize="26sp"
+        android:text="המנהל במשמרת: ספיר"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="#1E293B"
         android:gravity="center"
-        android:layout_marginTop="16dp"
-        android:layoutDirection="rtl"/>
+        android:layout_marginTop="8dp" />
 
-    <!-- תוכן יצירת קשר עם המנהל -->
-    <TextView
+    <!-- חלון צ'אט -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- הודעת העובד -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#DCF8C6"
+                android:padding="10dp"
+                android:layout_marginBottom="8dp"
+                android:layout_gravity="end"
+                android:elevation="2dp"
+                android:layoutDirection="rtl">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="שלום ספיר, אני זקוק לעזרה בנוגע למשמרות שלי."
+                    android:textSize="16sp"
+                    android:textColor="#000" />
+            </LinearLayout>
+
+            <!-- הודעת המנהל -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:padding="10dp"
+                android:layout_marginBottom="8dp"
+                android:layout_gravity="start"
+                android:elevation="2dp"
+                android:layoutDirection="rtl">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="שלום, איך אני יכולה לעזור לך?"
+                    android:textSize="16sp"
+                    android:textColor="#000" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- שדה הודעה ושליחה -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="כאן תוכל ליצור קשר עם המנהל."
-        android:textSize="18sp"
-        android:textColor="#475569"
-        android:gravity="center"
-        android:layout_marginTop="8dp"
-        android:layoutDirection="rtl"/>
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:background="#FFFFFF"
+        android:elevation="4dp">
+
+        <EditText
+            android:id="@+id/message_input"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="הקלד הודעה..."
+            android:textSize="16sp"
+            android:background="@android:color/transparent" />
+
+        <ImageButton
+            android:id="@+id/send_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_send"
+            android:background="@null"
+            android:contentDescription="שלח הודעה"
+            app:tint="#3182CE" />
+    </LinearLayout>
 </LinearLayout>
