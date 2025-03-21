@@ -7,7 +7,6 @@
     android:padding="20dp"
     android:background="#F7FAFC">
 
-    <!-- כותרת עם שם החברה -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,7 +25,6 @@
             android:layout_marginBottom="16dp"/>
     </LinearLayout>
 
-    <!-- הצגת היסטוריית הזמנות -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -37,13 +35,11 @@
         android:layout_gravity="center"
         android:layout_marginBottom="16dp"/>
 
-    <!-- רשימת ההזמנות -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- הזמנה 1 - מחשב ASUS -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -92,7 +88,6 @@
 
         </androidx.cardview.widget.CardView>
 
-        <!-- הזמנה 2 - נינטנדו -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -143,7 +138,6 @@
 
     </LinearLayout>
 
-    <!-- כפתור חזרה למסך הראשי -->
     <Button
         android:id="@+id/back_to_home"
         android:layout_width="match_parent"

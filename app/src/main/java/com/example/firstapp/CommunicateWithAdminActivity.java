@@ -7,6 +7,6 @@ public class CommunicateWithAdminActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.communicate_with_admin);  // קישור ל-XML של התקשרות עם מנהל
+        setContentView(R.layout.communicate_with_admin);
     }
 }

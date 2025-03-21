@@ -7,6 +7,6 @@ public class EmployeeInquiriesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.employee_inquiries); // קישור ל-XML של פניות עובדים
+        setContentView(R.layout.employee_inquiries);
     }
 }

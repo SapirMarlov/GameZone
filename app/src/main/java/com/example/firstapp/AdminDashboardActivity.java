@@ -11,18 +11,18 @@ public class AdminDashboardActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.admin_dashboard);  // קישור ל-XML של לוח הבקרה
+        setContentView(R.layout.admin_dashboard);
 
-        // הגדרת כפתורים במסך
+
         Button manageOrdersButton = findViewById(R.id.manage_orders);
         Button manageInventoryButton = findViewById(R.id.manage_inventory);
         Button customerRequestsButton = findViewById(R.id.customer_requests);
         Button viewReportsButton = findViewById(R.id.view_reports);
         Button manageEmployeesButton = findViewById(R.id.manage_employees);
-        Button manageEmployeesScreenButton = findViewById(R.id.employee_inquiries); // כפתור פניות עובדים במשמרת
-        Button employeesScreenButton = findViewById(R.id.employee_home); // כפתור מעבר למסך עובדים
+        Button manageEmployeesScreenButton = findViewById(R.id.employee_inquiries);
+        Button employeesScreenButton = findViewById(R.id.employee_home);
 
-        // מאזין ללחיצה על כל כפתור
+
         manageOrdersButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

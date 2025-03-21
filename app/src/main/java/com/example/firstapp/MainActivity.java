@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // הפיכת תמונת ה-PS5 ללחיצה
         ImageView ps5Image = findViewById(R.id.ps5_image);
         ps5Image.setOnClickListener(new View.OnClickListener() {
             @Override

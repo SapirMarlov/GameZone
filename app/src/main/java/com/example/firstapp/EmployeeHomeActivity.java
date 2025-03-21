@@ -11,7 +11,7 @@ public class EmployeeHomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.employee_home); // קישור ל-XML של מסך עובדים
+        setContentView(R.layout.employee_home);
 
         // כפתור ניהול משימות
         Button manageTasksButton = findViewById(R.id.manage_tasks);

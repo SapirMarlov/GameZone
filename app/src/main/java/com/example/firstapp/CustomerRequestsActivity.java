@@ -10,7 +10,7 @@ public class CustomerRequestsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.customer_requests);  // קישור ל-XML של פניות לקוחות
+        setContentView(R.layout.customer_requests);
 
 
     }

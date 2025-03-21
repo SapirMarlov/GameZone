@@ -5,7 +5,6 @@
     android:background="#F3F4F6"
     android:padding="16dp">
 
-    <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,7 +29,6 @@
         android:background="#CBD5E1"
         android:layout_marginTop="4dp" />
 
-    <!-- רשימת פניות עובדים -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -42,7 +40,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- פנייה 1 - עם סימן לא נקראה -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -71,7 +68,6 @@
                     android:textSize="14sp"
                     android:textColor="#A0AEC0" />
 
-                <!-- סימן הודעה שלא נקראה -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -81,7 +77,6 @@
                     android:layout_gravity="center_vertical" />
             </LinearLayout>
 
-            <!-- פנייה 2 - עם סימן לא נקראה -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -110,7 +105,6 @@
                     android:textSize="14sp"
                     android:textColor="#A0AEC0" />
 
-                <!-- סימן הודעה שלא נקראה -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

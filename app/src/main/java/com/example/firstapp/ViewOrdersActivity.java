@@ -7,6 +7,6 @@ public class ViewOrdersActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.view_orders); // register.xml
+        setContentView(R.layout.view_orders);
     }
 }

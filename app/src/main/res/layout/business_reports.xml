@@ -9,7 +9,6 @@
         android:background="#F3F4F6"
         android:padding="16dp">
 
-        <!-- Toolbar -->
 
         <Spinner
             android:id="@+id/report_type_spinner2"
@@ -47,7 +46,6 @@
             android:background="#CBD5E1"
             android:layout_marginTop="4dp"/>
 
-        <!-- תפריט לבחירת סוג דוח -->
         <Spinner
             android:id="@+id/report_type_spinner"
             android:layout_width="match_parent"
@@ -58,7 +56,6 @@
             android:entries="@array/graph"
             android:padding="8dp" />
 
-        <!-- כותרת גרף -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -69,7 +66,6 @@
             android:gravity="center"
             android:layout_marginTop="12dp"/>
 
-        <!-- גרף מכירות -->
         <ImageView
             android:id="@+id/report_chart"
             android:layout_width="match_parent"
@@ -79,7 +75,6 @@
             android:src="@drawable/graph"
             android:contentDescription="גרף מכירות"/>
 
-        <!-- כותרת נתוני מכירות יומיים -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -90,7 +85,6 @@
             android:gravity="center"
             android:layout_marginTop="16dp"/>
 
-        <!-- גלילת טבלה -->
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="300dp"
@@ -112,7 +106,6 @@
                     <TextView android:layout_width="0dp" android:layout_weight="1" android:text="יעד מכירות" android:textStyle="bold" android:textSize="16sp" android:textColor="#2D3748" android:gravity="right"/>
                 </TableRow>
 
-                <!-- רשימת מוצרים -->
                 <TableRow>
                     <TextView android:layout_width="0dp" android:layout_weight="1" android:text="Laptop HP" android:textSize="16sp" android:textColor="#000" android:gravity="right"/>
                     <TextView android:layout_width="0dp" android:layout_weight="1" android:text="7" android:textSize="16sp" android:textColor="#000" android:gravity="right"/>
@@ -207,7 +200,6 @@
             </TableLayout>
         </ScrollView>
 
-        <!-- יעד חנות -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -218,7 +210,6 @@
             android:gravity="center"
             android:layout_marginTop="16dp"/>
 
-        <!-- כפתור חזרה -->
         <Button
             android:id="@+id/back_to_admin"
             android:layout_width="wrap_content"

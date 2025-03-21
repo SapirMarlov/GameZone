@@ -6,7 +6,6 @@
     android:gravity="center"
     android:layoutDirection="rtl">
 
-    <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,7 +23,6 @@
             android:textStyle="bold"/>
     </androidx.appcompat.widget.Toolbar>
 
-    <!-- כותרת מסבירת פנים -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

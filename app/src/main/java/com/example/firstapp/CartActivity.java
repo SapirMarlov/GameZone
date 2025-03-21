@@ -9,13 +9,13 @@ public class CartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.cart_checkout);  // קובץ ה-XML של עגלת הקניות
+        setContentView(R.layout.cart_checkout);
 
-        Button continueToPaymentButton = findViewById(R.id.continue_to_payment); // כפתור המשך לתשלום
+        Button continueToPaymentButton = findViewById(R.id.continue_to_payment);
 
         continueToPaymentButton.setOnClickListener(v -> {
             // מעבר למסך התשלום
-            Intent intent = new Intent(CartActivity.this, PaymentActivity.class);  // PaymentActivity הוא מסך התשלום שלך
+            Intent intent = new Intent(CartActivity.this, PaymentActivity.class);
             startActivity(intent);
         });
     }

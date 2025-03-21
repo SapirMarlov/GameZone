@@ -7,7 +7,6 @@
     android:background="#F3F4F6"
     android:padding="16dp">
 
-    <!-- Toolbar עם לוגו -->
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,7 +32,6 @@
         android:background="#CBD5E1"
         android:layout_marginTop="4dp"/>
 
-    <!-- חיפוש במלאי -->
     <EditText
         android:id="@+id/search_inventory"
         android:layout_width="match_parent"
@@ -45,7 +43,6 @@
         android:textDirection="rtl"
         android:gravity="right"/>
 
-    <!-- רשימת מוצרים -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -55,7 +52,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- פריט 1 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -105,7 +101,6 @@
                         android:layout_marginTop="4dp"/>
                 </LinearLayout>
 
-                <!-- כפתור עדכון מלאי -->
                 <Button
                     android:id="@+id/update_stock_PS5_button"
                     android:layout_width="wrap_content"
@@ -120,7 +115,6 @@
 
             </LinearLayout>
 
-            <!-- פריט 2 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -170,7 +164,6 @@
                         android:layout_marginTop="4dp"/>
                 </LinearLayout>
 
-                <!-- כפתור עדכון מלאי -->
                 <Button
                     android:id="@+id/update_stock_Xbox_controller_X_button"
                     android:layout_width="wrap_content"
@@ -185,7 +178,6 @@
 
             </LinearLayout>
 
-            <!-- פריט 3 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -235,7 +227,6 @@
                         android:layout_marginTop="4dp"/>
                 </LinearLayout>
 
-                <!-- כפתור עדכון מלאי -->
                 <Button
                     android:id="@+id/update_stock_Nintendo_Switch_button"
                     android:layout_width="wrap_content"
@@ -250,7 +241,6 @@
 
             </LinearLayout>
 
-            <!-- פריט 4 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -300,7 +290,6 @@
                         android:layout_marginTop="4dp"/>
                 </LinearLayout>
 
-                <!-- כפתור עדכון מלאי -->
                 <Button
                     android:id="@+id/update_stock_Razer_Keyboard_button"
                     android:layout_width="wrap_content"
@@ -311,14 +300,13 @@
                     android:padding="8dp"
                     android:textSize="14sp"
                     android:layout_marginStart="8dp"
-                    android:enabled="false" /> <!-- הכפתור לא פעיל -->
+                    android:enabled="false" />
 
             </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
 
-    <!-- כפתור הוסף מוצר חדש -->
     <Button
         android:id="@+id/add_new_product"
         android:layout_width="match_parent"
@@ -329,6 +317,6 @@
         android:padding="12dp"
         android:textSize="18sp"
         android:layout_marginBottom="12dp"
-        android:enabled="false" /> <!-- הכפתור לא פעיל -->
+        android:enabled="false" />
 
 </LinearLayout>

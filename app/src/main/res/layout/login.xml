@@ -6,7 +6,6 @@
     android:gravity="center"
     android:layoutDirection="rtl">
 
-    <!-- כותרת מסבירת פנים -->
 
     <TextView
         android:layout_width="match_parent"

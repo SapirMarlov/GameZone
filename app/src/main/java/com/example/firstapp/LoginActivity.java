@@ -12,7 +12,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);  // קישור ל-XML של מסך ההתחברות
+        setContentView(R.layout.login);
 
         // הגדרת שדות הקלט
         final EditText emailEditText = findViewById(R.id.email);
@@ -21,7 +21,6 @@ public class LoginActivity extends AppCompatActivity {
         // כפתור התחברות
         Button loginButton = findViewById(R.id.login_button);
 
-        // מאזין ללחיצה על כפתור ההתחברות
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
                 } else if (userType.equals("customer")) {
                     intent = new Intent(LoginActivity.this, CustomerHomeActivity.class);
                 } else {
-                    // במקרה של נתונים לא תקינים – ניתן להציג הודעת שגיאה
+
                     return;
                 }
                 startActivity(intent);
@@ -54,14 +53,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                // מעבר למסך ההרשמה
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
             }
         });
     }
 
-    // פונקציה לקביעת סוג המשתמש בהתאם לקרדנציות
+
     private String getUserType(String username, String password) {
         if (username.equals("admin") && password.equals("admin123")) {
             return "admin";

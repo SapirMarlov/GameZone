@@ -8,7 +8,6 @@
     android:padding="16dp"
     android:gravity="right">
 
-    <!-- Toolbar עם חותמת GameZone -->
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -42,7 +41,6 @@
         android:background="#CBD5E1"
         android:layout_marginTop="4dp"/>
 
-    <!-- כותרת ראשית -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -54,7 +52,6 @@
         android:layout_marginTop="16dp"
         android:layoutDirection="rtl"/>
 
-    <!-- כותרת משנית -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -66,7 +63,6 @@
         android:layout_marginTop="8dp"
         android:layoutDirection="rtl"/>
 
-    <!-- אזור הכפתורים -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -80,7 +76,6 @@
             android:layoutDirection="rtl"
             android:padding="8dp">
 
-            <!-- כפתורים מעודכנים בעיצוב עדין -->
             <Button
                 android:id="@+id/manage_tasks"
                 android:layout_width="match_parent"

@@ -7,6 +7,6 @@ public class ManageTasksActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.manage_tasks); // register.xml
+        setContentView(R.layout.manage_tasks);
     }
 }

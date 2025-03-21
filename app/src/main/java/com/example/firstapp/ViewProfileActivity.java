@@ -7,6 +7,6 @@ public class ViewProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.view_profile); // register.xml
+        setContentView(R.layout.view_profile);
     }
 }

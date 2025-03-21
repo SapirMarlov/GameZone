@@ -7,7 +7,6 @@
     android:background="#f0f0f0"
     android:padding="16dp">
 
-    <!-- כותרת תשלום בכרטיס אשראי -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,7 +17,6 @@
         android:layout_gravity="center"
         android:layout_marginBottom="16dp"/>
 
-    <!-- סכום לתשלום -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,7 +26,6 @@
         android:textColor="#000"
         android:layout_marginBottom="16dp"/>
 
-    <!-- שדה הזנת מספר כרטיס -->
     <EditText
         android:id="@+id/user_id"
         android:layout_width="match_parent"
@@ -49,7 +46,6 @@
         android:background="@android:drawable/editbox_background"
         android:layout_marginBottom="12dp"/>
 
-    <!-- שדה תוקף כרטיס -->
     <EditText
         android:id="@+id/card_expiry"
         android:layout_width="match_parent"
@@ -60,7 +56,6 @@
         android:background="@android:drawable/editbox_background"
         android:layout_marginBottom="12dp"/>
 
-    <!-- שדה CVV -->
     <EditText
         android:id="@+id/card_cvv"
         android:layout_width="match_parent"
@@ -71,9 +66,7 @@
         android:background="@android:drawable/editbox_background"
         android:layout_marginBottom="12dp"/>
 
-    <!-- שדה תעודת זהות -->
 
-    <!-- כפתור אישור תשלום -->
     <Button
         android:id="@+id/confirm_credit_payment"
         android:layout_width="match_parent"

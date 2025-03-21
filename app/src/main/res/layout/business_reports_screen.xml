@@ -9,7 +9,6 @@
     android:padding="16dp"
     android:gravity="right">
 
-    <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -43,7 +42,6 @@
         android:background="#CBD5E1"
         android:layout_marginTop="4dp"/>
 
-    <!-- כותרת -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -55,7 +53,6 @@
         android:layout_marginTop="16dp"
         android:layoutDirection="rtl"/>
 
-    <!-- בחירת סוג דוח -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -74,7 +71,6 @@
         android:padding="8dp"
         android:layout_marginBottom="12dp"/>
 
-    <!-- כפתור הצגת דוח -->
     <Button
         android:id="@+id/generate_report_button"
         android:layout_width="match_parent"
@@ -86,7 +82,6 @@
         android:textSize="18sp"
         android:layout_marginBottom="16dp"/>
 
-    <!-- תצוגת דוח -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -7,7 +7,6 @@
     android:padding="16dp"
     android:gravity="right">
 
-    <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,7 +33,6 @@
         android:background="#CBD5E1"
         android:layout_marginTop="4dp"/>
 
-    <!-- כותרת עם התאריך -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -46,7 +44,6 @@
         android:layout_marginTop="16dp"
         android:layoutDirection="rtl"/>
 
-    <!-- תוכן ניהול משימות -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -56,7 +53,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- פרטי המשימה עבור כל עובד -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -66,7 +62,6 @@
                 android:elevation="6dp"
                 android:layout_marginBottom="8dp">
 
-                <!-- שם העובד, תפקיד וסטטוס -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -110,7 +105,6 @@
                     android:gravity="start"/>
             </LinearLayout>
 
-            <!-- פרטי המשימה עבור עובד נוסף -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -120,7 +114,6 @@
                 android:elevation="6dp"
                 android:layout_marginBottom="8dp">
 
-                <!-- שם העובד, תפקיד וסטטוס -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -164,7 +157,6 @@
                     android:gravity="start"/>
             </LinearLayout>
 
-            <!-- פרטי המשימה עבור עובד נוסף -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -174,7 +166,6 @@
                 android:elevation="6dp"
                 android:layout_marginBottom="8dp">
 
-                <!-- שם העובד, תפקיד וסטטוס -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -218,7 +209,6 @@
                     android:gravity="start"/>
             </LinearLayout>
 
-            <!-- פרטי המשימה עבור עובד נוסף -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -228,7 +218,6 @@
                 android:elevation="6dp"
                 android:layout_marginBottom="8dp">
 
-                <!-- שם העובד, תפקיד וסטטוס -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

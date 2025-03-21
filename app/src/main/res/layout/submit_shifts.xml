@@ -9,9 +9,8 @@
         android:orientation="vertical"
         android:padding="16dp"
         android:gravity="right"
-        android:layoutDirection="rtl"> <!-- מציב את כל התוכן בימין לשמאל -->
+        android:layoutDirection="rtl">
 
-        <!-- כותרת GameZone -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -22,7 +21,6 @@
             android:layout_gravity="center"
             android:layout_marginBottom="16dp"/>
 
-        <!-- שם העובד -->
         <EditText
             android:id="@+id/name_edit_text"
             android:layout_width="match_parent"
@@ -32,14 +30,12 @@
             android:inputType="textPersonName"
             android:layoutDirection="rtl"/>
 
-        <!-- קו הפרדה -->
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="#CBD5E1"
             android:layout_marginTop="16dp"/>
 
-        <!-- יום ראשון -->
         <CheckBox
             android:id="@+id/monday_checkbox"
             android:layout_width="wrap_content"
@@ -49,7 +45,6 @@
             android:layoutDirection="rtl"
             android:gravity="right"/>
 
-        <!-- שעת התחלה וסיום ליום ראשון -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -78,14 +73,12 @@
                 android:timePickerMode="spinner"/>
         </LinearLayout>
 
-        <!-- קו הפרדה בין הימים -->
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="#CBD5E1"
             android:layout_marginTop="8dp"/>
 
-        <!-- יום שני -->
         <CheckBox
             android:id="@+id/tuesday_checkbox"
             android:layout_width="wrap_content"
@@ -95,7 +88,6 @@
             android:layoutDirection="rtl"
             android:gravity="right"/>
 
-        <!-- שעת התחלה וסיום ליום שני -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -124,14 +116,12 @@
                 android:timePickerMode="spinner"/>
         </LinearLayout>
 
-        <!-- קו הפרדה בין הימים -->
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="#CBD5E1"
             android:layout_marginTop="8dp"/>
 
-        <!-- יום שלישי -->
         <CheckBox
             android:id="@+id/wednesday_checkbox"
             android:layout_width="wrap_content"
@@ -141,7 +131,6 @@
             android:layoutDirection="rtl"
             android:gravity="right"/>
 
-        <!-- שעת התחלה וסיום ליום שלישי -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -170,14 +159,12 @@
                 android:timePickerMode="spinner"/>
         </LinearLayout>
 
-        <!-- קו הפרדה בין הימים -->
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="#CBD5E1"
             android:layout_marginTop="8dp"/>
 
-        <!-- יום רביעי -->
         <CheckBox
             android:id="@+id/thursday_checkbox"
             android:layout_width="wrap_content"
@@ -187,7 +174,6 @@
             android:layoutDirection="rtl"
             android:gravity="right"/>
 
-        <!-- שעת התחלה וסיום ליום רביעי -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -216,14 +202,12 @@
                 android:timePickerMode="spinner"/>
         </LinearLayout>
 
-        <!-- קו הפרדה בין הימים -->
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="#CBD5E1"
             android:layout_marginTop="8dp"/>
 
-        <!-- יום חמישי -->
         <CheckBox
             android:id="@+id/friday_checkbox"
             android:layout_width="wrap_content"
@@ -233,7 +217,6 @@
             android:layoutDirection="rtl"
             android:gravity="right"/>
 
-        <!-- שעת התחלה וסיום ליום חמישי -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -262,14 +245,12 @@
                 android:timePickerMode="spinner"/>
         </LinearLayout>
 
-        <!-- קו הפרדה בין הימים -->
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="#CBD5E1"
             android:layout_marginTop="8dp"/>
 
-        <!-- כפתור שליחה -->
         <Button
             android:id="@+id/submit_button"
             android:layout_width="match_parent"
@@ -279,7 +260,6 @@
             android:backgroundTint="#3182CE"
             android:layout_marginTop="16dp"/>
 
-        <!-- הצגת המשמרות שנבחרו -->
         <TextView
             android:id="@+id/selected_shifts_text_view"
             android:layout_width="wrap_content"

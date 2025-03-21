@@ -10,7 +10,7 @@ public class BusinessReportsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.business_reports);  // קישור ל-XML של דוחות עסקיים
+        setContentView(R.layout.business_reports);  //
 
 
     }

@@ -8,7 +8,6 @@
     android:padding="16dp"
     android:gravity="start|center_vertical">
 
-    <!-- Toolbar -->
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
@@ -35,7 +34,6 @@
         android:background="#CBD5E1"
         android:layout_marginTop="4dp"/>
 
-    <!-- רשימת פניות לקוחות עם ScrollView -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -46,7 +44,6 @@
             android:orientation="vertical"
             android:padding="8dp">
 
-            <!-- פריט פנייה 1 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -56,7 +53,6 @@
                 android:elevation="6dp"
                 android:layout_marginBottom="8dp">
 
-                <!-- סטטוס פנייה -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -66,7 +62,6 @@
                     android:textStyle="bold"
                     android:layout_gravity="center"/>
 
-                <!-- מידע כללי על הפנייה -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -92,7 +87,6 @@
                     android:textColor="#000"
                     android:layout_gravity="end"/>
 
-                <!-- תוכן הפנייה -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -101,7 +95,6 @@
                     android:textColor="#000"
                     android:layout_gravity="end"/>
 
-                <!-- כפתור לניהול הפנייה -->
                 <Button
                     android:id="@+id/manage_request_button_1"
                     android:layout_width="wrap_content"
@@ -115,7 +108,6 @@
                     android:layout_gravity="start"/>
             </LinearLayout>
 
-            <!-- קו הפרדה -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
@@ -123,7 +115,6 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"/>
 
-            <!-- פריט פנייה 2 (חריפה) -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -133,7 +124,6 @@
                 android:elevation="6dp"
                 android:layout_marginBottom="8dp">
 
-                <!-- סטטוס פנייה -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -143,7 +133,6 @@
                     android:textStyle="bold"
                     android:layout_gravity="center"/>
 
-                <!-- מידע כללי על הפנייה -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -169,7 +158,6 @@
                     android:textColor="#000"
                     android:layout_gravity="end"/>
 
-                <!-- תוכן הפנייה -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -178,7 +166,6 @@
                     android:textColor="#000"
                     android:layout_gravity="end"/>
 
-                <!-- כפתור לניהול הפנייה -->
                 <Button
                     android:id="@+id/manage_request_button_2"
                     android:layout_width="wrap_content"
@@ -192,7 +179,6 @@
                     android:layout_gravity="start"/>
             </LinearLayout>
 
-            <!-- קו הפרדה -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
@@ -200,7 +186,6 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"/>
 
-            <!-- פריט פנייה 3 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -210,7 +195,6 @@
                 android:elevation="6dp"
                 android:layout_marginBottom="8dp">
 
-                <!-- סטטוס פנייה -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -220,7 +204,6 @@
                     android:textStyle="bold"
                     android:layout_gravity="center"/>
 
-                <!-- מידע כללי על הפנייה -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -246,7 +229,6 @@
                     android:textColor="#000"
                     android:layout_gravity="end"/>
 
-                <!-- תוכן הפנייה -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -255,7 +237,6 @@
                     android:textColor="#000"
                     android:layout_gravity="end"/>
 
-                <!-- כפתור לניהול הפנייה -->
                 <Button
                     android:id="@+id/manage_request_button_3"
                     android:layout_width="wrap_content"
