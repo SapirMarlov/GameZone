@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F2F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- כותרת עליונה עם לוגו GameZone -->
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#2D3748"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🎮 GameZone🎮  פרסום מודעה למשחק"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center"/>
+        </androidx.appcompat.widget.Toolbar>
+
+
+
+        <!-- בחירת קונסולה -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="בחר/י פלטפורמת משחק"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/console_playstation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PlayStation"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="#3B82F6"/>
+
+                <Button
+                    android:id="@+id/console_xbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Xbox"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="#059669"/>
+
+                <Button
+                    android:id="@+id/console_nintendo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nintendo"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="#D97706"/>
+
+                <Button
+                    android:id="@+id/console_pc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PC Gaming"
+                    android:backgroundTint="#7C3AED"/>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- שם משתמש בפלטפורמה -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="מה השם משתמש שלך בפלטפורמה?"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/gamer_name_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- משחק מועדף -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="המשחק בו את/ה מחפש שותפים"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/favorite_game_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background"
+            android:layout_marginBottom="16dp"/>
+
+
+        <!-- תיאור נוסף -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="מידע נוסף"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/additional_description"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:hint="הוסף תיאור על עצמך ועל סגנון המשחק שלך"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- כפתור פרסום -->
+        <Button
+            android:id="@+id/publish_profile_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="פרסם מודעה"
+            android:backgroundTint="#28A745"
+            android:textColor="#FFFFFF"
+            android:padding="16dp"
+            android:textSize="18sp"/>
+    </LinearLayout>
+</ScrollView>

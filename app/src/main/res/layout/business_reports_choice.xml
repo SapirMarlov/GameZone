@@ -210,15 +210,6 @@
             android:gravity="center"
             android:layout_marginTop="16dp"/>
 
-        <Button
-            android:id="@+id/back_to_admin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="חזרה למסך מנהל"
-            android:backgroundTint="#2D3748"
-            android:textColor="#ffffff"
-            android:textSize="14sp"
-            android:layout_marginTop="16dp"
-            android:padding="8dp"/>
+
     </LinearLayout>
 </ScrollView>

@@ -105,13 +105,13 @@
                     android:id="@+id/update_stock_PS5_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="עדכן מלאי"
+                    android:text="עדכן פריט"
                     android:backgroundTint="#3182CE"
                     android:textColor="#ffffff"
                     android:padding="8dp"
                     android:textSize="14sp"
                     android:layout_marginStart="8dp"
-                    android:enabled="false" /> <!-- הכפתור לא פעיל -->
+                    android:enabled="true" /> <!-- הכפתור לא פעיל -->
 
             </LinearLayout>
 
@@ -168,13 +168,13 @@
                     android:id="@+id/update_stock_Xbox_controller_X_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="עדכן מלאי"
+                    android:text="עדכן פריט"
                     android:backgroundTint="#3182CE"
                     android:textColor="#ffffff"
                     android:padding="8dp"
                     android:textSize="14sp"
                     android:layout_marginStart="8dp"
-                    android:enabled="false" /> <!-- הכפתור לא פעיל -->
+                    android:enabled="true" /> <!-- הכפתור לא פעיל -->
 
             </LinearLayout>
 
@@ -231,13 +231,13 @@
                     android:id="@+id/update_stock_Nintendo_Switch_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="עדכן מלאי"
+                    android:text="עדכן פריט"
                     android:backgroundTint="#3182CE"
                     android:textColor="#ffffff"
                     android:padding="8dp"
                     android:textSize="14sp"
                     android:layout_marginStart="8dp"
-                    android:enabled="false" /> <!-- הכפתור לא פעיל -->
+                    android:enabled="true" /> <!-- הכפתור לא פעיל -->
 
             </LinearLayout>
 
@@ -294,13 +294,13 @@
                     android:id="@+id/update_stock_Razer_Keyboard_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="עדכן מלאי"
+                    android:text="עדכן פריט"
                     android:backgroundTint="#3182CE"
                     android:textColor="#ffffff"
                     android:padding="8dp"
                     android:textSize="14sp"
                     android:layout_marginStart="8dp"
-                    android:enabled="false" />
+                    android:enabled="true" />
 
             </LinearLayout>
 
@@ -311,12 +311,14 @@
         android:id="@+id/add_new_product"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="הוסף מוצר חדש"
+        android:text="עדכון מלאי"
         android:backgroundTint="#28A745"
         android:textColor="#ffffff"
         android:padding="12dp"
         android:textSize="18sp"
         android:layout_marginBottom="12dp"
-        android:enabled="false" />
+        android:enabled="true" />
+
+
 
 </LinearLayout>

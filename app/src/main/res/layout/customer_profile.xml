@@ -45,34 +45,60 @@
             android:id="@+id/view_profile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="📇 הצגת פרופיל"
+            android:text="📇  הצגת פרופיל"
             android:backgroundTint="#3182CE"
             android:textColor="#ffffff"
             android:padding="14dp"
             android:textSize="18sp"
-            android:layout_marginBottom="12dp"/>
+            android:layout_marginBottom="12dp"
+            android:gravity="center"/>
 
         <Button
             android:id="@+id/view_orders"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="📦 הצגת הזמנות"
+            android:text="📦  הצגת הזמנות"
             android:backgroundTint="#38A169"
             android:textColor="#ffffff"
             android:padding="14dp"
             android:textSize="18sp"
-            android:layout_marginBottom="12dp"/>
+            android:layout_marginBottom="12dp"
+            android:gravity="center"/>
 
         <Button
             android:id="@+id/customer_support"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="💬 תמיכה ללקוח"
+            android:text="💬  תמיכה ללקוח"
             android:backgroundTint="#DD6B20"
             android:textColor="#ffffff"
             android:padding="14dp"
             android:textSize="18sp"
-            android:layout_marginBottom="12dp"/>
+            android:layout_marginBottom="12dp"
+            android:gravity="center"/>
+
+        <Button
+            android:id="@+id/personal_suggestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🎯 המלצות אישיות"
+            android:backgroundTint="#DDCA20"
+            android:textColor="#ffffff"
+            android:padding="14dp"
+            android:textSize="18sp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"/>
+        <Button
+            android:id="@+id/game_partner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🎮 חיפוש שותפים למשחק"
+            android:backgroundTint="#A120DD"
+            android:textColor="#ffffff"
+            android:padding="14dp"
+            android:textSize="18sp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"/>
     </LinearLayout>
 
 </LinearLayout>

@@ -139,7 +139,7 @@
             android:id="@+id/payment_paypal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="PayPal"/>
+            android:text="מזומן"/>
     </RadioGroup>
 
     <Button

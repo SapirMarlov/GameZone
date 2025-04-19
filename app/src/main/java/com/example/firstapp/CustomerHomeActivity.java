@@ -3,6 +3,8 @@ package com.example.firstapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class CustomerHomeActivity extends AppCompatActivity {
@@ -34,6 +36,25 @@ public class CustomerHomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // מעבר למסך תמיכה ללקוח
                 Intent intent = new Intent(CustomerHomeActivity.this, CustomerSupportActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.personal_suggestion).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //מעבר למסך המלצות אישיות
+
+                Intent intent = new Intent(CustomerHomeActivity.this, PersonalSuggestionActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button gamepartner = findViewById(R.id.game_partner);
+        gamepartner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CustomerHomeActivity.this, GamePartnerActivity.class);
                 startActivity(intent);
             }
         });

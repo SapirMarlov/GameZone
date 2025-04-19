@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F3F4F6"
+    android:layoutDirection="rtl">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2D3748"
+        android:padding="12dp"
+        android:gravity="center_vertical"
+        android:layoutDirection="rtl">
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🎮 GameZone 🎮     🎯 המלצות אישיות"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#3182CE"
+            android:layout_gravity="center" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#CBD5E1"
+        android:layout_marginTop="4dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- שלב 1: פרופיל משתמש -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                android:background="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="פרופיל גיימר"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#2D3748"
+                        android:layout_marginBottom="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="8dp"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextAge"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="גיל"
+                                android:inputType="number" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+                            <AutoCompleteTextView
+                                android:id="@+id/spinnerGamingExperience"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="none"
+                                android:hint="ניסיון משחק" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- שלב 2: העדפות משחק -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                android:background="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="העדפות משחק"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#2D3748"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="סוגי משחקים מועדפים (ניתן לבחור מספר אפשרויות)"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="8dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+
+                        <com.google.android.material.chip.ChipGroup
+                            android:id="@+id/chipGroupGameTypes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:chipSpacingHorizontal="8dp"
+                            app:chipSpacingVertical="8dp"
+                            app:singleSelection="false">
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipAction"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="אקשן"
+                                android:checkable="true"
+                                style="@style/Widget.MaterialComponents.Chip.Filter" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipAdventure"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="הרפתקאות"
+                                android:checkable="true"
+                                style="@style/Widget.MaterialComponents.Chip.Filter" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipRPG"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="RPG"
+                                android:checkable="true"
+                                style="@style/Widget.MaterialComponents.Chip.Filter" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipStrategy"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="אסטרטגיה"
+                                android:checkable="true"
+                                style="@style/Widget.MaterialComponents.Chip.Filter" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipSports"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ספורט"
+                                android:checkable="true"
+                                style="@style/Widget.MaterialComponents.Chip.Filter" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipMMO"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="MMO"
+                                android:checkable="true"
+                                style="@style/Widget.MaterialComponents.Chip.Filter" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipSimulation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="סימולציה"
+                                android:checkable="true"
+                                style="@style/Widget.MaterialComponents.Chip.Filter" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipRacing"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="מרוצים"
+                                android:checkable="true"
+                                style="@style/Widget.MaterialComponents.Chip.Filter" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipHorror"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="אימה"
+                                android:checkable="true"
+                                style="@style/Widget.MaterialComponents.Chip.Filter" />
+                        </com.google.android.material.chip.ChipGroup>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="פלטפורמות משחק"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="8dp" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupPlatform"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp">
+
+                        <RadioButton
+                            android:id="@+id/radioPC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PC"
+                            android:layout_marginEnd="12dp" />
+
+                        <RadioButton
+                            android:id="@+id/radioPlayStation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PlayStation"
+                            android:layout_marginEnd="12dp" />
+
+                        <RadioButton
+                            android:id="@+id/radioXbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Xbox"
+                            android:layout_marginEnd="12dp" />
+
+                        <RadioButton
+                            android:id="@+id/radioSwitch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Switch" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="תקציב מקסימלי"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="8dp" />
+
+                    <SeekBar
+                        android:id="@+id/seekBarBudget"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="500"
+                        android:progress="250"
+                        android:layout_marginBottom="8dp"
+                        style="@style/Widget.AppCompat.SeekBar.Discrete"
+                        android:thumbTint="#3182CE"
+                        android:progressTint="#3182CE" />
+
+                    <TextView
+                        android:id="@+id/textViewBudgetValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="תקציב: 250 ₪"
+                        android:textSize="14sp"
+                        android:textAlignment="center"
+                        android:layout_marginBottom="12dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- שלב 3: העדפות סגנון -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                android:background="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="העדפות סגנון"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#2D3748"
+                        android:layout_marginBottom="12dp" />
+
+                    <com.google.android.material.slider.RangeSlider
+                        android:id="@+id/sliderDifficulty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:valueFrom="1"
+                        android:valueTo="5"
+                        android:stepSize="1"
+                        app:labelBehavior="visible"
+                        android:layout_marginBottom="24dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="רמת קושי מועדפת: בינונית"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="12dp" />
+
+                    <CheckBox
+                        android:id="@+id/checkBoxMultiplayer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="משחק מרובה משתתפים"
+                        android:layout_marginBottom="8dp" />
+
+                    <CheckBox
+                        android:id="@+id/checkBoxOpenWorld"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="עולם פתוח"
+                        android:layout_marginBottom="8dp" />
+
+                    <CheckBox
+                        android:id="@+id/checkBoxStoryDriven"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="מונע סיפור"
+                        android:layout_marginBottom="8dp" />
+
+                    <CheckBox
+                        android:id="@+id/checkBoxCompetitive"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="תחרותי"
+                        android:layout_marginBottom="12dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- כפתור קבלת המלצות -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonGetRecommendations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="קבל המלצות"
+                android:textSize="16sp"
+                android:padding="12dp"
+                android:layout_marginBottom="24dp"
+                android:backgroundTint="#3182CE" />
+
+            <!-- תוצאות ההמלצות (מוסתר בתחילה) -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewResults"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                android:background="#FFFFFF"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ההמלצות שלנו"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#2D3748"
+                        android:layout_marginBottom="16dp" />
+
+                    <LinearLayout
+                        android:id="@+id/layoutRecommendations"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <!-- כאן יתווספו המלצות דינמית -->
+
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

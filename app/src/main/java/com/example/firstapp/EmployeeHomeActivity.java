@@ -13,13 +13,6 @@ public class EmployeeHomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.employee_home);
 
-        // כפתור ניהול משימות
-        Button manageTasksButton = findViewById(R.id.manage_tasks);
-        manageTasksButton.setOnClickListener(view -> {
-            Intent intent = new Intent(EmployeeHomeActivity.this, ManageTasksActivity.class);
-            startActivity(intent);
-        });
-
         // כפתור הצגת לוח זמנים
         Button viewScheduleButton = findViewById(R.id.view_schedule);
         viewScheduleButton.setOnClickListener(view -> {
