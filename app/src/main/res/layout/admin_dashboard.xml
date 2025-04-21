@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F3F4F6"
+    android:padding="16dp"
+    android:gravity="right">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2D3748"
+        android:padding="12dp"
+        android:gravity="center_vertical"
+        android:layoutDirection="rtl">
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" מנהל החנות           🎮 GameZone 🎮"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#CBD5E1"
+        android:layout_marginTop="4dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="⚙️ מסך ניהול ראשי ⚙️"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#1E293B"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:layoutDirection="rtl"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="בחר פעולה לניהול המערכת"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#475569"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:layoutDirection="rtl"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingVertical="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="right"
+            android:layoutDirection="rtl"
+            android:padding="8dp">
+
+            <Button
+                android:id="@+id/manage_orders"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="#64748B"
+                android:text="🛒 ניהול הזמנות"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:padding="14dp"
+                android:gravity="right"
+                android:elevation="6dp"/>
+
+            <Button
+                android:id="@+id/manage_inventory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="#7C3AED"
+                android:text="💼 ניהול מלאי"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:padding="14dp"
+                android:gravity="right"
+                android:elevation="6dp"/>
+
+            <Button
+                android:id="@+id/customer_requests"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="#059669"
+                android:text="📨 פניות לקוחות"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:padding="14dp"
+                android:gravity="right"
+                android:elevation="6dp"/>
+
+            <Button
+                android:id="@+id/view_reports"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="#D97706"
+                android:text="📊 דוחות עסקיים"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:padding="14dp"
+                android:gravity="right"
+                android:elevation="6dp"/>
+
+            <Button
+                android:id="@+id/manage_employees"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="#3B82F6"
+                android:text="👥 ניהול עובדים"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:padding="14dp"
+                android:gravity="right"
+                android:elevation="6dp"/>
+
+            <Button
+                android:id="@+id/employee_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="#BE3BF6"
+                android:text="👥מעבר למסך עובדים"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:padding="14dp"
+                android:gravity="right"
+                android:elevation="6dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#CBD5E1"
+        android:layout_marginTop="8dp"/>
+
+</LinearLayout>

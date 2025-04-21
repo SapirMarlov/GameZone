@@ -1,0 +1,63 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FirstApp"
+        tools:targetApi="31">
+
+        <!-- Main Activity (מסך ראשי) -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Activities קיימות -->
+        <activity android:name=".CustomerHomeActivity" android:exported="false" />
+        <activity android:name=".LoginActivity" android:exported="true" />
+        <activity android:name=".RegisterActivity" android:exported="true" />
+        <activity android:name=".AdminDashboardActivity" android:exported="false" />
+        <activity android:name=".EmployeeHomeActivity" android:exported="false" />
+        <activity android:name=".ManageTasksActivity" android:exported="false" />
+        <activity android:name=".ViewScheduleActivity" android:exported="false" />
+        <activity android:name=".CommunicateWithAdminActivity" android:exported="false" />
+
+        <activity android:name=".ManageOrdersActivity" android:exported="false" />
+        <activity android:name=".InventoryManagementActivity" android:exported="true" /> <!-- עדכון כאן -->
+        <activity android:name=".CustomerRequestsActivity" android:exported="false" />
+        <activity android:name=".BusinessReportsActivity" android:exported="false" />
+        <activity android:name=".ManageEmployeesActivity" android:exported="false" />
+        <activity android:name=".SubmitShiftsActivity" android:exported="false" />
+        <activity android:name=".ViewProfileActivity" android:exported="false" />
+        <activity android:name=".ViewOrdersActivity" android:exported="false" />
+        <activity android:name=".CustomerSupportActivity" android:exported="false" />
+        <activity android:name=".ProductDetailsActivity" android:exported="true" />
+        <activity android:name=".CartActivity" android:exported="true" />
+        <activity android:name=".PaymentActivity" android:exported="true" />
+        <activity android:name=".PromotionsActivity" android:exported="true" />
+        <activity android:name=".GamePartnerActivity" android:exported="true" />
+        <activity android:name=".CategoriesActivity" android:exported="true" />
+        <activity android:name=".PlayerPostCreationActivity" android:exported="true" />
+        <activity android:name=".UpdateInventoryActivity" android:exported="true" /> <!-- עדכון כאן -->
+        <activity android:name=".PersonalSuggestionActivity" android:exported="true" /> <!-- עדכון כאן -->
+        <activity android:name=".SuggestionsOutputActivity" android:exported="true" /> <!-- עדכון כאן -->
+        <activity android:name=".UpdateItemDetailsActivity" android:exported="true" /> <!-- עדכון כאן -->
+        <activity android:name=".BusinessReportsChoiceActivity" android:exported="true" /> <!-- עדכון כאן -->
+
+
+
+
+
+    </application>
+
+</manifest>

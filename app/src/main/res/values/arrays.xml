@@ -1,0 +1,8 @@
+<resources>
+    <string-array name="graph">
+        <item>דוח 1</item>
+        <item>דוח 2</item>
+        <item>דוח 3</item>
+        <!-- הוסף עוד דוחות לפי הצורך -->
+    </string-array>
+</resources>

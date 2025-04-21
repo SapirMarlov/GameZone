@@ -1,0 +1,964 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F3F4F6"
+    android:layoutDirection="rtl">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2D3748"
+        android:gravity="center_vertical"
+        android:padding="12dp">
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_arrow_forward"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_gravity="start"
+            android:contentDescription="חזרה למסך ראשי" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="שיבוץ עובדים          🎮GameZone🎮 "
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_gravity="center" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#E2E8F0"
+        android:padding="12dp">
+
+        <Button
+            android:id="@+id/previous_week_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="◀ שבוע קודם"
+            android:backgroundTint="#3182CE"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/current_date_range"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="21 - 27 אפריל 2025"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#2D3748"
+            android:gravity="center" />
+
+        <Button
+            android:id="@+id/next_week_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="שבוע הבא ▶"
+            android:backgroundTint="#3182CE"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:background="#FFFFFF">
+
+        <Button
+            android:id="@+id/view_requests_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="צפייה בבקשות"
+            android:backgroundTint="#3182CE"
+            android:textColor="#FFFFFF"
+            android:layout_marginEnd="4dp"
+            android:drawableStart="@drawable/ic_request"/>
+
+        <Button
+            android:id="@+id/view_schedule_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="תצוגת סידור"
+            android:backgroundTint="#CBD5E1"
+            android:textColor="#2D3748"
+            android:layout_marginStart="4dp"
+            android:drawableStart="@drawable/ic_calendar"/>
+
+        <Button
+            android:id="@+id/publish_schedule_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="פרסם סידור"
+            android:backgroundTint="#38A169"
+            android:textColor="#FFFFFF"
+            android:layout_marginStart="4dp"
+            android:drawableStart="@drawable/ic_publish"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/main_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <!-- תצוגת בקשות העובדים -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="בקשות עובדים לשבוע הקרוב"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#2D3748"
+                        android:gravity="center"
+                        android:layout_marginBottom="8dp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#CBD5E1"
+                        android:layout_marginBottom="12dp"/>
+
+                    <!-- טבלת ימים בשבוע -->
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <!-- כותרות ימים -->
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="שם העובד"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:background="#E2E8F0"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="ראשון 21/4"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:background="#E2E8F0"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="שני 22/4"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:background="#E2E8F0"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="שלישי 23/4"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:background="#E2E8F0"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="רביעי 24/4"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:background="#E2E8F0"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="חמישי 25/4"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:background="#E2E8F0"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="שישי 26/4"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:background="#E2E8F0"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="שבת 27/4"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:background="#E2E8F0"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+                            </LinearLayout>
+
+                            <!-- עובד 1 -->
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="100dp"
+                                    android:layout_height="match_parent"
+                                    android:text="אבי לוי"
+                                    android:textSize="14sp"
+                                    android:background="#FFFFFF"
+                                    android:padding="8dp"
+                                    android:gravity="center_vertical"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="match_parent"
+                                    android:text="בוקר ✅"
+                                    android:textSize="14sp"
+                                    android:textColor="#38A169"
+                                    android:background="#FFFFFF"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="match_parent"
+                                    android:text="לא זמין ❌"
+                                    android:textSize="14sp"
+                                    android:textColor="#E53E3E"
+                                    android:background="#F9FAFB"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="match_parent"
+                                    android:text="לא זמין ❌"
+                                    android:textSize="14sp"
+                                    android:textColor="#E53E3E"
+                                    android:background="#FFFFFF"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="match_parent"
+                                    android:text="ערב ✅"
+                                    android:textSize="14sp"
+                                    android:textColor="#38A169"
+                                    android:background="#F9FAFB"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="match_parent"
+                                    android:text="גמיש 🔄"
+                                    android:textSize="14sp"
+                                    android:textColor="#3182CE"
+                                    android:background="#FFFFFF"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="match_parent"
+                                    android:text="גמיש 🔄"
+                                    android:textSize="14sp"
+                                    android:textColor="#3182CE"
+                                    android:background="#F9FAFB"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="match_parent"
+                                    android:text="לא זמין ❌"
+                                    android:textSize="14sp"
+                                    android:textColor="#E53E3E"
+                                    android:background="#FFFFFF"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+                            </LinearLayout>
+
+                            <!-- עובד 2 -->
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="100dp"
+                                    android:layout_height="match_parent"
+                                    android:text="שרה כהן"
+                                    android:textSize="14sp"
+                                    android:background="#F9FAFB"
+                                    android:padding="8dp"
+                                    android:gravity="center_vertical"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="match_parent"
+                                    android:text="לא זמין ❌"
+                                    android:textSize="14sp"
+                                    android:textColor="#E53E3E"
+                                    android:background="#F9FAFB"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="match_parent"
+                                    android:text="בוקר ✅"
+                                    android:textSize="14sp"
+                                    android:textColor="#38A169"
+                                    android:background="#F9FAFB"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="match_parent"
+                                    android:text="בוקר ✅"
+                                    android:textSize="14sp"
+                                    android:textColor="#38A169"
+                                    android:background="#F9FAFB"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="match_parent"
+                                    android:text="ערב ✅"
+                                    android:textSize="14sp"
+                                    android:textColor="#38A169"
+                                    android:background="#F9FAFB"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="match_parent"
+                                    android:text="לא זמין ❌"
+                                    android:textSize="14sp"
+                                    android:textColor="#E53E3E"
+                                    android:background="#F9FAFB"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="match_parent"
+                                    android:text="לא זמין ❌"
+                                    android:textSize="14sp"
+                                    android:textColor="#E53E3E"
+                                    android:background="#F9FAFB"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="match_parent"
+                                    android:text="ערב ✅"
+                                    android:textSize="14sp"
+                                    android:textColor="#38A169"
+                                    android:background="#F9FAFB"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+                            </LinearLayout>
+
+                            <!-- עובד 3 -->
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="100dp"
+                                    android:layout_height="match_parent"
+                                    android:text="דני ישראלי"
+                                    android:textSize="14sp"
+                                    android:background="#FFFFFF"
+                                    android:padding="8dp"
+                                    android:gravity="center_vertical"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="match_parent"
+                                    android:text="ערב ✅"
+                                    android:textSize="14sp"
+                                    android:textColor="#38A169"
+                                    android:background="#FFFFFF"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="match_parent"
+                                    android:text="ערב ✅"
+                                    android:textSize="14sp"
+                                    android:textColor="#38A169"
+                                    android:background="#F9FAFB"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="match_parent"
+                                    android:text="בוקר ✅"
+                                    android:textSize="14sp"
+                                    android:textColor="#38A169"
+                                    android:background="#FFFFFF"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="match_parent"
+                                    android:text="גמיש 🔄"
+                                    android:textSize="14sp"
+                                    android:textColor="#3182CE"
+                                    android:background="#F9FAFB"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="match_parent"
+                                    android:text="גמיש 🔄"
+                                    android:textSize="14sp"
+                                    android:textColor="#3182CE"
+                                    android:background="#FFFFFF"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="match_parent"
+                                    android:text="בוקר ✅"
+                                    android:textSize="14sp"
+                                    android:textColor="#38A169"
+                                    android:background="#F9FAFB"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="match_parent"
+                                    android:text="בוקר ✅"
+                                    android:textSize="14sp"
+                                    android:textColor="#38A169"
+                                    android:background="#FFFFFF"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+                            </LinearLayout>
+
+                            <!-- עובד 4 -->
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="100dp"
+                                    android:layout_height="match_parent"
+                                    android:text="מיכל רביד"
+                                    android:textSize="14sp"
+                                    android:background="#F9FAFB"
+                                    android:padding="8dp"
+                                    android:gravity="center_vertical"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="match_parent"
+                                    android:text="גמיש 🔄"
+                                    android:textSize="14sp"
+                                    android:textColor="#3182CE"
+                                    android:background="#F9FAFB"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="match_parent"
+                                    android:text="גמיש 🔄"
+                                    android:textSize="14sp"
+                                    android:textColor="#3182CE"
+                                    android:background="#F9FAFB"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="match_parent"
+                                    android:text="ערב ✅"
+                                    android:textSize="14sp"
+                                    android:textColor="#38A169"
+                                    android:background="#F9FAFB"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="match_parent"
+                                    android:text="ערב ✅"
+                                    android:textSize="14sp"
+                                    android:textColor="#38A169"
+                                    android:background="#F9FAFB"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="match_parent"
+                                    android:text="בוקר ✅"
+                                    android:textSize="14sp"
+                                    android:textColor="#38A169"
+                                    android:background="#F9FAFB"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="match_parent"
+                                    android:text="גמיש 🔄"
+                                    android:textSize="14sp"
+                                    android:textColor="#3182CE"
+                                    android:background="#F9FAFB"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="match_parent"
+                                    android:text="גמיש 🔄"
+                                    android:textSize="14sp"
+                                    android:textColor="#3182CE"
+                                    android:background="#F9FAFB"
+                                    android:padding="8dp"
+                                    android:gravity="center"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- שיבוץ עובדים למשמרות -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="שיבוץ עובדים למשמרות"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#2D3748"
+                        android:gravity="center"
+                        android:layout_marginBottom="8dp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#CBD5E1"
+                        android:layout_marginBottom="12dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="בחר יום:"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#2D3748"
+                            android:layout_marginEnd="8dp"/>
+
+                        <Spinner
+                            android:id="@+id/day_spinner"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:minWidth="120dp"
+                            android:background="@drawable/spinner_background"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="בחר משמרת:"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#2D3748"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="8dp"/>
+
+                        <Spinner
+                            android:id="@+id/shift_spinner"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:minWidth="120dp"
+                            android:background="@drawable/spinner_background"/>
+                    </LinearLayout>
+
+                    <!-- רשימת העובדים לשיבוץ -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="#F9FAFB"
+                        android:padding="8dp"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="עובדים זמינים למשמרת נבחרת:"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#2D3748"
+                            android:layout_marginBottom="8dp"/>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/available_employees_recycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="100dp"
+                            android:background="#FFFFFF"
+                            android:padding="8dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="* גרור עובד למשבצת המשמרת כדי לשבץ"
+                            android:textSize="12sp"
+                            android:textColor="#718096"
+                            android:textStyle="italic"
+                            android:gravity="center"
+                            android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+
+                    <!-- טבלת שיבוץ -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="סידור עבודה ליום שני 22/4 - משמרת בוקר:"
+                            android:id="@+id/selected_shift_title"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#2D3748"
+                            android:layout_marginBottom="8dp"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="#E2E8F0"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="תפקיד"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textColor="#2D3748"
+                                android:gravity="center"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:text="עובד משובץ"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textColor="#2D3748"
+                                android:gravity="center"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="פעולות"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textColor="#2D3748"
+                                android:gravity="center"/>
+                        </LinearLayout>
+
+                        <!-- משבצת שיבוץ 1 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="#FFFFFF"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="מנהל משמרת"
+                                android:textSize="14sp"
+                                android:textColor="#2D3748"
+                                android:gravity="center"/>
+
+                            <LinearLayout
+                                android:id="@+id/slot_manager"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:orientation="horizontal"
+                                android:background="#F0FFF4"
+                                android:padding="8dp"
+                                android:gravity="center">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="שרה כהן"
+                                    android:textSize="14sp"
+                                    android:textColor="#38A169"
+                                    android:drawableStart="@drawable/ic_person"
+                                    android:drawablePadding="4dp"/>
+                            </LinearLayout>
+
+                            <Button
+                                android:layout_width="0dp"
+                                android:layout_height="36dp"
+                                android:layout_weight="1"
+                                android:text="הסר"
+                                android:textSize="12sp"
+                                android:backgroundTint="#E53E3E"
+                                android:textColor="#FFFFFF"/>
+                        </LinearLayout>
+
+                        <!-- משבצת שיבוץ 2 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="#F9FAFB"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="קופאי"
+                                android:textSize="14sp"
+                                android:textColor="#2D3748"
+                                android:gravity="center"/>
+
+                            <LinearLayout
+                                android:id="@+id/slot_cashier"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:orientation="horizontal"
+                                android:background="#EBF8FF"
+                                android:padding="8dp"
+                                android:gravity="center">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="גרור עובד לכאן"
+                                    android:textSize="14sp"
+                                    android:textColor="#3182CE"
+                                    android:textStyle="italic"/>
+                            </LinearLayout>
+
+                            <Button
+                                android:layout_width="0dp"
+                                android:layout_height="36dp"
+                                android:layout_weight="1"
+                                android:text="הסר"
+                                android:textSize="12sp"
+                                android:backgroundTint="#CBD5E1"
+                                android:textColor="#2D3748"
+                                android:enabled="false"/>
+                        </LinearLayout>
+
+                        <!-- משבצת שיבוץ 3 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="#FFFFFF"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="מדריך משחקים"
+                                android:textSize="14sp"
+                                android:textColor="#2D3748"
+                                android:gravity="center"/>
+
+                            <LinearLayout
+                                android:id="@+id/slot_guide"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:orientation="horizontal"
+                                android:background="#EBF8FF"
+                                android:padding="8dp"
+                                android:gravity="center">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="גרור עובד לכאן"
+                                    android:textSize="14sp"
+                                    android:textColor="#3182CE"
+                                    android:textStyle="italic"/>
+                            </LinearLayout>
+
+                            <Button
+                                android:layout_width="0dp"
+                                android:layout_height="36dp"
+                                android:layout_weight="1"
+                                android:text="הסר"
+                                android:textSize="12sp"
+                                android:backgroundTint="#CBD5E1"
+                                android:textColor="#2D3748"
+                                android:enabled="false"/>
+                        </LinearLayout>
+
+                        <!-- משבצת שיבוץ 4 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="#F9FAFB"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="תמיכה טכנית"
+                                android:textSize="14sp"
+                                android:textColor="#2D3748"
+                                android:gravity="center"/>
+
+                            <LinearLayout
+                                android:id="@+id/slot_tech"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:orientation="horizontal"
+                                android:background="#EBF8FF"
+                                android:padding="8dp"
+                                android:gravity="center">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="גרור עובד לכאן"
+                                    android:textSize="14sp"
+                                    android:textColor="#3182CE"
+                                    android:textStyle="italic"/>
+                            </LinearLayout>
+
+                            <Button
+                                android:layout_width="0dp"
+                                android:layout_height="36dp"
+                                android:layout_weight="1"
+                                android:text="הסר"
+                                android:textSize="12sp"
+                                android:backgroundTint="#CBD5E1"
+                                android:textColor="#2D3748"
+                                android:enabled="false"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/save_assignments_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="שמור שיבוצים למשמרת זו"
+                        android:backgroundTint="#38A169"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginTop="16dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
