@@ -27,11 +27,5 @@ public class EmployeeHomeActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        // כפתור יצירת קשר עם המנהל
-        Button communicateWithAdminButton = findViewById(R.id.communicate_with_admin);
-        communicateWithAdminButton.setOnClickListener(view -> {
-            Intent intent = new Intent(EmployeeHomeActivity.this, CommunicateWithAdminActivity.class);
-            startActivity(intent);
-        });
     }
 }

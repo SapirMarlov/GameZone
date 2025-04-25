@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,6 +14,7 @@
         android:padding="12dp"
         android:gravity="center_vertical"
         android:layoutDirection="rtl">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -43,39 +45,41 @@
             android:orientation="vertical"
             android:layout_gravity="center">
 
-            <!-- Category 1: Gaming -->
+            <!-- קטגוריה: משחקים -->
             <LinearLayout
+                android:id="@+id/category_games"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="#FFFFFF"
-                android:padding="16dp"
                 android:layout_marginBottom="16dp"
-                android:elevation="4dp"
-                android:gravity="center_vertical"
+                android:background="#FFFFFF"
                 android:clickable="true"
-                android:focusable="true">
+                android:elevation="4dp"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
 
                 <TextView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
+                    android:layout_marginEnd="16dp"
                     android:gravity="center"
                     android:text="🎮"
-                    android:textSize="36sp"
-                    android:layout_marginEnd="16dp"/>
+                    android:textSize="36sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="קטגוריית גיימינג"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:text="קטגוריית משחקים"
                     android:textColor="#333333"
-                    android:layout_weight="1" />
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
-            <!-- Category 2: Computers -->
+            <!-- קטגוריה: מחשבים -->
             <LinearLayout
+                android:id="@+id/category_computers"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -105,8 +109,9 @@
                     android:layout_weight="1" />
             </LinearLayout>
 
-            <!-- Category 3: Headphones -->
+            <!-- קטגוריה: אוזניות -->
             <LinearLayout
+                android:id="@+id/category_headphones"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -136,8 +141,9 @@
                     android:layout_weight="1" />
             </LinearLayout>
 
-            <!-- Category 4: Gaming Chairs -->
+            <!-- קטגוריה: כיסאות גיימינג -->
             <LinearLayout
+                android:id="@+id/category_chairs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -161,37 +167,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="קטגוריית כיסאות גיימינג"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="#333333"
-                    android:layout_weight="1" />
-            </LinearLayout>
-
-            <!-- Category 5: Games -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="#FFFFFF"
-                android:padding="16dp"
-                android:layout_marginBottom="16dp"
-                android:elevation="4dp"
-                android:gravity="center_vertical"
-                android:clickable="true"
-                android:focusable="true">
-
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:gravity="center"
-                    android:text="🎮"
-                    android:textSize="36sp"
-                    android:layout_marginEnd="16dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="קטגוריית משחקים"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="#333333"

@@ -10,16 +10,6 @@
         android:padding="16dp">
 
 
-        <Spinner
-            android:id="@+id/report_type_spinner2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="?android:attr/selectableItemBackground"
-            android:entries="@array/graph"
-            android:hint="חפש דוח..."
-            android:padding="8dp" />
-
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -32,10 +22,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:layout_marginBottom="16dp"
-                android:text="🎮 GameZone 🎮                                     בחר דוח עסקי מהרשימה - ברירת מחדל נתונים חנות יומיים "
+                android:text="🎮 GameZone 🎮                                        בחר דוח עסקי מהרשימה  "
                 android:textColor="#3182CE"
+                android:layout_gravity="center"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </androidx.appcompat.widget.Toolbar>

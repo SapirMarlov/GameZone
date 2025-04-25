@@ -1,5 +1,6 @@
 package com.example.firstapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,12 +13,13 @@ public class ManageOrdersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.manage_orders);
 
-        Button manageOrderButton = findViewById(R.id.manage_order_button);
 
-
-        manageOrderButton.setOnClickListener(new View.OnClickListener() {
+        Button manageorderbutton1 = findViewById(R.id.manage_order_button_1);
+        manageorderbutton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(ManageOrdersActivity.this, OrderDetailActivity.class);
+                startActivity(intent);
             }
         });
     }

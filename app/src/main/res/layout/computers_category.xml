@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F3F4F6"
+    android:layoutDirection="rtl">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2D3748"
+        android:padding="12dp"
+        android:gravity="center_vertical">
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@android:drawable/ic_menu_revert"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_gravity="start"
+            android:contentDescription="חזרה למסך הקודם" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="💻 מחשבים | GameZone"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#CBD5E1"
+        android:layout_marginTop="4dp" />
+
+    <!-- Filter options -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:background="#FFFFFF"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="סנן לפי:"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/filter_work"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="נייח"
+            android:textSize="14sp"
+            android:backgroundTint="#E2E8F0"
+            android:textColor="#333333"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/filter_laptop"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="נייד"
+            android:textSize="14sp"
+            android:backgroundTint="#E2E8F0"
+            android:textColor="#333333" />
+    </LinearLayout>
+
+    <!-- Scrollable content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Computer 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp"
+                android:elevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:text="💻"
+                        android:textSize="36sp"
+                        android:gravity="center"
+                        android:background="#E2E8F0"
+                        android:layout_marginEnd="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="מחשב גיימינג עוצמתי"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="#333333"
+                            android:layout_marginBottom="4dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="₪7,999"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#3182CE" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• מעבד: Intel Core i9-12900K\n• כרטיס מסך: NVIDIA RTX 4080\n• זיכרון: 32GB DDR5\n• אחסון: 2TB NVMe SSD"
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:layout_marginBottom="12dp" />
+
+                <Button
+                    android:id="@+id/add_to_cart_computer_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="הוסף לסל"
+                    android:backgroundTint="#38A169"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+
+            <!-- Computer 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp"
+                android:elevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:text="💻"
+                        android:textSize="36sp"
+                        android:gravity="center"
+                        android:background="#E2E8F0"
+                        android:layout_marginEnd="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="לפטופ לעבודה ולימודים"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="#333333"
+                            android:layout_marginBottom="4dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="₪3,499"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#3182CE" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• מעבד: Intel Core i5-1235U\n• כרטיס מסך: Intel Iris Xe\n• זיכרון: 16GB DDR4\n• אחסון: 512GB SSD"
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:layout_marginBottom="12dp" />
+
+                <Button
+                    android:id="@+id/add_to_cart_computer_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="הוסף לסל"
+                    android:backgroundTint="#38A169"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+
+            <!-- Computer 3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp"
+                android:elevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:text="💻"
+                        android:textSize="36sp"
+                        android:gravity="center"
+                        android:background="#E2E8F0"
+                        android:layout_marginEnd="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="לפטופ גיימינג נייד"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="#333333"
+                            android:layout_marginBottom="4dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="₪5,999"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#3182CE" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• מעבד: AMD Ryzen 9 7900HX\n• כרטיס מסך: NVIDIA RTX 4070 Mobile\n• זיכרון: 32GB DDR5\n• אחסון: 1TB NVMe SSD"
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:layout_marginBottom="12dp" />
+
+                <Button
+                    android:id="@+id/add_to_cart_computer_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="הוסף לסל"
+                    android:backgroundTint="#38A169"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

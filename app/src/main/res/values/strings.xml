@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">firstApp</string>
+    <string name="connect">🔑 התחברות</string>
+    <string name="personal_area">👤 אזור אישי</string>
+    <string name="cart">🛒 עגלה</string>
+    <string name="categories">📋 קטגוריות</string>
+    <string name="sales">💥 מבצעים</string>
+    <string name="search_for_player">🔍 חיפוש שחקנים</string>
+    <string name="search_item">חפש מוצר...</string>
+    <string name="playstation_5">PlayStation 5</string>
+    <string name="item_description">קונסולת גיימינג מתקדמת עם גרפיקה מרהיבה</string>
+    <string name="add_to_cart">➕ הוסף לעגלה</string>
 </resources>

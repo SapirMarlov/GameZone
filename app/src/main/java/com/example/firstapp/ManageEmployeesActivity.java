@@ -1,5 +1,6 @@
 package com.example.firstapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,12 +13,13 @@ public class ManageEmployeesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.manage_employees);
 
-        Button manageEmployeeButton = findViewById(R.id.create_schedule_button);
 
-        manageEmployeeButton.setOnClickListener(new View.OnClickListener() {
+        Button createschedulebutton = findViewById(R.id.create_schedule_button);
+        createschedulebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(ManageEmployeesActivity.this, CreateScheduleActivity.class);
+                startActivity(intent);
             }
         });
     }

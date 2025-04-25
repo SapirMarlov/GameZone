@@ -30,10 +30,9 @@
         <activity android:name=".EmployeeHomeActivity" android:exported="false" />
         <activity android:name=".ManageTasksActivity" android:exported="false" />
         <activity android:name=".ViewScheduleActivity" android:exported="false" />
-        <activity android:name=".CommunicateWithAdminActivity" android:exported="false" />
 
         <activity android:name=".ManageOrdersActivity" android:exported="false" />
-        <activity android:name=".InventoryManagementActivity" android:exported="true" /> <!-- עדכון כאן -->
+        <activity android:name=".InventoryManagementActivity" android:exported="true" />
         <activity android:name=".CustomerRequestsActivity" android:exported="false" />
         <activity android:name=".BusinessReportsActivity" android:exported="false" />
         <activity android:name=".ManageEmployeesActivity" android:exported="false" />
@@ -48,11 +47,23 @@
         <activity android:name=".GamePartnerActivity" android:exported="true" />
         <activity android:name=".CategoriesActivity" android:exported="true" />
         <activity android:name=".PlayerPostCreationActivity" android:exported="true" />
-        <activity android:name=".UpdateInventoryActivity" android:exported="true" /> <!-- עדכון כאן -->
-        <activity android:name=".PersonalSuggestionActivity" android:exported="true" /> <!-- עדכון כאן -->
-        <activity android:name=".SuggestionsOutputActivity" android:exported="true" /> <!-- עדכון כאן -->
-        <activity android:name=".UpdateItemDetailsActivity" android:exported="true" /> <!-- עדכון כאן -->
-        <activity android:name=".BusinessReportsChoiceActivity" android:exported="true" /> <!-- עדכון כאן -->
+        <activity android:name=".UpdateInventoryActivity" android:exported="true" />
+        <activity android:name=".PersonalSuggestionActivity" android:exported="true" />
+        <activity android:name=".SuggestionsOutputActivity" android:exported="true" />
+        <activity android:name=".UpdateItemDetailsActivity" android:exported="true" />
+        <activity android:name=".BusinessReportsChoiceActivity" android:exported="true" />
+        <activity android:name=".CreateScheduleActivity" android:exported="true" />
+        <activity android:name=".RequestManagmentActivity" android:exported="true" />
+        <activity android:name=".OrderDetailActivity" android:exported="true" />
+        <activity android:name=".GameCategoryActivity" android:exported="true" />
+        <activity android:name=".ComputerCategoryActivity" android:exported="true" />
+        <activity android:name=".HeadphonesCategoryActivity" android:exported="true" />
+        <activity android:name=".GamingChairCategoryActivity" android:exported="true" />
+
+
+
+
+
 
 
 

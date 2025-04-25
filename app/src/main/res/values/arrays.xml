@@ -3,6 +3,20 @@
         <item>דוח 1</item>
         <item>דוח 2</item>
         <item>דוח 3</item>
-        <!-- הוסף עוד דוחות לפי הצורך -->
     </string-array>
+
+
+    <string-array name="order_status">
+        <item>התקבל</item>
+        <item>בטיפול</item>
+        <item>נסגר</item>
+    </string-array>
+
+
+    <string-array name="reports">
+        <item>יומי</item>
+        <item>חודשי</item>
+        <item>שנתי</item>
+    </string-array>
+
 </resources>

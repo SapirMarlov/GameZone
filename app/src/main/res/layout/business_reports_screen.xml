@@ -45,7 +45,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="📊 דוח מכירות חודשי"
+        android:text="📊 דוח מכירות"
         android:textSize="26sp"
         android:textStyle="bold"
         android:textColor="#1E293B"
@@ -67,9 +67,11 @@
         android:id="@+id/report_type_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#ffffff"
-        android:padding="8dp"
-        android:layout_marginBottom="12dp"/>
+        android:hint="בחר דוח"
+        android:layout_margin="16dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:entries="@array/reports"
+        android:padding="8dp" />
 
     <Button
         android:id="@+id/generate_report_button"
