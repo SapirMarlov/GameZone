@@ -11,17 +11,23 @@
         android:layout_height="wrap_content"
         android:background="#2D3748"
         android:padding="12dp"
-        android:gravity="center_vertical"
         android:layoutDirection="rtl">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="🎮 GameZone 🎮                      "
-            android:textColor="@android:color/white"
-            android:textSize="22sp"
-            android:textStyle="bold"/>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/gamezone"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_gravity="center" />
+        </FrameLayout>
     </androidx.appcompat.widget.Toolbar>
+
 
     <TextView
         android:layout_width="match_parent"
@@ -31,7 +37,7 @@
         android:gravity="center"
         android:letterSpacing="0.2"
         android:padding="16dp"
-        android:text="הרשמה"
+        android:text="@string/הרשמה"
         android:textColor="#000000"
         android:textSize="28sp"
         android:textStyle="bold" />
@@ -51,7 +57,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="הרשמה למערכת"
+            android:text="@string/הרשמה_למערכת"
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="#000000"
@@ -78,7 +84,7 @@
                 android:id="@+id/reg_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="שם משתמש"
+                android:hint="@string/שם_משתמש_הרשמה"
                 android:textColorHint="#64748B"
                 android:gravity="right"
                 android:layoutDirection="rtl"/>
@@ -104,7 +110,7 @@
                 android:id="@+id/reg_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="אימייל"
+                android:hint="@string/אימייל_הרשמה"
                 android:inputType="textEmailAddress"
                 android:textColorHint="#64748B"
                 android:gravity="right"
@@ -131,7 +137,7 @@
                 android:id="@+id/reg_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="סיסמה"
+                android:hint="@string/סיסמה_הרשמה"
                 android:inputType="textPassword"
                 android:textColorHint="#64748B"
                 android:gravity="right"
@@ -142,7 +148,7 @@
             android:id="@+id/register_submit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="🔵 הרשמה"
+            android:text="@string/כפתור_הרשמה"
             android:textColor="@android:color/white"
             android:backgroundTint="#059669"
             android:padding="16dp"

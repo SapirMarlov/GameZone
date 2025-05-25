@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#f0f0f0"
+    android:gravity="right">
+
+    <!-- כותרת המסך -->
+    <TextView
+        android:id="@+id/create_order_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="יצירת הזמנה חדשה"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:layout_gravity="right"
+        android:textAlignment="viewStart"
+        android:layout_marginBottom="24dp" />
+
+    <!-- שם הלקוח -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="שם הלקוח"
+        android:textSize="16sp"
+        android:textColor="#000"
+        android:layout_gravity="right"
+        android:textAlignment="viewStart"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/customer_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="הכנס את שם הלקוח"
+        android:inputType="text"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="right|center_vertical" />
+
+    <!-- מספר הזמנה -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="מספר הזמנה"
+        android:textSize="16sp"
+        android:textColor="#000"
+        android:layout_gravity="right"
+        android:textAlignment="viewStart"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/order_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="הכנס מספר הזמנה"
+        android:inputType="number"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="right|center_vertical" />
+
+    <!-- פרטי מוצר -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="פרטי המוצר"
+        android:textSize="16sp"
+        android:textColor="#000"
+        android:layout_gravity="right"
+        android:textAlignment="viewStart"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/product_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="הכנס פרטי המוצר"
+        android:inputType="text"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="right|center_vertical" />
+
+    <!-- כפתור לשליחת הזמנה -->
+    <Button
+        android:id="@+id/create_order_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="צור הזמנה"
+        android:backgroundTint="#007bff"
+        android:textColor="#ffffff"
+        android:padding="12dp"
+        android:layout_marginTop="16dp"
+        android:gravity="right|center_vertical" />
+
+</LinearLayout>

@@ -18,7 +18,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="🎮 Game Zone 🎮  קטגוריות רכישה"
+            android:text="@string/קטגוריות_רכישה"
             android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="#FFFFFF"
@@ -68,10 +68,10 @@
                     android:textSize="36sp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="קטגוריית משחקים"
+                    android:text="@string/קטגוריית_משחקים"
                     android:textColor="#333333"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -100,9 +100,9 @@
                     android:layout_marginEnd="16dp"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="קטגוריית מחשבים"
+                    android:text="@string/קטגוריית_מחשבים"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="#333333"
@@ -132,9 +132,9 @@
                     android:layout_marginEnd="16dp"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="קטגוריית אוזניות"
+                    android:text="@string/קטגוריית_אוזניות"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="#333333"
@@ -164,9 +164,9 @@
                     android:layout_marginEnd="16dp"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="קטגוריית כיסאות גיימינג"
+                    android:text="@string/קטגוריית_כיסאות_גיימינג"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="#333333"

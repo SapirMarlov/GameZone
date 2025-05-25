@@ -86,7 +86,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="14dp"
                         android:backgroundTint="#32CD32"
-                        android:text="@string/sales"
+                        android:text="@string/sales_button"
                         android:textColor="#ffffff" />
 
                     <Button
@@ -151,20 +151,20 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/playstation_5"
+                                android:text="playstation_5"
                                 android:textStyle="bold"
                                 android:layout_marginTop="8dp"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/item_description"
+                                android:text="item_description"
                                 android:textSize="12sp"
                                 android:gravity="center"
                                 android:layout_marginTop="4dp"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="₪2,499"
+                                android:text="₪2_499"
                                 android:textColor="#28A745"
                                 android:textStyle="bold"
                                 android:layout_marginTop="8dp"/>
@@ -197,20 +197,20 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Nintendo Switch OLED"
+                                android:text="nintendo_switch_oled"
                                 android:textStyle="bold"
                                 android:layout_marginTop="8dp"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="קונסולה ניידת עם מסך OLED מרהיב"
+                                android:text="oled"
                                 android:textSize="12sp"
                                 android:gravity="center"
                                 android:layout_marginTop="4dp"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="₪1,799"
+                                android:text="₪1799"
                                 android:textColor="#28A745"
                                 android:textStyle="bold"
                                 android:layout_marginTop="8dp"/>
@@ -218,7 +218,7 @@
                                 android:id="@+id/add_nintendo_to_cart"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="➕ הוסף לעגלה"
+                                android:text="@string/הוסף_לעגלה"
                                 android:backgroundTint="#4CAF50"
                                 android:textColor="#FFFFFF"
                                 android:layout_marginTop="8dp"
@@ -252,20 +252,20 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="ASUS ROG Strix G15"
+                                android:text="asus_rog_strix_g15"
                                 android:textStyle="bold"
                                 android:layout_marginTop="8dp"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="מחשב גיימינג עם כרטיס גרפי RTX"
+                                android:text="rtx"
                                 android:textSize="12sp"
                                 android:gravity="center"
                                 android:layout_marginTop="4dp"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="₪6,999"
+                                android:text="₪6999"
                                 android:textColor="#28A745"
                                 android:textStyle="bold"
                                 android:layout_marginTop="8dp"/>
@@ -273,7 +273,7 @@
                                 android:id="@+id/add_asus_to_cart"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="➕ הוסף לעגלה"
+                                android:text="@string/הוסף_לעגלה"
                                 android:backgroundTint="#4CAF50"
                                 android:textColor="#FFFFFF"
                                 android:layout_marginTop="8dp"
@@ -301,7 +301,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
-                                android:text="Razer Viper V2 Pro"
+                                android:text="razer_viper_v2_pro"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -309,7 +309,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
                                 android:gravity="center"
-                                android:text="עכבר גיימינג אלחוטי מקצועי"
+                                android:text="@string/עכבר_גיימינג_אלחוטי_מקצועי"
                                 android:textSize="12sp" />
 
                             <TextView
@@ -328,7 +328,7 @@
                                 android:backgroundTint="#4CAF50"
                                 android:paddingHorizontal="12dp"
                                 android:paddingVertical="6dp"
-                                android:text="➕ הוסף לעגלה"
+                                android:text="@string/הוסף_לעגלה"
                                 android:textColor="#FFFFFF"
                                 android:textSize="14sp" />
                         </LinearLayout>

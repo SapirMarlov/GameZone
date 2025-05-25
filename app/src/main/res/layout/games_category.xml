@@ -18,7 +18,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="🎮 משחקים | GameZone"
+            android:text="@string/משחקים"
             android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="#FFFFFF"
@@ -46,7 +46,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="חפש משחקים..."
+            android:hint="@string/חפש_משחקים"
             android:padding="8dp"
             android:background="@android:drawable/editbox_background"
             android:drawableStart="@android:drawable/ic_menu_search"
@@ -120,7 +120,7 @@
                     android:id="@+id/add_to_cart_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="הוסף לסל"
+                    android:text="@string/הוסף_לסל"
                     android:backgroundTint="#38A169"
                     android:textColor="#FFFFFF" />
             </LinearLayout>
@@ -180,7 +180,7 @@
                     android:id="@+id/add_to_cart_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="הוסף לסל"
+                    android:text="@string/הוסף_לסל"
                     android:backgroundTint="#38A169"
                     android:textColor="#FFFFFF" />
             </LinearLayout>
@@ -240,7 +240,7 @@
                     android:id="@+id/add_to_cart_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="הוסף לסל"
+                    android:text="@string/הוסף_לסל"
                     android:backgroundTint="#38A169"
                     android:textColor="#FFFFFF" />
             </LinearLayout>
@@ -300,7 +300,7 @@
                     android:id="@+id/add_to_cart_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="הוסף לסל"
+                    android:text="@string/הוסף_לסל"
                     android:backgroundTint="#38A169"
                     android:textColor="#FFFFFF" />
             </LinearLayout>
@@ -360,7 +360,7 @@
                     android:id="@+id/add_to_cart_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="הוסף לסל"
+                    android:text="@string/הוסף_לסל"
                     android:backgroundTint="#38A169"
                     android:textColor="#FFFFFF" />
             </LinearLayout>

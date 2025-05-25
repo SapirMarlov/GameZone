@@ -11,27 +11,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#2D3748"
-        android:padding="12dp"
         android:gravity="center_vertical"
-        android:layoutDirection="rtl">
+        android:layoutDirection="rtl"
+        android:padding="12dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="🎮 GameZone 🎮"
-            android:textSize="26sp"
-            android:textStyle="bold"
+            android:layout_gravity="left"
+            android:layout_marginBottom="16dp"
+            android:text="@string/gamezone"
             android:textColor="#3182CE"
-            android:layout_gravity="center"
-            android:layout_marginBottom="16dp"/>
+            android:textSize="26sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ניהול הזמנות"
+            android:text="@string/ניהול_הזמנות"
             android:textColor="@android:color/white"
             android:textSize="22sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -44,7 +44,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="לוח הזמנות למוצרים"
+        android:text="@string/לוח_הזמנות_למוצרים"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="#000000"
@@ -147,7 +147,7 @@
                     android:id="@+id/manage_order_button_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ניהול הזמנה"
+                    android:text="@string/כפתור_ניהול_הזמנה"
                     android:backgroundTint="#3182CE"
                     android:textColor="#ffffff"
                     android:padding="8dp"
@@ -241,7 +241,7 @@
                     android:id="@+id/manage_order_button_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ניהול הזמנה"
+                    android:text="@string/כפתור_ניהול_הזמנה"
                     android:backgroundTint="#3182CE"
                     android:textColor="#ffffff"
                     android:padding="8dp"
@@ -335,7 +335,7 @@
                     android:id="@+id/manage_order_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ניהול הזמנה"
+                    android:text="@string/כפתור_ניהול_הזמנה"
                     android:backgroundTint="#3182CE"
                     android:textColor="#ffffff"
                     android:padding="8dp"

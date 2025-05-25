@@ -11,20 +11,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#2D3748"
-        android:padding="12dp"
         android:gravity="center_vertical"
-        android:layoutDirection="rtl">
-
+        android:layoutDirection="rtl"
+        android:padding="12dp">
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" 🎮 GameZone 🎮
-     ניהול משימות"
+            android:text="@string/ניהול_משימות"
             android:textColor="@android:color/white"
             android:textSize="22sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
     </androidx.appcompat.widget.Toolbar>
 
     <View

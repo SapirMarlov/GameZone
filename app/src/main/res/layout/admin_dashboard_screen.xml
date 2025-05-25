@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f0f0f0"
+    android:padding="16dp">
+
+    <!-- כותרת לוח הבקרה -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="לוח ניהול"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- כפתורים לניהול -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/manage_inventory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ניהול מלאי"
+            android:backgroundTint="#007bff"
+            android:textColor="#ffffff"
+            android:layout_margin="8dp"/>
+
+        <Button
+            android:id="@+id/update_prices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="עדכון מחירים"
+            android:backgroundTint="#007bff"
+            android:textColor="#ffffff"
+            android:layout_margin="8dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/view_reports"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="צפייה בדוחות"
+        android:backgroundTint="#007bff"
+        android:textColor="#ffffff"
+        android:layout_margin="8dp"/>
+
+    <!-- התראות על הזמנות חדשות -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="התראות הזמנות חדשות"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:layout_marginTop="16dp"/>
+
+    <ListView
+        android:id="@+id/order_notifications"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#ffffff"
+        android:elevation="5dp"
+        android:layout_marginTop="8dp"/>
+
+    <!-- טבלת מלאי עם חיפוש -->
+    <EditText
+        android:id="@+id/search_inventory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="חפש מוצר במלאי..."
+        android:padding="12dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:drawable/editbox_background"
+        android:textDirection="rtl"
+        android:gravity="right"/>
+
+    <ListView
+        android:id="@+id/inventory_table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:elevation="5dp"
+        android:layout_marginTop="8dp"/>
+
+    <!-- כפתור הוספת מוצר חדש -->
+    <Button
+        android:id="@+id/add_new_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="הוסף מוצר חדש"
+        android:backgroundTint="#28a745"
+        android:textColor="#ffffff"
+        android:padding="12dp"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>

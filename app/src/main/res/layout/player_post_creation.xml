@@ -53,7 +53,7 @@
                     android:id="@+id/console_playstation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="PlayStation"
+                    android:text="@string/playstation_button"
                     android:layout_marginEnd="8dp"
                     android:backgroundTint="#3B82F6"/>
 
@@ -61,7 +61,7 @@
                     android:id="@+id/console_xbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Xbox"
+                    android:text="@string/xbox_button"
                     android:layout_marginEnd="8dp"
                     android:backgroundTint="#059669"/>
 
@@ -69,7 +69,7 @@
                     android:id="@+id/console_nintendo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nintendo"
+                    android:text="@string/nintendo_button"
                     android:layout_marginEnd="8dp"
                     android:backgroundTint="#D97706"/>
 
@@ -77,7 +77,7 @@
                     android:id="@+id/console_pc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="PC Gaming"
+                    android:text="@string/pc_gaming_button"
                     android:backgroundTint="#7C3AED"/>
             </LinearLayout>
         </HorizontalScrollView>
@@ -86,7 +86,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="מה השם משתמש שלך בפלטפורמה?"
+            android:text="@string/שם_משתמש_מודעה"
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_marginBottom="8dp"/>
@@ -103,7 +103,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="המשחק בו את/ה מחפש שותפים"
+            android:text="@string/משחק_מודעה"
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_marginBottom="8dp"/>
@@ -121,7 +121,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="מידע נוסף"
+            android:text="@string/מידע_נוסף_מודעה"
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_marginBottom="8dp"/>
@@ -130,7 +130,7 @@
             android:id="@+id/additional_description"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:hint="הוסף תיאור על עצמך ועל סגנון המשחק שלך"
+            android:hint="@string/תיאור_עצמי_מודעה"
             android:gravity="top"
             android:inputType="textMultiLine"
             android:padding="12dp"
@@ -142,7 +142,7 @@
             android:id="@+id/publish_profile_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="פרסם מודעה"
+            android:text="@string/כפתור_פרסם_מודעה"
             android:backgroundTint="#28A745"
             android:textColor="#FFFFFF"
             android:padding="16dp"

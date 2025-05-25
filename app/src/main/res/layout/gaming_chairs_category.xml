@@ -22,12 +22,12 @@
             android:src="@android:drawable/ic_menu_revert"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:layout_gravity="start"
-            android:contentDescription="חזרה למסך הקודם" />
+            android:contentDescription="@string/חזרה_למסך_הקודם" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="🪑 כיסאות גיימינג | GameZone"
+            android:text="@string/כיסאות_גיימינג"
             android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="#FFFFFF"
@@ -180,7 +180,7 @@
                     android:id="@+id/add_to_cart_chair_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="הוסף לסל"
+                    android:text="@string/הוסף_לסל"
                     android:backgroundTint="#38A169"
                     android:textColor="#FFFFFF" />
             </LinearLayout>
@@ -255,7 +255,7 @@
                     android:id="@+id/add_to_cart_chair_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="הוסף לסל"
+                    android:text="@string/הוסף_לסל"
                     android:backgroundTint="#38A169"
                     android:textColor="#FFFFFF" />
             </LinearLayout>
@@ -330,7 +330,7 @@
                     android:id="@+id/add_to_cart_chair_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="הוסף לסל"
+                    android:text="@string/הוסף_לסל"
                     android:backgroundTint="#38A169"
                     android:textColor="#FFFFFF" />
             </LinearLayout>

@@ -20,7 +20,7 @@
             android:id="@+id/textViewTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="🎮 GameZone 🎮     🎯 המלצות אישיות"
+            android:text="@string/המלציות_אישיות"
             android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="#3182CE"
@@ -61,7 +61,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="פרופיל גיימר"
+                        android:text="@string/פרופיל_גיימר"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:textColor="#2D3748"
@@ -83,7 +83,7 @@
                                 android:id="@+id/editTextAge"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="גיל"
+                                android:hint="@string/גיל_המלצות"
                                 android:inputType="number" />
                         </com.google.android.material.textfield.TextInputLayout>
 
@@ -97,7 +97,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:inputType="none"
-                                android:hint="ניסיון משחק" />
+                                android:hint="@string/נסיון_משחק_המלצות" />
                         </com.google.android.material.textfield.TextInputLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -121,7 +121,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="העדפות משחק"
+                        android:text="@string/העדפות_משחק_המלצות"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:textColor="#2D3748"
@@ -130,7 +130,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="סוגי משחקים מועדפים (ניתן לבחור מספר אפשרויות)"
+                        android:text="@string/סוגי_משחק_המלצות"
                         android:textSize="14sp"
                         android:layout_marginBottom="8dp" />
 
@@ -152,7 +152,7 @@
                                 android:id="@+id/chipAction"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="אקשן"
+                                android:text="@string/אקשן_המלצות"
                                 android:checkable="true"
                                 style="@style/Widget.MaterialComponents.Chip.Filter" />
 
@@ -160,7 +160,7 @@
                                 android:id="@+id/chipAdventure"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="הרפתקאות"
+                                android:text="@string/הרפתקאות_המלצות"
                                 android:checkable="true"
                                 style="@style/Widget.MaterialComponents.Chip.Filter" />
 
@@ -168,7 +168,7 @@
                                 android:id="@+id/chipRPG"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="RPG"
+                                android:text="@string/rpg_המלצות"
                                 android:checkable="true"
                                 style="@style/Widget.MaterialComponents.Chip.Filter" />
 
@@ -176,7 +176,7 @@
                                 android:id="@+id/chipStrategy"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="אסטרטגיה"
+                                android:text="@string/אסטרטגיה_המלצות"
                                 android:checkable="true"
                                 style="@style/Widget.MaterialComponents.Chip.Filter" />
 
@@ -184,7 +184,7 @@
                                 android:id="@+id/chipSports"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="ספורט"
+                                android:text="@string/ספורט_המלצות"
                                 android:checkable="true"
                                 style="@style/Widget.MaterialComponents.Chip.Filter" />
 
@@ -192,7 +192,7 @@
                                 android:id="@+id/chipMMO"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="MMO"
+                                android:text="@string/mmo_המלצות"
                                 android:checkable="true"
                                 style="@style/Widget.MaterialComponents.Chip.Filter" />
 
@@ -200,7 +200,7 @@
                                 android:id="@+id/chipSimulation"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="סימולציה"
+                                android:text="@string/סימולציה_המלצות"
                                 android:checkable="true"
                                 style="@style/Widget.MaterialComponents.Chip.Filter" />
 
@@ -208,7 +208,7 @@
                                 android:id="@+id/chipRacing"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="מרוצים"
+                                android:text="@string/מרוצים_המלצות"
                                 android:checkable="true"
                                 style="@style/Widget.MaterialComponents.Chip.Filter" />
 
@@ -216,7 +216,7 @@
                                 android:id="@+id/chipHorror"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="אימה"
+                                android:text="@string/אימה_המלצות"
                                 android:checkable="true"
                                 style="@style/Widget.MaterialComponents.Chip.Filter" />
                         </com.google.android.material.chip.ChipGroup>
@@ -225,7 +225,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="פלטפורמות משחק"
+                        android:text="@string/פלטפורמות_משחק_המלצות"
                         android:textSize="14sp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginTop="8dp" />
@@ -408,7 +408,6 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <!-- כאן יתווספו המלצות דינמית -->
 
                     </LinearLayout>
                 </LinearLayout>

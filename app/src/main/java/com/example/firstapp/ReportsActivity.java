@@ -3,10 +3,13 @@ package com.example.firstapp;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class PaymentActivity extends AppCompatActivity {
+public class ReportsActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.credit_card_payment_screen);
+        setContentView(R.layout.business_reports_screen);
+
+        // ניתן להוסיף כאן פונקציונליות להצגת דוחות עסקיים
     }
 }

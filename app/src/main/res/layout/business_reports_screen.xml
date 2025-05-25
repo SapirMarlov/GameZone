@@ -20,7 +20,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="🎮 GameZone 🎮         "
+            android:text="@string/gamezone"
             android:textSize="26sp"
             android:textStyle="bold"
             android:textColor="#3182CE"
@@ -30,7 +30,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="דוחות עסקיים"
+            android:text="@string/דוחות_עסקיים"
             android:textColor="@android:color/white"
             android:textSize="22sp"
             android:textStyle="bold"/>
@@ -45,7 +45,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="📊 דוח מכירות"
+        android:text="@string/דוח_מכירות"
         android:textSize="26sp"
         android:textStyle="bold"
         android:textColor="#1E293B"
@@ -56,7 +56,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="בחר סוג דוח"
+        android:text="@string/בחר_סוג_דוח"
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="#000"
@@ -67,7 +67,7 @@
         android:id="@+id/report_type_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="בחר דוח"
+        android:hint="@string/בחר_דוח"
         android:layout_margin="16dp"
         android:background="?android:attr/selectableItemBackground"
         android:entries="@array/reports"
@@ -77,7 +77,7 @@
         android:id="@+id/generate_report_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="הצג דוח"
+        android:text="@string/הצג_דוח"
         android:backgroundTint="#007bff"
         android:textColor="#ffffff"
         android:padding="12dp"

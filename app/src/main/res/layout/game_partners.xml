@@ -16,7 +16,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="🎮GameZone🎮   מחפשים שותפים למשחק"
+            android:text="@string/מחפשים_שותפים_למשחק"
             android:textColor="@android:color/white"
             android:textSize="20sp"
             android:textStyle="bold"/>
@@ -50,7 +50,7 @@
                 android:id="@+id/filter_playstation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PlayStation"
+                android:text="@string/playstation_button"
                 android:layout_marginEnd="8dp"
                 android:backgroundTint="#3B82F6"/>
 
@@ -58,7 +58,7 @@
                 android:id="@+id/filter_xbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Xbox"
+                android:text="@string/xbox_button"
                 android:layout_marginEnd="8dp"
                 android:backgroundTint="#059669"/>
 
@@ -68,13 +68,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:backgroundTint="#D97706"
-                android:text="Nintendo" />
+                android:text="@string/nintendo_button" />
 
             <Button
                 android:id="@+id/filter_pc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PC Gaming"
+                android:text="@string/pc_gaming_button"
                 android:backgroundTint="#7C3AED"/>
         </LinearLayout>
     </HorizontalScrollView>
@@ -91,7 +91,7 @@
             android:id="@+id/search_players"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="חפש משחק או שחקן..."
+            android:hint="@string/חפש_משחק_שחקן"
             android:padding="10dp"
             />
     </LinearLayout>
@@ -166,7 +166,7 @@
         android:id="@+id/create_post_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="פרסם מודעה חדשה"
+        android:text="@string/כפתור_פרסם_מודעה_חדשה"
         android:backgroundTint="#28A745"
         android:textColor="#FFFFFF"
         android:padding="16dp"

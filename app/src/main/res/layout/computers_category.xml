@@ -22,12 +22,12 @@
             android:src="@android:drawable/ic_menu_revert"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:layout_gravity="start"
-            android:contentDescription="חזרה למסך הקודם" />
+            android:contentDescription="@string/חזרה_למסך_הקודם" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="💻 מחשבים | GameZone"
+            android:text="@string/מחשבים"
             android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="#FFFFFF"
@@ -52,7 +52,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="סנן לפי:"
+            android:text="@string/סנן_לפי"
             android:textSize="16sp"
             android:textColor="#333333"
             android:layout_marginEnd="8dp" />
@@ -61,7 +61,7 @@
             android:id="@+id/filter_work"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:text="נייח"
+            android:text="@string/נייח"
             android:textSize="14sp"
             android:backgroundTint="#E2E8F0"
             android:textColor="#333333"
@@ -71,7 +71,7 @@
             android:id="@+id/filter_laptop"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:text="נייד"
+            android:text="@string/נייד"
             android:textSize="14sp"
             android:backgroundTint="#E2E8F0"
             android:textColor="#333333" />
@@ -150,7 +150,7 @@
                     android:id="@+id/add_to_cart_computer_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="הוסף לסל"
+                    android:text="@string/הוסף_לסל"
                     android:backgroundTint="#38A169"
                     android:textColor="#FFFFFF" />
             </LinearLayout>
@@ -217,7 +217,7 @@
                     android:id="@+id/add_to_cart_computer_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="הוסף לסל"
+                    android:text="@string/הוסף_לסל"
                     android:backgroundTint="#38A169"
                     android:textColor="#FFFFFF" />
             </LinearLayout>
@@ -284,7 +284,7 @@
                     android:id="@+id/add_to_cart_computer_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="הוסף לסל"
+                    android:text="@string/הוסף_לסל"
                     android:backgroundTint="#38A169"
                     android:textColor="#FFFFFF" />
             </LinearLayout>

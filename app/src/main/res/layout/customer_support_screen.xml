@@ -7,62 +7,57 @@
     android:background="#f0f0f0"
     android:padding="16dp">
 
+    <!-- כותרת מסך פניות לקוח -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/gamezone"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        android:textColor="#3182CE"
-        android:layout_gravity="center"
-        android:layout_marginBottom="16dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/שלח_פנייה_לשירות_לקוחות"
+        android:text="שלח פנייה לשירות לקוחות"
         android:textSize="22sp"
         android:textStyle="bold"
-        android:textColor="#1E293B"
+        android:textColor="#000"
         android:layout_gravity="center"
         android:layout_marginBottom="16dp"/>
 
+    <!-- שדה שם לקוח -->
     <EditText
         android:id="@+id/customer_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/פנייה_שם_מלא"
+        android:hint="שם מלא"
         android:padding="12dp"
         android:background="@android:drawable/editbox_background"
         android:layout_marginBottom="12dp"/>
 
+    <!-- שדה אימייל -->
     <EditText
         android:id="@+id/customer_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/פנייה_אימייל"
+        android:hint="אימייל"
         android:inputType="textEmailAddress"
         android:padding="12dp"
         android:background="@android:drawable/editbox_background"
         android:layout_marginBottom="12dp"/>
 
+    <!-- שדה תוכן הפנייה -->
     <EditText
         android:id="@+id/customer_message"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:hint="@string/כתוב_כאן_את_הפנייה_שלך"
+        android:hint="כתוב כאן את הפנייה שלך"
         android:gravity="top"
         android:padding="12dp"
         android:background="@android:drawable/editbox_background"
         android:layout_marginBottom="12dp"
         android:inputType="textMultiLine"/>
 
+    <!-- כפתור שליחת פנייה -->
     <Button
         android:id="@+id/send_message_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/כפתור_שלח_פנייה"
-        android:backgroundTint="#3182CE"
+        android:text="שלח פנייה"
+        android:backgroundTint="#007bff"
         android:textColor="#ffffff"
         android:padding="12dp"
         android:textSize="18sp"

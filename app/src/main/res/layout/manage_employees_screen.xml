@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#f0f0f0">
+
+    <!-- כותרת המסך -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ניהול עובדים - משמרות"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- כפתור ליצירת סידור עבודה -->
+    <Button
+        android:id="@+id/create_schedule_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="צור סידור עבודה"
+        android:backgroundTint="#007bff"
+        android:textColor="#ffffff"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- טבלת משמרות -->
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"
+        android:background="#ffffff">
+
+        <!-- כותרות הטבלה -->
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="שם עובד"
+                android:textStyle="bold"
+                android:padding="8dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="תפקיד"
+                android:textStyle="bold"
+                android:padding="8dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="משמרת"
+                android:textStyle="bold"
+                android:padding="8dp"/>
+        </TableRow>
+
+        <!-- שורות עובדים - יוצגו דינאמית מה-Java -->
+    </TableLayout>
+
+    <!-- רשימה להצגת נתונים דינאמיים -->
+    <ListView
+        android:id="@+id/shifts_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp"/>
+</LinearLayout>

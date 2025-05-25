@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#f0f0f0"
+    android:gravity="right">
+
+    <!-- כותרת המסך -->
+    <TextView
+        android:id="@+id/add_item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="הוסף פריט למלאי"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:layout_gravity="right"
+        android:textAlignment="viewStart"
+        android:layout_marginBottom="24dp" />
+
+    <!-- שם המוצר -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="שם המוצר"
+        android:textSize="16sp"
+        android:textColor="#000"
+        android:layout_gravity="right"
+        android:textAlignment="viewStart"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/product_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="הכנס את שם המוצר"
+        android:inputType="text"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="right|center_vertical" />
+
+    <!-- כמות המוצר -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="כמות"
+        android:textSize="16sp"
+        android:textColor="#000"
+        android:layout_gravity="right"
+        android:textAlignment="viewStart"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/product_quantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="הכנס כמות"
+        android:inputType="number"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="right|center_vertical" />
+
+    <!-- מחיר המוצר -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="מחיר"
+        android:textSize="16sp"
+        android:textColor="#000"
+        android:layout_gravity="right"
+        android:textAlignment="viewStart"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/product_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="הכנס מחיר"
+        android:inputType="numberDecimal"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="right|center_vertical" />
+
+    <!-- כפתור להוספת פריט למלאי -->
+    <Button
+        android:id="@+id/add_item_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="הוסף פריט"
+        android:backgroundTint="#007bff"
+        android:textColor="#ffffff"
+        android:padding="12dp"
+        android:layout_marginTop="16dp"
+        android:gravity="right|center_vertical" />
+
+</LinearLayout>

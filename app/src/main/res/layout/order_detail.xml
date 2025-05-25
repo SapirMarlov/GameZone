@@ -353,7 +353,7 @@
                 android:id="@+id/update_order_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="עדכן סטטוס הזמנה"
+                android:text="@string/כפתור_עדכן_סטטוס_הזמנה"
                 android:backgroundTint="#38A169"
                 android:textColor="#FFFFFF"
                 android:layout_marginBottom="8dp"/>

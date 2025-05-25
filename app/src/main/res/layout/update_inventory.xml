@@ -20,7 +20,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="🎮 GameZone 🎮     📦 עדכון פרטי מלאי"
+            android:text="@string/עדכון_פרטי_מלאי"
             android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="#3182CE"
@@ -52,7 +52,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="פרטי מוצר"
+                android:text="@string/פרטי_מוצר_עדכון_מלאי"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="#2D3748"
@@ -64,7 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:hint="מק״ט מוצר">
+                android:hint="@string/מקט_מוצר">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextProductId"
@@ -79,7 +79,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:hint="שם המוצר">
+                android:hint="@string/שם_מוצר_עדכון_מלאי">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextProductName"
@@ -119,7 +119,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="עדכון כמות"
+                android:text="@string/עדכון_כמות_מלאי"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="#2D3748"
@@ -225,7 +225,7 @@
         android:id="@+id/buttonSave"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="שמור שינויים"
+        android:text="@string/כפתור_שמור_שינויים"
         android:textSize="16sp"
         android:padding="12dp"
         android:backgroundTint="#3182CE" />

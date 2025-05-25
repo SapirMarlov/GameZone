@@ -7,18 +7,16 @@
     android:background="#f0f0f0"
     android:padding="16dp">
 
-    <!-- כותרת תשלום בכרטיס אשראי -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="תשלום בכרטיס אשראי"
+        android:text="@string/תשלום_בכרטיס_אשראי"
         android:textSize="22sp"
         android:textStyle="bold"
         android:textColor="#000"
         android:layout_gravity="center"
         android:layout_marginBottom="16dp"/>
 
-    <!-- סכום לתשלום -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,14 +26,13 @@
         android:textColor="#000"
         android:layout_marginBottom="16dp"/>
 
-    <!-- שדה הזנת מספר כרטיס -->
     <EditText
         android:id="@+id/user_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
         android:background="@android:drawable/editbox_background"
-        android:hint="תעודת זהות"
+        android:hint="@string/תעודת_זהות"
         android:inputType="number"
         android:padding="12dp" />
 
@@ -43,42 +40,38 @@
         android:id="@+id/card_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="מספר כרטיס אשראי"
+        android:hint="@string/מספר_כרטיס_אשראי"
         android:inputType="number"
         android:padding="12dp"
         android:background="@android:drawable/editbox_background"
         android:layout_marginBottom="12dp"/>
 
-    <!-- שדה תוקף כרטיס -->
     <EditText
         android:id="@+id/card_expiry"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="תוקף (MM/YY)"
+        android:hint="@string/mm_yy_תוקף"
         android:inputType="text"
         android:padding="12dp"
         android:background="@android:drawable/editbox_background"
         android:layout_marginBottom="12dp"/>
 
-    <!-- שדה CVV -->
     <EditText
         android:id="@+id/card_cvv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="CVV"
+        android:hint="@string/cvv"
         android:inputType="numberPassword"
         android:padding="12dp"
         android:background="@android:drawable/editbox_background"
         android:layout_marginBottom="12dp"/>
 
-    <!-- שדה תעודת זהות -->
 
-    <!-- כפתור אישור תשלום -->
     <Button
         android:id="@+id/confirm_credit_payment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="אשר תשלום"
+        android:text="@string/אשר_תשלום"
         android:backgroundTint="#28a745"
         android:textColor="#ffffff"
         android:padding="12dp"

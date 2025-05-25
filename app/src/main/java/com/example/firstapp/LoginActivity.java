@@ -2,72 +2,55 @@ package com.example.firstapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class LoginActivity extends AppCompatActivity {
+
+    private FirebaseAuth mAuth;
+    private EditText emailInput, passwordInput;
+    private Button loginBtn, goToRegisterBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
+        setContentView(R.layout.login); // תואם לקובץ שלך
 
-        // הגדרת שדות הקלט
-        final EditText emailEditText = findViewById(R.id.email);
-        final EditText passwordEditText = findViewById(R.id.password);
+        mAuth = FirebaseAuth.getInstance();
 
-        // כפתור התחברות
-        Button loginButton = findViewById(R.id.login_button);
+        emailInput = findViewById(R.id.email);
+        passwordInput = findViewById(R.id.password);
+        loginBtn = findViewById(R.id.login_button);
+        goToRegisterBtn = findViewById(R.id.register_button);
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        loginBtn.setOnClickListener(v -> {
+            String email = emailInput.getText().toString().trim();
+            String password = passwordInput.getText().toString().trim();
 
-                // קבלת שם המשתמש והסיסמה
-                String username = emailEditText.getText().toString().trim();
-                String password = passwordEditText.getText().toString().trim();
-
-                // בדיקת סוג המשתמש
-                String userType = getUserType(username, password);
-                Intent intent;
-
-                if (userType.equals("admin")) {
-                    intent = new Intent(LoginActivity.this, AdminDashboardActivity.class);
-                } else if (userType.equals("employee")) {
-                    intent = new Intent(LoginActivity.this, EmployeeHomeActivity.class);
-                } else if (userType.equals("customer")) {
-                    intent = new Intent(LoginActivity.this, CustomerHomeActivity.class);
-                } else {
-
-                    return;
-                }
-                startActivity(intent);
+            if (email.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "אנא מלא את כל השדות", Toast.LENGTH_SHORT).show();
+                return;
             }
+
+            mAuth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(this, "התחברת בהצלחה!", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(this, MainActivity.class)); // שים את המסך שתרצה אחרי התחברות
+                            finish();
+                        } else {
+                            Toast.makeText(this, "שגיאה: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                        }
+                    });
         });
 
-        // מעבר למסך הרשמה
-        Button registerButton = findViewById(R.id.register_button);
-        registerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(intent);
-            }
+        goToRegisterBtn.setOnClickListener(v -> {
+            startActivity(new Intent(this, RegisterActivity.class));
         });
-    }
-
-
-    private String getUserType(String username, String password) {
-        if (username.equals("admin") && password.equals("admin123")) {
-            return "admin";
-        } else if (username.equals("employee") && password.equals("employee123")) {
-            return "employee";
-        } else if (username.equals("customer") && password.equals("customer123")) {
-            return "customer";
-        }
-        return "invalid";
     }
 }
