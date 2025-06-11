@@ -19,6 +19,7 @@
     <string name="כפתור_דוחות_עסקיים">📊 דוחות עסקיים</string>
     <string name="כפתור_ניהול_עובדים">👥 ניהול עובדים</string>
     <string name="כפתור_מעבר_למסך_עובדים">👥מעבר למסך עובדים</string>
+    <string name="כפתור_התנתקות">התנתק מהמערכת  </string>
     <string name="בחר_דוח_עסקי_מהרשימה">🎮 GameZone 🎮 בחר דוח עסקי מהרשימה</string>
     <string name="חפש_דוח">חפש דוח...</string>
     <string name="דוח_מכירות">📊 דוח מכירות</string>
@@ -157,4 +158,8 @@
     <string name="כפתור_עדכון_מלאי_פריט">עדכן מלאי</string>
     <string name="איזור_אישי">איזור אישי</string>
     <string name="לוח_זמנים">🎮 GameZone 🎮 לוח זמנים</string>
+    <string name="הגדרת_תפקיד">הגדרת תפקיד המשתמש</string>
+    <string name="הוספת_עובד_חדש">הוספת עובד חדש למערכת</string>
+    <string name="user_roles">user_roles</string>
+    <string name="תפקיד">הכנס תפקיד: עובד או מנהל</string>
 </resources>

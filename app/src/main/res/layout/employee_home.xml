@@ -27,9 +27,10 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/employee_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="שלום אייל"
+            android:text=""
             android:textColor="@android:color/white"
             android:textSize="22sp"
             android:textStyle="bold" />
@@ -103,7 +104,19 @@
                 android:padding="14dp"
                 android:gravity="right"
                 android:elevation="6dp"/>
-
+            <Button
+                android:id="@+id/log_out"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="#EB26C4"
+                android:text="@string/כפתור_התנתקות"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:padding="14dp"
+                android:gravity="right"
+                android:elevation="6dp"/>
 
         </LinearLayout>
     </ScrollView>

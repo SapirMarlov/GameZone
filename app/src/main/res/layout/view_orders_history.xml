@@ -26,14 +26,15 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/customer_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="שלום ישראל, אלו הם הסטוריית ההזמנות שלך"
-        android:textSize="22sp"
+        android:text=""
+        android:textSize="26sp"
         android:textStyle="bold"
         android:textColor="#2D3748"
         android:layout_gravity="center"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="24dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"

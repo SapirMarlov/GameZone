@@ -27,20 +27,24 @@
         android:layout_marginBottom="16dp">
 
         <TextView
-            android:id="@+id/user_name"
+            android:id="@+id/customer_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="שם משתמש: ישראל כהן"
-            android:textSize="16sp"
-            android:textColor="#000"/>
+            android:text=""
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#2D3748"
+            android:layout_gravity="center"
+            android:layout_marginBottom="24dp"/>
 
         <TextView
             android:id="@+id/user_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="אימייל: israel@example.com"
+            android:text=""
             android:textSize="16sp"
             android:textColor="#000"
+            android:layout_gravity="center"
             android:layout_marginTop="8dp"/>
     </LinearLayout>
 

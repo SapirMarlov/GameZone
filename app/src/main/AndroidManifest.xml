@@ -30,7 +30,6 @@
         <activity android:name=".EmployeeHomeActivity" android:exported="false" />
         <activity android:name=".ManageTasksActivity" android:exported="false" />
         <activity android:name=".ViewScheduleActivity" android:exported="false" />
-
         <activity android:name=".ManageOrdersActivity" android:exported="false" />
         <activity android:name=".InventoryManagementActivity" android:exported="true" />
         <activity android:name=".CustomerRequestsActivity" android:exported="false" />
@@ -59,12 +58,7 @@
         <activity android:name=".ComputerCategoryActivity" android:exported="true" />
         <activity android:name=".HeadphonesCategoryActivity" android:exported="true" />
         <activity android:name=".GamingChairCategoryActivity" android:exported="true" />
-
-
-
-
-
-
+        <activity android:name=".RegisterAdminActivityToSystemActivity" android:exported="true" />
 
 
 

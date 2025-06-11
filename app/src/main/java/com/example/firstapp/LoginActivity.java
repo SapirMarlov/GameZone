@@ -9,6 +9,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.DocumentReference;
+
+
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -37,15 +42,43 @@ public class LoginActivity extends AppCompatActivity {
                 return;
             }
 
+
             mAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(task -> {
+                        // progressBar.setVisibility(View.GONE);  // אם הוספת תצוגת טעינה
+
                         if (task.isSuccessful()) {
-                            Toast.makeText(this, "התחברת בהצלחה!", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(this, MainActivity.class)); // שים את המסך שתרצה אחרי התחברות
-                            finish();
-                        } else {
-                            Toast.makeText(this, "שגיאה: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                            FirebaseUser user = mAuth.getCurrentUser();
+
+                            if (user != null) {
+                                String uid = user.getUid();
+                                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                                DocumentReference userRef = db.collection("users").document(uid);
+
+                                userRef.get().addOnSuccessListener(documentSnapshot -> {
+                                    if (documentSnapshot.exists()) {
+                                        String username = documentSnapshot.getString("username");
+                                        if (username == null || username.isEmpty()) {
+                                            username = user.getEmail().split("@")[0]; // fallback
+                                        }
+
+                                        Toast.makeText(this, "התחברת בהצלחה, " + username + "!", Toast.LENGTH_SHORT).show();
+
+                                        Intent intent = new Intent(this, MainActivity.class);
+                                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                        intent.putExtra("username", username); // אם את רוצה להשתמש בזה ב-MainActivity
+                                        startActivity(intent);
+                                        finish();
+
+                                    } else {
+                                        Toast.makeText(this, "המשתמש לא נמצא במסד הנתונים", Toast.LENGTH_SHORT).show();
+                                    }
+                                }).addOnFailureListener(e -> {
+                                    Toast.makeText(this, "שגיאה בגישה למסד הנתונים", Toast.LENGTH_SHORT).show();
+                                });
+                            }
                         }
+
                     });
         });
 

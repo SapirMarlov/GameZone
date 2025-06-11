@@ -38,15 +38,17 @@
 
         <!-- כותרת ראשית -->
         <TextView
+            android:id="@+id/greetingTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="היי אייל, אלו הם המשימות שלך לשבוע הקרוב"
+            android:text="טוען..."
             android:textSize="26sp"
             android:textStyle="bold"
             android:textColor="#1E293B"
             android:gravity="center"
             android:layout_marginTop="16dp"
             android:layoutDirection="rtl"/>
+
 
         <!-- תוכן הצגת לוח זמנים -->
         <!-- הוספתי כאן את layoutDirection -->
