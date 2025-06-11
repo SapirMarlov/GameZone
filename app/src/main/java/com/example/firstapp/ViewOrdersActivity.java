@@ -7,32 +7,63 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class ViewOrdersActivity extends AppCompatActivity {
+    private TextView customerNameTextView;
+    private FirebaseAuth mAuth;
+
+    private FirebaseFirestore db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_orders_history);
+        // אתחול Firebase
+        mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
 
-        TextView customerNameTextView = findViewById(R.id.customer_name);
-        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        // מציאת רכיבי UI
+        customerNameTextView = findViewById(R.id.customer_name);
 
+        // הצגת שם
+        loadCustomerName();
+    }
+
+    private void loadCustomerName() {
+        FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
-            // קובע את שם המשתמש
-            String displayName = currentUser.getDisplayName();
-            if (displayName != null && !displayName.isEmpty()) {
-                customerNameTextView.setText("שלום " + displayName + ", אלו הם היסטוריית ההזמנות שלך");
-            } else {
-                // אם אין שם תצוגה, משתמש בשם מהאימייל
-                String email = currentUser.getEmail();
-                if (email != null && email.contains("@")) {
-                    displayName = email.substring(0, email.indexOf("@"));
-                    customerNameTextView.setText("שלום " + displayName + ", אלו הם היסטוריית ההזמנות שלך");
-                }
-            }
+            String userId = currentUser.getUid();
+
+            db.collection("users").document(userId)
+                    .get()
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                String username = document.getString("username");
+
+                                if (username != null && !username.isEmpty()) {
+                                    customerNameTextView.setText("שלום " + username + "!");
+                                } else {
+                                    String email = document.getString("email");
+                                    if (email != null && email.contains("@")) {
+                                        String nameFromEmail = email.substring(0, email.indexOf("@"));
+                                        customerNameTextView.setText("שלום " + nameFromEmail + "!");
+                                    } else {
+                                        customerNameTextView.setText("שלום אורח!");
+                                    }
+                                }
+                            } else {
+                                customerNameTextView.setText("שלום אורח!");
+                            }
+                        } else {
+                            customerNameTextView.setText("שלום אורח!");
+                        }
+                    });
         } else {
-            // למקרה שאין משתמש מחובר
-            customerNameTextView.setText("היסטוריית הזמנות");
+            customerNameTextView.setText("שלום אורח!");
         }
     }
 }
