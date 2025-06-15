@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F4F6">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="right"
+        android:layoutDirection="rtl">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#2D3748"
+            android:padding="12dp"
+            android:gravity="center_vertical"
+            android:layoutDirection="rtl">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/לוח_זמנים"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layoutDirection="rtl"/>
+        </androidx.appcompat.widget.Toolbar>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#CBD5E1"
+            android:layout_marginTop="4dp"/>
+
+        <!-- כותרת ראשית -->
+        <TextView
+            android:id="@+id/greetingTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="טוען..."
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#1E293B"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:layoutDirection="rtl"/>
+
+
+        <!-- תוכן הצגת לוח זמנים -->
+        <!-- הוספתי כאן את layoutDirection -->
+
+        <!-- פרטי המשימות עבור יום ראשון -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:background="#FFFFFF"
+            android:elevation="3dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="יום ראשון"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#2D3748"
+                android:layoutDirection="rtl"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="משימה 1: טיוב נתונים"
+                android:textSize="16sp"
+                android:textColor="#475569"
+                android:layoutDirection="rtl"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="משימה 2: הכנסת פריטים למערכת"
+                android:textSize="16sp"
+                android:textColor="#475569"
+                android:layoutDirection="rtl"/>
+        </LinearLayout>
+
+        <!-- פרטי המשימות עבור יום שני -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:background="#FFFFFF"
+            android:elevation="3dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="יום שני"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#2D3748"
+                android:layoutDirection="rtl"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="משימה 1: עדכון מלאי"
+                android:textSize="16sp"
+                android:textColor="#475569"
+                android:layoutDirection="rtl"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="משימה 2: יצירת ממשקים למערכת"
+                android:textSize="16sp"
+                android:textColor="#475569"
+                android:layoutDirection="rtl"/>
+        </LinearLayout>
+
+        <!-- פרטי המשימות עבור יום שלישי -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:background="#FFFFFF"
+            android:elevation="3dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="יום שלישי"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#2D3748"
+                android:layoutDirection="rtl"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="משימה 1: ניהול ממשקים"
+                android:textSize="16sp"
+                android:textColor="#475569"
+                android:layoutDirection="rtl"/>
+        </LinearLayout>
+
+        <!-- פרטי המשימות עבור יום רביעי -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:background="#FFFFFF"
+            android:elevation="3dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="יום רביעי"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#2D3748"
+                android:layoutDirection="rtl"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="משימה 1: תמיכה טכנית"
+                android:textSize="16sp"
+                android:textColor="#475569"
+                android:layoutDirection="rtl"/>
+        </LinearLayout>
+
+        <!-- פרטי המשימות עבור יום חמישי -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:background="#FFFFFF"
+            android:elevation="3dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="יום חמישי"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#2D3748"
+                android:layoutDirection="rtl"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="משימה 1: ביצוע בדיקות מערכת"
+                android:textSize="16sp"
+                android:textColor="#475569"
+                android:layoutDirection="rtl"/>
+        </LinearLayout>
+
+        <!-- פרטי המשימות עבור יום שישי -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:background="#FFFFFF"
+            android:elevation="3dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="יום שישי"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#2D3748"
+                android:layoutDirection="rtl"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="משימה 1: עדכון דוחות מערכת"
+                android:textSize="16sp"
+                android:textColor="#475569"
+                android:layoutDirection="rtl"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

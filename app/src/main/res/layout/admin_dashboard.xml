@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F3F4F6"
+    android:padding="16dp"
+    android:gravity="right">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2D3748"
+        android:padding="12dp"
+        android:gravity="center_vertical"
+        android:layoutDirection="rtl">
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/מנהל_חנות"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#CBD5E1"
+        android:layout_marginTop="4dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/מסך_ניהול_ראשי"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#1E293B"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:layoutDirection="rtl"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/בחר_פעולה_לניהול_המערכת"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#475569"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:layoutDirection="rtl"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingVertical="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="right"
+            android:layoutDirection="rtl"
+            android:padding="8dp">
+
+            <Button
+                android:id="@+id/manage_orders"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="#64748B"
+                android:text="@string/כפתור_ניהול_הזמנות"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:padding="14dp"
+                android:gravity="right"
+                android:elevation="6dp"/>
+
+            <Button
+                android:id="@+id/manage_inventory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="#7C3AED"
+                android:text="@string/כפתור_ניהול_מלאי"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:padding="14dp"
+                android:gravity="right"
+                android:elevation="6dp"/>
+
+            <Button
+                android:id="@+id/customer_requests"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="#059669"
+                android:text="@string/כפתור_פניות_לקוחות"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:padding="14dp"
+                android:gravity="right"
+                android:elevation="6dp"/>
+
+            <Button
+                android:id="@+id/view_reports"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="#D97706"
+                android:text="@string/כפתור_דוחות_עסקיים"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:padding="14dp"
+                android:gravity="right"
+                android:elevation="6dp"/>
+
+            <Button
+                android:id="@+id/manage_employees"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="#3B82F6"
+                android:text="@string/כפתור_ניהול_עובדים"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:padding="14dp"
+                android:gravity="right"
+                android:elevation="6dp"/>
+
+            <Button
+                android:id="@+id/employee_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="#BE3BF6"
+                android:text="@string/כפתור_מעבר_למסך_עובדים"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:padding="14dp"
+                android:gravity="right"
+                android:elevation="6dp"/>
+            <Button
+                android:id="@+id/employee_add_tp_system"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="#F63BDD"
+                android:text="@string/הוספת_עובד_חדש"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:padding="14dp"
+                android:gravity="right"
+                android:elevation="6dp"/>
+            <Button
+                android:id="@+id/log_out"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="#EB2651"
+                android:text="@string/כפתור_התנתקות"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:padding="14dp"
+                android:gravity="right"
+                android:elevation="6dp"/>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#CBD5E1"
+        android:layout_marginTop="8dp"/>
+
+</LinearLayout>

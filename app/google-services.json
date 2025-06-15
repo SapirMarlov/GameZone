@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "255114477063",
+    "project_id": "game-zone-9d9ff",
+    "storage_bucket": "game-zone-9d9ff.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:255114477063:android:f74d1e35d766270d13b4a2",
+        "android_client_info": {
+          "package_name": "com.example.firstapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYLOeiP6ZBVqitYyqbb86AjVm5IVyhxhg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
