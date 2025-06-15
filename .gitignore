@@ -13,3 +13,17 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+
+.emulator/
+*.apk
+*.ap_
+*.dll
+*.exe
+*.iso
+*.img
+*.bin
+*.qcow2
+crashlytics-build.properties
+*.jks
+*.keystore
