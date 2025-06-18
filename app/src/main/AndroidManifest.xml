@@ -60,6 +60,8 @@
         <activity android:name=".GamingChairCategoryActivity" android:exported="true" />
         <activity android:name=".RegisterAdminActivityToSystemActivity" android:exported="true" />
         <activity android:name=".StockHistoryActivity" android:exported="true" />
+        <activity android:name=".ThankYouActivity" android:exported="true" />
+
 
 
 

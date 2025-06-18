@@ -4,37 +4,33 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class UpdateInventoryActivity extends AppCompatActivity {
 
-    private static final int PICK_IMAGE_REQUEST = 1;
-
     private FirebaseFirestore db;
     private StorageReference storageRef;
+    private FirebaseAuth mAuth;
 
     private TextInputEditText editTextProductId, editTextProductName, editTextCategory,
             editTextDescription, editTextPrice, editTextQuantity;
@@ -43,11 +39,9 @@ public class UpdateInventoryActivity extends AppCompatActivity {
 
     private int currentQuantity = 0;
     private Uri selectedImageUri = null;
-
     private String lastStockAction = "עדכון";
 
     private ActivityResultLauncher<Intent> imagePickerLauncher;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +50,7 @@ public class UpdateInventoryActivity extends AppCompatActivity {
 
         db = FirebaseFirestore.getInstance();
         storageRef = FirebaseStorage.getInstance().getReference("product_images");
+        mAuth = FirebaseAuth.getInstance();
 
         imagePickerLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
@@ -66,13 +61,13 @@ public class UpdateInventoryActivity extends AppCompatActivity {
                     }
                 }
         );
+
         editTextProductId = findViewById(R.id.editTextProductId);
         editTextProductName = findViewById(R.id.editTextProductName);
         editTextCategory = findViewById(R.id.editTextCategory);
         editTextDescription = findViewById(R.id.editTextDescription);
         editTextPrice = findViewById(R.id.editTextPrice);
         editTextQuantity = findViewById(R.id.editTextQuantity);
-
         textViewCurrentQuantity = findViewById(R.id.textViewCurrentQuantity);
         textViewImageStatus = findViewById(R.id.textViewImageStatus);
 
@@ -82,9 +77,7 @@ public class UpdateInventoryActivity extends AppCompatActivity {
         buttonSelectImage = findViewById(R.id.buttonSelectImage);
 
         editTextProductId.setOnFocusChangeListener((v, hasFocus) -> {
-            if (!hasFocus) {
-                loadProduct();
-            }
+            if (!hasFocus) loadProduct();
         });
 
         buttonAdd.setOnClickListener(v -> {
@@ -93,7 +86,6 @@ public class UpdateInventoryActivity extends AppCompatActivity {
             updateQuantityText();
             lastStockAction = "הוספה";
         });
-
 
         buttonRemove.setOnClickListener(v -> {
             int toRemove = getEnteredQuantity();
@@ -117,24 +109,24 @@ public class UpdateInventoryActivity extends AppCompatActivity {
         String productId = editTextProductId.getText().toString().trim();
         if (productId.isEmpty()) return;
 
-        DocumentReference docRef = db.collection("product").document(productId);
-        docRef.get().addOnSuccessListener(documentSnapshot -> {
-            if (documentSnapshot.exists()) {
-                editTextProductName.setText(documentSnapshot.getString("name"));
-                editTextCategory.setText(documentSnapshot.getString("category"));
-                editTextDescription.setText(documentSnapshot.getString("description"));
-                editTextPrice.setText(String.valueOf(documentSnapshot.getDouble("price")));
-
-                Long quantity = documentSnapshot.getLong("stock");
-                currentQuantity = (quantity != null) ? quantity.intValue() : 0;
-                updateQuantityText();
-            } else {
-                Toast.makeText(this, "מוצר לא נמצא", Toast.LENGTH_SHORT).show();
-            }
-        }).addOnFailureListener(e -> {
-            Toast.makeText(this, "שגיאה בטעינת נתונים", Toast.LENGTH_SHORT).show();
-            Log.e("Firebase", "loadProduct failed", e);
-        });
+        db.collection("product").document(productId).get()
+                .addOnSuccessListener(doc -> {
+                    if (doc.exists()) {
+                        editTextProductName.setText(doc.getString("name"));
+                        editTextCategory.setText(doc.getString("category"));
+                        editTextDescription.setText(doc.getString("description"));
+                        editTextPrice.setText(String.valueOf(doc.getDouble("price")));
+                        Long qty = doc.getLong("stock");
+                        currentQuantity = (qty != null) ? qty.intValue() : 0;
+                        updateQuantityText();
+                    } else {
+                        Toast.makeText(this, "מוצר לא נמצא", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    Toast.makeText(this, "שגיאה בטעינת נתונים", Toast.LENGTH_SHORT).show();
+                    Log.e("Firebase", "loadProduct failed", e);
+                });
     }
 
     private void saveData(String imageUrl) {
@@ -157,42 +149,49 @@ public class UpdateInventoryActivity extends AppCompatActivity {
         data.put("description", description);
         data.put("price", price);
         data.put("stock", currentQuantity);
-        if (imageUrl != null) {
-            data.put("imageUrl", imageUrl);
-        }
+        if (imageUrl != null) data.put("imageUrl", imageUrl);
 
-        db.collection("product").document(productId)
-                .set(data)
+        db.collection("product").document(productId).set(data)
                 .addOnSuccessListener(aVoid -> {
-                    Toast.makeText(this, "מלאי עודכן בהצלחה!", Toast.LENGTH_SHORT).show();
+                    FirebaseUser currentUser = mAuth.getCurrentUser();
+                    if (currentUser == null) return;
+                    String uid = currentUser.getUid();
 
-                    // ✅ יצירת לוג חדש להיסטוריית מלאי
-                    Map<String, Object> log = new HashMap<>();
-                    log.put("productName", name);
-                    log.put("action", lastStockAction);
-                    log.put("quantityBefore", 0); // תוכל לשנות את זה אם תשלוף את הכמות לפני
-                    log.put("quantityAfter", currentQuantity);
-                    log.put("updatedBy", "admin"); // קבוע ידנית
-                    log.put("timestamp", new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm", java.util.Locale.getDefault()).format(new java.util.Date()));
+                    db.collection("users").document(uid).get()
+                            .addOnSuccessListener(documentSnapshot -> {
+                                String updatedBy = documentSnapshot.contains("username")
+                                        ? documentSnapshot.getString("username")
+                                        : (currentUser.getEmail() != null ? currentUser.getEmail() : "לא ידוע");
 
-                    db.collection("stock_logs")
-                            .add(log)
-                            .addOnSuccessListener(documentReference -> Log.d("Log", "Stock log added"))
-                            .addOnFailureListener(e -> Log.e("Log", "Failed to add stock log", e));
-                    lastStockAction = "עדכון";
+                                Map<String, Object> log = new HashMap<>();
+                                log.put("productId", productId);
+                                log.put("productName", name);
+                                log.put("action", lastStockAction);
+                                log.put("quantityBefore", 0);
+                                log.put("quantityAfter", currentQuantity);
+                                log.put("updatedBy", updatedBy);
+                                log.put("timestamp", FieldValue.serverTimestamp());
 
+                                db.collection("stock_logs").add(log)
+                                        .addOnSuccessListener(r -> Log.d("Log", "Stock log added"))
+                                        .addOnFailureListener(e -> Log.e("Log", "Failed to add log", e));
+
+                                lastStockAction = "עדכון";
+                                Toast.makeText(this, "המלאי עודכן בהצלחה!", Toast.LENGTH_SHORT).show();
+                            })
+                            .addOnFailureListener(e -> {
+                                Toast.makeText(this, "שגיאה בשליפת משתמש", Toast.LENGTH_SHORT).show();
+                            });
                 })
                 .addOnFailureListener(e -> {
                     Toast.makeText(this, "שגיאה בעדכון", Toast.LENGTH_SHORT).show();
-                    Log.e("Firebase", "saveChanges failed", e);
+                    Log.e("Firebase", "saveData failed", e);
                 });
     }
 
     private int getEnteredQuantity() {
-        String quantityStr = editTextQuantity.getText().toString().trim();
-        if (quantityStr.isEmpty()) return 0;
         try {
-            return Integer.parseInt(quantityStr);
+            return Integer.parseInt(editTextQuantity.getText().toString().trim());
         } catch (NumberFormatException e) {
             return 0;
         }
@@ -209,7 +208,6 @@ public class UpdateInventoryActivity extends AppCompatActivity {
         imagePickerLauncher.launch(Intent.createChooser(intent, "בחר תמונה"));
     }
 
-
     private void uploadImageAndSaveData() {
         if (selectedImageUri == null) return;
 
@@ -219,8 +217,7 @@ public class UpdateInventoryActivity extends AppCompatActivity {
         fileRef.putFile(selectedImageUri)
                 .addOnSuccessListener(taskSnapshot ->
                         fileRef.getDownloadUrl().addOnSuccessListener(uri ->
-                                saveData(uri.toString())
-                        ))
+                                saveData(uri.toString())))
                 .addOnFailureListener(e -> {
                     Toast.makeText(this, "שגיאה בהעלאת תמונה", Toast.LENGTH_SHORT).show();
                     Log.e("Firebase", "Image upload failed", e);

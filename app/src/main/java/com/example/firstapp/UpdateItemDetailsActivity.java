@@ -1,23 +1,21 @@
 package com.example.firstapp;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.RadioGroup;
-import android.widget.TextView;
-import android.widget.Toast;
-
+import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
-import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class UpdateItemDetailsActivity extends AppCompatActivity {
 
     private ImageView productImage;
-    private TextView productName, productPrice, currentQuantity;
+    private TextView productName, productPrice, currentQuantity, serialNumber;
     private EditText editQuantity, editReason;
     private RadioGroup actionRadioGroup;
     private Button buttonConfirm, buttonIncrease, buttonDecrease;
@@ -25,6 +23,7 @@ public class UpdateItemDetailsActivity extends AppCompatActivity {
     private FirebaseFirestore db;
     private String productId;
     private int stock = 0;
+    private String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +34,7 @@ public class UpdateItemDetailsActivity extends AppCompatActivity {
         productName = findViewById(R.id.product_name);
         productPrice = findViewById(R.id.product_price);
         currentQuantity = findViewById(R.id.current_quantity);
+        serialNumber = findViewById(R.id.serial_number); // ✅ הוספנו
         editQuantity = findViewById(R.id.edit_quantity);
         editReason = findViewById(R.id.edit_reason);
         actionRadioGroup = findViewById(R.id.action_radio_group);
@@ -44,48 +44,40 @@ public class UpdateItemDetailsActivity extends AppCompatActivity {
 
         db = FirebaseFirestore.getInstance();
 
-        // מקבל נתונים מה־Intent
+        // קבלת נתונים מה־Intent
         productId = getIntent().getStringExtra("productId");
-        String name = getIntent().getStringExtra("name");
-        Double price = getIntent().getDoubleExtra("price", 0.0);
+        name = getIntent().getStringExtra("name");
+        double price = getIntent().getDoubleExtra("price", 0.0);
         Long currentStock = getIntent().getLongExtra("stock", 0);
         String imageUrl = getIntent().getStringExtra("imageUrl");
 
         stock = currentStock != null ? currentStock.intValue() : 0;
 
-        // מציג מידע על המוצר
         productName.setText(name != null ? name : "לא ידוע");
         productPrice.setText("₪" + price);
         currentQuantity.setText("במלאי: " + stock + " יחידות");
+        serialNumber.setText("מקט: " + productId); // ✅ מציג את ה-ID כמספר סידורי
 
         if (imageUrl != null && !imageUrl.isEmpty()) {
             Glide.with(this)
                     .load(imageUrl)
-                    .placeholder(R.drawable.notfound) // מוצג לפני שהטעינה הסתיימה
-                    .error(R.drawable.notfound)       // מוצג אם יש שגיאה
+                    .placeholder(R.drawable.notfound)
+                    .error(R.drawable.notfound)
                     .into(productImage);
         } else {
             productImage.setImageResource(R.drawable.notfound);
         }
 
-
-        // לחצן פלוס
         buttonIncrease.setOnClickListener(v -> {
             int quantity = getQuantity();
-            if (quantity < 999) {
-                editQuantity.setText(String.valueOf(quantity + 1));
-            }
+            if (quantity < 999) editQuantity.setText(String.valueOf(quantity + 1));
         });
 
-        // לחצן מינוס
         buttonDecrease.setOnClickListener(v -> {
             int quantity = getQuantity();
-            if (quantity > 1) {
-                editQuantity.setText(String.valueOf(quantity - 1));
-            }
+            if (quantity > 1) editQuantity.setText(String.valueOf(quantity - 1));
         });
 
-        // אישור העדכון
         buttonConfirm.setOnClickListener(v -> {
             int quantityToChange = getQuantity();
             if (quantityToChange <= 0) {
@@ -104,8 +96,26 @@ public class UpdateItemDetailsActivity extends AppCompatActivity {
             db.collection("product").document(productId)
                     .update("stock", newStock)
                     .addOnSuccessListener(unused -> {
-                        Toast.makeText(this, "המלאי עודכן בהצלחה!", Toast.LENGTH_SHORT).show();
-                        finish();
+                        String action = addStock ? "הוספה" : "הסרה";
+                        String reason = editReason.getText().toString().trim();
+
+                        getUpdatedByFromUsers(updatedBy -> {
+                            Map<String, Object> log = new HashMap<>();
+                            log.put("productId", productId);
+                            log.put("productName", name != null ? name : "לא ידוע");
+                            log.put("action", action);
+                            log.put("quantityBefore", stock);
+                            log.put("quantityAfter", newStock);
+                            log.put("updatedBy", updatedBy);
+                            log.put("timestamp", FieldValue.serverTimestamp());
+                            if (!reason.isEmpty()) {
+                                log.put("reason", reason);
+                            }
+
+                            db.collection("stock_logs").add(log);
+                            Toast.makeText(this, "המלאי עודכן בהצלחה!", Toast.LENGTH_SHORT).show();
+                            finish();
+                        });
                     })
                     .addOnFailureListener(e ->
                             Toast.makeText(this, "אירעה שגיאה בעדכון", Toast.LENGTH_SHORT).show()
@@ -120,5 +130,29 @@ public class UpdateItemDetailsActivity extends AppCompatActivity {
         } catch (NumberFormatException e) {
             return 0;
         }
+    }
+
+    private void getUpdatedByFromUsers(UserCallback callback) {
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (currentUser != null) {
+            String uid = currentUser.getUid();
+            db.collection("users").document(uid)
+                    .get()
+                    .addOnSuccessListener(doc -> {
+                        String username = doc.getString("username");
+                        if (username != null && !username.isEmpty()) {
+                            callback.onUserResolved(username);
+                        } else {
+                            callback.onUserResolved("לא ידוע");
+                        }
+                    })
+                    .addOnFailureListener(e -> callback.onUserResolved("לא ידוע"));
+        } else {
+            callback.onUserResolved("לא ידוע");
+        }
+    }
+
+    private interface UserCallback {
+        void onUserResolved(String name);
     }
 }

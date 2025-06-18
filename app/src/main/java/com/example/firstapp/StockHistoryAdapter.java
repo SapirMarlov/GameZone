@@ -6,7 +6,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.Timestamp;
+
+import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Locale;
 
 public class StockHistoryAdapter extends RecyclerView.Adapter<StockHistoryAdapter.ViewHolder> {
 
@@ -36,17 +41,34 @@ public class StockHistoryAdapter extends RecyclerView.Adapter<StockHistoryAdapte
     @Override
     public void onBindViewHolder(@NonNull StockHistoryAdapter.ViewHolder holder, int position) {
         StockLog log = logs.get(position);
+
+        // עיצוב תאריך
+        String formattedDate = "";
+        Timestamp ts = log.getTimestamp();
+        if (ts != null) {
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault());
+            formattedDate = sdf.format(ts.toDate());
+        }
+
         String info = "מוצר: " + log.getProductName() +
+                "\nמקט: " + log.getProductId() +
                 "\nפעולה: " + log.getAction() +
                 "\nלפני: " + log.getQuantityBefore() +
-                " → אחרי: " + log.getQuantityAfter() +
+                "  אחרי: " + log.getQuantityAfter() +
                 "\nעל ידי: " + log.getUpdatedBy() +
-                "\nזמן: " + log.getTimestamp();
+                "\nזמן: " + formattedDate;
+
+
         holder.textDetails.setText(info);
     }
 
     @Override
     public int getItemCount() {
         return logs.size();
+    }
+
+    public void updateData(List<StockLog> newLogs) {
+        this.logs = newLogs;
+        notifyDataSetChanged();
     }
 }

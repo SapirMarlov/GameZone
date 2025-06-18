@@ -39,27 +39,6 @@
         android:textColor="#000"
         android:layout_marginTop="16dp"/>
 
-    <!-- Payment method -->
-    <RadioGroup
-        android:id="@+id/payment_method_group"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="16dp">
-
-        <RadioButton
-            android:id="@+id/payment_credit_card"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/כרטיס_אשראי"/>
-
-        <RadioButton
-            android:id="@+id/payment_paypal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/מזומן"/>
-    </RadioGroup>
-
     <!-- Continue to payment -->
     <Button
         android:id="@+id/continue_to_payment"

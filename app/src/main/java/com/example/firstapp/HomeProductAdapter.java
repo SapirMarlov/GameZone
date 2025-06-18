@@ -14,9 +14,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public  class HomeProductAdapter extends RecyclerView.Adapter<HomeProductAdapter.HomeProductViewHolder> {
 
@@ -55,9 +60,40 @@ public  class HomeProductAdapter extends RecyclerView.Adapter<HomeProductAdapter
             holder.imageView.setImageResource(R.drawable.notfound);
         }
 
-        holder.addToCartButton.setOnClickListener(v ->
-                Toast.makeText(context, name + " נוסף לעגלה!", Toast.LENGTH_SHORT).show()
-        );
+        holder.addToCartButton.setOnClickListener(v -> {
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            if (user == null) {
+                Toast.makeText(context, "יש להתחבר כדי להוסיף לעגלה", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            String userId = user.getUid();
+            String productId = product.getId();
+            String productName = product.getString("name");
+            Double productPrice = product.getDouble("price");
+            String imageUrlVal = product.getString("imageUrl");
+
+            // יצירת מידע המוצר לעגלה
+            Map<String, Object> cartItem = new HashMap<>();
+            cartItem.put("productId", productId);
+            cartItem.put("name", productName);
+            cartItem.put("price", productPrice);
+            cartItem.put("imageUrl", imageUrlVal);
+            cartItem.put("quantity", 1);
+
+            FirebaseFirestore.getInstance()
+                    .collection("carts")
+                    .document(userId)
+                    .collection("items")
+                    .add(cartItem)
+                    .addOnSuccessListener(documentReference -> {
+                        Toast.makeText(context, productName + " נוסף לעגלה!", Toast.LENGTH_SHORT).show();
+                    })
+                    .addOnFailureListener(e -> {
+                        Toast.makeText(context, "שגיאה בהוספת המוצר לעגלה", Toast.LENGTH_SHORT).show();
+                    });
+        });
+
 
         // 💡 לחיצה על כרטיס המוצר כולו תעביר למסך פרטי מוצר
         holder.itemView.setOnClickListener(v -> {

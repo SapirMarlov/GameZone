@@ -1,81 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#f0f0f0"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="#f0f0f0">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/תשלום_בכרטיס_אשראי"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:textColor="#000"
-        android:layout_gravity="center"
-        android:layout_marginBottom="16dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="סכום לתשלום: ₪1,999"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="#000"
-        android:layout_marginBottom="16dp"/>
-
-    <EditText
-        android:id="@+id/user_id"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:background="@android:drawable/editbox_background"
-        android:hint="@string/תעודת_זהות"
-        android:inputType="number"
-        android:padding="12dp" />
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/card_number"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/מספר_כרטיס_אשראי"
-        android:inputType="number"
-        android:padding="12dp"
-        android:background="@android:drawable/editbox_background"
-        android:layout_marginBottom="12dp"/>
+        <TextView
+            android:id="@+id/amount_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="סכום לתשלום: ₪0"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"/>
 
-    <EditText
-        android:id="@+id/card_expiry"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/mm_yy_תוקף"
-        android:inputType="text"
-        android:padding="12dp"
-        android:background="@android:drawable/editbox_background"
-        android:layout_marginBottom="12dp"/>
+        <RadioGroup
+            android:id="@+id/payment_method_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
 
-    <EditText
-        android:id="@+id/card_cvv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/cvv"
-        android:inputType="numberPassword"
-        android:padding="12dp"
-        android:background="@android:drawable/editbox_background"
-        android:layout_marginBottom="12dp"/>
+            <RadioButton
+                android:id="@+id/radio_credit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="אשראי"
+                android:checked="true"/>
 
+            <RadioButton
+                android:id="@+id/radio_cash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="מזומן"
+                android:layout_marginStart="32dp"/>
+        </RadioGroup>
 
-    <Button
-        android:id="@+id/confirm_credit_payment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/אשר_תשלום"
-        android:backgroundTint="#28a745"
-        android:textColor="#ffffff"
-        android:padding="12dp"
-        android:textSize="18sp"
-        android:layout_marginTop="16dp"/>
+        <!-- ✳️ עטיפת כל שדות האשראי ב־LinearLayout -->
+        <LinearLayout
+            android:id="@+id/credit_card_fields"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-</LinearLayout>
+            <EditText
+                android:id="@+id/user_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="תעודת זהות"
+                android:inputType="number"
+                android:layout_marginBottom="12dp"/>
+
+            <EditText
+                android:id="@+id/card_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="מספר כרטיס אשראי"
+                android:inputType="number"
+                android:layout_marginBottom="12dp"/>
+
+            <EditText
+                android:id="@+id/card_expiry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="תוקף (MM/YY)"
+                android:inputType="text"
+                android:layout_marginBottom="12dp"/>
+
+            <EditText
+                android:id="@+id/card_cvv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="CVV"
+                android:inputType="numberPassword"
+                android:layout_marginBottom="12dp"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/confirm_credit_payment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="אשר תשלום"
+            android:backgroundTint="#28a745"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+</ScrollView>

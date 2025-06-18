@@ -45,20 +45,22 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
         String price = (priceValue != null ? priceValue + " ₪" : "לא זמין");
         String stockText = (stockValue != null && stockValue > 0) ? "במלאי" : "אין במלאי";
+        String productId = product.getId();
 
         holder.textViewName.setText(name != null ? name : "לא ידוע");
         holder.textViewPrice.setText(price);
         holder.textViewStock.setText(stockText);
+        holder.textViewId.setText("מקט: " + productId);
 
         if (imageUrl != null && !imageUrl.isEmpty()) {
             Glide.with(context).load(imageUrl).into(holder.imageView);
         } else {
-            holder.imageView.setImageResource(R.drawable.notfound); // ודא שיש לך placeholder אם אין תמונה
+            holder.imageView.setImageResource(R.drawable.notfound);
         }
 
         holder.buttonUpdate.setOnClickListener(v -> {
             Intent intent = new Intent(context, UpdateItemDetailsActivity.class);
-            intent.putExtra("productId", product.getId());
+            intent.putExtra("productId", productId);
             intent.putExtra("name", name);
             intent.putExtra("price", priceValue);
             intent.putExtra("stock", stockValue);
@@ -67,7 +69,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         });
     }
 
-
     @Override
     public int getItemCount() {
         return productList.size();
@@ -75,13 +76,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     public static class ProductViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
-        TextView textViewName, textViewPrice, textViewStock;
+        TextView textViewName, textViewPrice, textViewStock, textViewId;
         Button buttonUpdate;
 
         public ProductViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.product_image);
             textViewName = itemView.findViewById(R.id.product_name);
+            textViewId = itemView.findViewById(R.id.product_id);
             textViewPrice = itemView.findViewById(R.id.product_price);
             textViewStock = itemView.findViewById(R.id.product_stock_status);
             buttonUpdate = itemView.findViewById(R.id.update_stock_button);

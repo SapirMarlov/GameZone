@@ -61,12 +61,11 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         }
 
         holder.removeButton.setOnClickListener(v -> {
-            String productId = product.getString("productId"); // לוודא ששדה זה קיים
             FirebaseFirestore.getInstance()
                     .collection("carts")
                     .document(FirebaseAuth.getInstance().getUid())
                     .collection("items")
-                    .document(productId)
+                    .document(product.getId()) // ← תיקון כאן
                     .delete()
                     .addOnSuccessListener(unused -> {
                         cartItems.remove(position);
@@ -82,6 +81,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
                         if (listener != null) listener.onCalculated(totalPrice);
                     });
         });
+
     }
 
     @Override

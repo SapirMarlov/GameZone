@@ -33,10 +33,19 @@
             android:textColor="#000" />
 
         <TextView
+            android:id="@+id/product_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="מקט"
+            android:textSize="14sp"
+            android:textColor="#4A5568"
+            android:layout_marginTop="2dp" />
+
+        <TextView
             android:id="@+id/product_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="₪2,499"
+            android:text="₪0.0"
             android:textSize="14sp"
             android:textColor="#3182CE"
             android:textStyle="bold" />
@@ -45,7 +54,7 @@
             android:id="@+id/product_stock_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="במלאי"
+            android:text="מלאי"
             android:textSize="14sp"
             android:textColor="#2D3748"
             android:textStyle="bold"
@@ -61,5 +70,4 @@
         android:textColor="#ffffff"
         android:padding="8dp"
         android:textSize="14sp" />
-
 </LinearLayout>

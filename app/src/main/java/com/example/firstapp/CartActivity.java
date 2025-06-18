@@ -6,7 +6,6 @@ import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,6 +24,9 @@ public class CartActivity extends AppCompatActivity {
     private List<DocumentSnapshot> cartItems = new ArrayList<>();
     private FirebaseFirestore db;
     private String userId;
+    private double totalPrice = 0; // ✅ משתנה לסכום כולל
+
+    private ListenerRegistration cartListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,6 @@ public class CartActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         orderSummaryText = findViewById(R.id.order_summary);
         Button continueToPayment = findViewById(R.id.continue_to_payment);
-        RadioGroup paymentMethodGroup = findViewById(R.id.payment_method_group);
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user == null) {
@@ -51,11 +52,10 @@ public class CartActivity extends AppCompatActivity {
 
         continueToPayment.setOnClickListener(v -> {
             Intent intent = new Intent(CartActivity.this, PaymentActivity.class);
+            intent.putExtra("totalPrice", totalPrice); // ✅ שליחת הסכום למסך הבא
             startActivity(intent);
         });
     }
-
-    private ListenerRegistration cartListener; // מחוץ ל-method
 
     private void loadCartItems() {
         cartListener = db.collection("carts")
@@ -74,6 +74,7 @@ public class CartActivity extends AppCompatActivity {
                         orderSummaryText.setText("העגלה ריקה");
                     } else {
                         adapter = new CartAdapter(this, cartItems, total -> {
+                            totalPrice = total; // ✅ שמירת סכום כולל
                             orderSummaryText.setText("סכום כולל: ₪" + total);
                         });
                         recyclerView.setAdapter(adapter);
@@ -88,6 +89,4 @@ public class CartActivity extends AppCompatActivity {
             cartListener.remove();
         }
     }
-
-
 }
