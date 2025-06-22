@@ -1,499 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:background="#F3F4F6"
     android:padding="16dp"
-    android:gravity="start|center_vertical">
+    android:layoutDirection="rtl">
 
-    <androidx.appcompat.widget.Toolbar
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#2D3748"
-        android:gravity="center_vertical"
-        android:layoutDirection="rtl"
-        android:padding="12dp">
+        android:orientation="vertical">
 
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ניהול_פניית_לקוחות"
-            android:textColor="@android:color/white"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:layout_gravity="center" />
-
-    </androidx.appcompat.widget.Toolbar>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="#CBD5E1"
-        android:layout_marginTop="4dp"/>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
+        <!-- כותרת ניהול פנייה -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="8dp">
+            android:padding="12dp"
+            android:background="#E2E8F0"
+            android:layout_marginBottom="12dp">
 
-            <!-- כרטיס פרטי פניה -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/customer_name"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="6dp">
+                android:text="שם: "
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#2D3748" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="פרטי פניה"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="#2D3748"
-                        android:layout_marginBottom="12dp"
-                        android:gravity="center"/>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="#CBD5E1"
-                        android:layout_marginBottom="12dp"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layoutDirection="rtl">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="מספר פניה:"
-                            android:textSize="14sp"
-                            android:textStyle="bold"
-                            android:textColor="#000"
-                            android:layout_marginEnd="8dp"/>
-
-                        <TextView
-                            android:id="@+id/request_id"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="#5678"
-                            android:textSize="14sp"
-                            android:textColor="#3182CE"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layoutDirection="rtl"
-                        android:layout_marginTop="8dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="שם לקוח:"
-                            android:textSize="14sp"
-                            android:textStyle="bold"
-                            android:textColor="#000"
-                            android:layout_marginEnd="8dp"/>
-
-                        <TextView
-                            android:id="@+id/customer_name"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="יוסי כהן"
-                            android:textSize="14sp"
-                            android:textColor="#3182CE"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layoutDirection="rtl"
-                        android:layout_marginTop="8dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="טלפון:"
-                            android:textSize="14sp"
-                            android:textStyle="bold"
-                            android:textColor="#000"
-                            android:layout_marginEnd="8dp"/>
-
-                        <TextView
-                            android:id="@+id/customer_phone"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="050-1234567"
-                            android:textSize="14sp"
-                            android:textColor="#3182CE"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layoutDirection="rtl"
-                        android:layout_marginTop="8dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="מוצר:"
-                            android:textSize="14sp"
-                            android:textStyle="bold"
-                            android:textColor="#000"
-                            android:layout_marginEnd="8dp"/>
-
-                        <TextView
-                            android:id="@+id/product_name"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="מיני קונסולת גיימינג"
-                            android:textSize="14sp"
-                            android:textColor="#000"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layoutDirection="rtl"
-                        android:layout_marginTop="8dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="תאריך פתיחה:"
-                            android:textSize="14sp"
-                            android:textStyle="bold"
-                            android:textColor="#000"
-                            android:layout_marginEnd="8dp"/>
-
-                        <TextView
-                            android:id="@+id/request_date"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="21/04/2025"
-                            android:textSize="14sp"
-                            android:textColor="#000"/>
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="#CBD5E1"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginBottom="12dp"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layoutDirection="rtl">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="תוכן הפניה:"
-                            android:textSize="14sp"
-                            android:textStyle="bold"
-                            android:textColor="#000"
-                            android:layout_marginBottom="4dp"/>
-
-                        <TextView
-                            android:id="@+id/request_content"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="המיני קונסולה לא פועלת כראוי אחרי עדכון גרסה."
-                            android:textSize="14sp"
-                            android:textColor="#000"
-                            android:padding="8dp"
-                            android:background="#F9FAFB"/>
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- כרטיס סטטוס פניה -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/customer_email"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="6dp">
+                android:text="אימייל: "
+                android:textSize="14sp"
+                android:textColor="#4A5568"
+                android:layout_marginTop="4dp" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="סטטוס פניה"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="#2D3748"
-                        android:layout_marginBottom="12dp"
-                        android:gravity="center"/>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="#CBD5E1"
-                        android:layout_marginBottom="12dp"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:gravity="center">
-
-                        <TextView
-                            android:id="@+id/status_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="ממתין"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
-                            android:textColor="#F6AD55"
-                            android:layout_marginBottom="12dp"/>
-
-                        <RadioGroup
-                            android:id="@+id/status_radio_group"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center"
-                            android:layoutDirection="rtl">
-
-                            <RadioButton
-                                android:id="@+id/status_waiting"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="ממתין"
-                                android:textColor="#F6AD55"
-                                android:layout_marginStart="16dp"/>
-
-                            <RadioButton
-                                android:id="@+id/status_in_progress"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="בטיפול"
-                                android:textColor="#3182CE"
-                                android:layout_marginStart="16dp"/>
-
-                            <RadioButton
-                                android:id="@+id/status_completed"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="הושלמה"
-                                android:textColor="#38A169"/>
-                        </RadioGroup>
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- כרטיס היסטוריית טיפול -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/customer_phone"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="6dp">
+                android:text="טלפון: "
+                android:textSize="14sp"
+                android:textColor="#4A5568"
+                android:layout_marginTop="4dp" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+            <TextView
+                android:id="@+id/customer_product"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="מוצר: "
+                android:textSize="14sp"
+                android:textColor="#4A5568"
+                android:layout_marginTop="4dp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="היסטוריית טיפול"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="#2D3748"
-                        android:layout_marginBottom="12dp"
-                        android:gravity="center"/>
+            <TextView
+                android:id="@+id/status_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="סטטוס: "
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#F6AD55"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="#CBD5E1"
-                        android:layout_marginBottom="12dp"/>
+        <!-- פרטי הפנייה -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layoutDirection="rtl"
-                        android:background="#F9FAFB"
-                        android:padding="12dp"
-                        android:layout_marginBottom="12dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:layoutDirection="rtl">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="21/04/2025 09:15"
-                                android:textSize="12sp"
-                                android:textColor="#4A5568"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text=" | נפתחה פניה"
-                                android:textSize="12sp"
-                                android:textStyle="bold"
-                                android:textColor="#3182CE"/>
-                        </LinearLayout>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="הלקוח פתח פניה חדשה בנוגע לבעיה במיני קונסולת גיימינג."
-                            android:textSize="14sp"
-                            android:textColor="#000"
-                            android:layout_marginTop="4dp"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layoutDirection="rtl"
-                        android:background="#F9FAFB"
-                        android:padding="12dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:layoutDirection="rtl">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="21/04/2025 10:30"
-                                android:textSize="12sp"
-                                android:textColor="#4A5568"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text=" | שיחת טלפון"
-                                android:textSize="12sp"
-                                android:textStyle="bold"
-                                android:textColor="#3182CE"/>
-                        </LinearLayout>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="ניסיון ליצור קשר עם הלקוח - לא ענה לשיחה."
-                            android:textSize="14sp"
-                            android:textColor="#000"
-                            android:layout_marginTop="4dp"/>
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="#CBD5E1"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginBottom="12dp"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layoutDirection="rtl">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="הוספת הערה חדשה:"
-                            android:textSize="14sp"
-                            android:textStyle="bold"
-                            android:textColor="#000"
-                            android:layout_marginBottom="8dp"/>
-
-
-
-                        <CheckBox
-                            android:id="@+id/contact_attempt_checkbox"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="נעשה ניסיון יצירת קשר עם הלקוח"
-                            android:textSize="14sp"
-                            android:layoutDirection="rtl"
-                            android:layout_marginTop="8dp"/>
-
-                        <Button
-                            android:id="@+id/add_comment_button"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/כפתור_הוסף_הערה_פניות"
-                            android:backgroundTint="#3182CE"
-                            android:textColor="#ffffff"
-                            android:padding="8dp"
-                            android:textSize="14sp"
-                            android:layout_marginTop="8dp"
-                            android:layout_gravity="center"/>
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- כפתורי פעולה -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="24dp">
+                android:orientation="vertical"
+                android:padding="16dp">
 
-                <Button
-                    android:id="@+id/close_request_button"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="פרטי הפנייה"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#2D3748"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/request_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="תיאור הפנייה יוצג כאן"
+                    android:textSize="14sp"
+                    android:textColor="#4A5568"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/request_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="תאריך"
+                    android:textSize="14sp"
+                    android:textColor="#4A5568" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- היסטוריית טיפול -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="היסטוריית טיפול"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#2D3748"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="8dp" />
+
+                <LinearLayout
+                    android:id="@+id/history_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#FFFFFF"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp" />
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/כפתור_סגור_פניה"
-                    android:backgroundTint="#38A169"
-                    android:textColor="#ffffff"
+                    android:text="הוספת הערה חדשה:"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    android:layout_marginBottom="8dp" />
+
+                <EditText
+                    android:id="@+id/comment_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="כתוב כאן את ההערה שלך"
+                    android:background="@android:drawable/edit_text"
                     android:padding="12dp"
-                    android:textSize="16sp"
-                    android:layout_marginEnd="16dp"/>
+                    android:textSize="14sp" />
 
+                <CheckBox
+                    android:id="@+id/contact_attempt_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="נעשה ניסיון יצירת קשר עם הלקוח"
+                    android:textSize="14sp"
+                    android:layout_marginTop="8dp" />
 
+                <Button
+                    android:id="@+id/add_comment_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="הוסף הערה"
+                    android:backgroundTint="#3182CE"
+                    android:textColor="#ffffff"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="12dp"
+                    android:padding="12dp"
+                    android:textSize="16sp" />
             </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- כפתור סטטוס -->
+        <Button
+            android:id="@+id/update_status_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="עדכון סטטוס פנייה"
+            android:backgroundTint="#38A169"
+            android:textColor="#ffffff"
+            android:padding="12dp"
+            android:textSize="16sp"
+            android:layout_marginBottom="24dp" />
+    </LinearLayout>
+</ScrollView>

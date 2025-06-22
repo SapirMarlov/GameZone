@@ -5,336 +5,137 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:orientation="vertical"
+        android:background="#ffffff">
 
-        <LinearLayout
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp">
+
+            <ImageView
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/banner_promo" />
+        </FrameLayout>
+
+        <!-- אזור כפתורים עם Scroll אופקי -->
+        <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="#ffffff">
+            android:scrollbars="horizontal"
+            android:layoutDirection="rtl"
+            android:padding="8dp"
+            android:fillViewport="true">
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="220dp">
-
-                <ImageView
-                    android:id="@+id/banner"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/banner_promo" />
-            </FrameLayout>
-
-            <!-- Scrollable button container -->
-            <HorizontalScrollView
-                android:id="@+id/horizontal_scroll"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:scrollbars="horizontal"
-                android:layoutDirection="rtl"
-                android:padding="8dp"
-                android:fillViewport="true">
+                android:orientation="horizontal"
+                android:layoutDirection="rtl">
 
-                <LinearLayout
+                <Button
+                    android:id="@+id/login_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layoutDirection="rtl">
+                    android:layout_margin="14dp"
+                    android:backgroundTint="#6366F1"
+                    android:text="@string/connect"
+                    android:textColor="#ffffff" />
 
-                    <Button
-                        android:id="@+id/login_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="14dp"
-                        android:backgroundTint="#6366F1"
-                        android:text="@string/connect"
-                        android:textColor="#ffffff" />
+                <Button
+                    android:id="@+id/user_profile_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="14dp"
+                    android:backgroundTint="#34D399"
+                    android:text="@string/personal_area"
+                    android:textColor="#ffffff" />
 
-                    <Button
-                        android:id="@+id/user_profile_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="14dp"
-                        android:backgroundTint="#34D399"
-                        android:text="@string/personal_area"
-                        android:textColor="#ffffff" />
+                <!-- כפתור עגלה עם מונה -->
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="14dp">
 
                     <Button
                         android:id="@+id/cart_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="14dp"
                         android:backgroundTint="#FFD700"
                         android:text="@string/cart"
                         android:textColor="#ffffff" />
 
-                    <Button
-                        android:id="@+id/categories_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="14dp"
-                        android:backgroundTint="#FF6347"
-                        android:text="@string/categories"
-                        android:textColor="#ffffff" />
+                    <TextView
+                        android:id="@+id/cart_counter"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="end|top"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:background="@drawable/red_circle_background"
+                        android:backgroundTint="#FF0000"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="#FFFFFF"
+                        android:textSize="10sp"
+                        android:visibility="gone"
+                        android:elevation="4dp"
+                        android:includeFontPadding="false"
+                        android:padding="2dp" />
+                </FrameLayout>
 
-                    <Button
-                        android:id="@+id/promotions_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="14dp"
-                        android:backgroundTint="#32CD32"
-                        android:text="@string/sales_button"
-                        android:textColor="#ffffff" />
 
-                    <Button
-                        android:id="@+id/search_players_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="14dp"
-                        android:backgroundTint="#00BFFF"
-                        android:text="@string/search_for_player"
-                        android:textColor="#ffffff" />
-
-                </LinearLayout>
-            </HorizontalScrollView>
-
-            <EditText
-                android:id="@+id/search_bar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="12dp"
-                android:background="@android:drawable/editbox_background"
-                android:hint="@string/search_item"
-                android:padding="14dp"
-                android:drawableStart="@android:drawable/ic_menu_search"
-                android:textDirection="rtl"/>
-
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1">
-
-                <LinearLayout
-                    android:id="@+id/product_grid"
-                    android:layout_width="match_parent"
+                <Button
+                    android:id="@+id/categories_button"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="12dp">
+                    android:layout_margin="14dp"
+                    android:backgroundTint="#FF6347"
+                    android:text="@string/categories"
+                    android:textColor="#ffffff" />
 
-                    <!-- First Row -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="16dp">
+                <Button
+                    android:id="@+id/promotions_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="14dp"
+                    android:backgroundTint="#32CD32"
+                    android:text="@string/sales_button"
+                    android:textColor="#ffffff" />
 
-                        <!-- PS5 -->
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical"
-                            android:gravity="center"
-                            android:layout_marginEnd="8dp">
+                <Button
+                    android:id="@+id/search_players_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="14dp"
+                    android:backgroundTint="#00BFFF"
+                    android:text="@string/search_for_player"
+                    android:textColor="#ffffff" />
+            </LinearLayout>
+        </HorizontalScrollView>
 
-                            <ImageView
-                                android:id="@+id/ps5_image"
-                                android:layout_width="158dp"
-                                android:layout_height="114dp"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/ps5"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="playstation_5"
-                                android:textStyle="bold"
-                                android:layout_marginTop="8dp"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="item_description"
-                                android:textSize="12sp"
-                                android:gravity="center"
-                                android:layout_marginTop="4dp"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="₪2_499"
-                                android:textColor="#28A745"
-                                android:textStyle="bold"
-                                android:layout_marginTop="8dp"/>
-                            <Button
-                                android:id="@+id/add_ps5_to_cart"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/add_to_cart"
-                                android:backgroundTint="#4CAF50"
-                                android:textColor="#FFFFFF"
-                                android:layout_marginTop="8dp"
-                                android:paddingHorizontal="12dp"
-                                android:paddingVertical="6dp"
-                                android:textSize="14sp" />
-                        </LinearLayout>
+        <EditText
+            android:id="@+id/search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:background="@android:drawable/editbox_background"
+            android:hint="@string/search_item"
+            android:padding="14dp"
+            android:drawableStart="@android:drawable/ic_menu_search"
+            android:textDirection="rtl"/>
 
-                        <!-- Nintendo -->
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical"
-                            android:gravity="center"
-                            android:layout_marginStart="8dp">
-                            <ImageView
-                                android:layout_width="168dp"
-                                android:layout_height="133dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/nintendo"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="nintendo_switch_oled"
-                                android:textStyle="bold"
-                                android:layout_marginTop="8dp"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="oled"
-                                android:textSize="12sp"
-                                android:gravity="center"
-                                android:layout_marginTop="4dp"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="₪1799"
-                                android:textColor="#28A745"
-                                android:textStyle="bold"
-                                android:layout_marginTop="8dp"/>
-                            <Button
-                                android:id="@+id/add_nintendo_to_cart"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/הוסף_לעגלה"
-                                android:backgroundTint="#4CAF50"
-                                android:textColor="#FFFFFF"
-                                android:layout_marginTop="8dp"
-                                android:paddingHorizontal="12dp"
-                                android:paddingVertical="6dp"
-                                android:textSize="14sp" />
-
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <!-- Second Row -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="16dp">
-
-                        <!-- ASUS -->
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical"
-                            android:gravity="center"
-                            android:layout_marginEnd="8dp">
-                            <ImageView
-                                android:layout_width="166dp"
-                                android:layout_height="131dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/asus"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="asus_rog_strix_g15"
-                                android:textStyle="bold"
-                                android:layout_marginTop="8dp"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="rtx"
-                                android:textSize="12sp"
-                                android:gravity="center"
-                                android:layout_marginTop="4dp"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="₪6999"
-                                android:textColor="#28A745"
-                                android:textStyle="bold"
-                                android:layout_marginTop="8dp"/>
-                            <Button
-                                android:id="@+id/add_asus_to_cart"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/הוסף_לעגלה"
-                                android:backgroundTint="#4CAF50"
-                                android:textColor="#FFFFFF"
-                                android:layout_marginTop="8dp"
-                                android:paddingHorizontal="12dp"
-                                android:paddingVertical="6dp"
-                                android:textSize="14sp" />
-                        </LinearLayout>
-
-                        <!-- Razer -->
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="153dp"
-                                android:layout_height="132dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/raze" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:text="razer_viper_v2_pro"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="4dp"
-                                android:gravity="center"
-                                android:text="@string/עכבר_גיימינג_אלחוטי_מקצועי"
-                                android:textSize="12sp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:text="₪599"
-                                android:textColor="#28A745"
-                                android:textStyle="bold" />
-
-                            <Button
-                                android:id="@+id/add_razer_to_cart"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:backgroundTint="#4CAF50"
-                                android:paddingHorizontal="12dp"
-                                android:paddingVertical="6dp"
-                                android:text="@string/הוסף_לעגלה"
-                                android:textColor="#FFFFFF"
-                                android:textSize="14sp" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-            </ScrollView>
-        </LinearLayout>
-    </ScrollView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_home_products"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"
+            android:clipToPadding="false"/>
+    </LinearLayout>
 </androidx.drawerlayout.widget.DrawerLayout>

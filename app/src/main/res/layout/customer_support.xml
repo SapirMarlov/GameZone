@@ -35,6 +35,18 @@
         android:padding="12dp"
         android:background="@android:drawable/editbox_background"
         android:layout_marginBottom="12dp"/>
+    <EditText
+        android:id="@+id/customer_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="מספר טלפון ליצירת קשר"
+        android:background="@android:drawable/editbox_background"
+        android:padding="12dp"
+        android:drawableStart="@android:drawable/ic_menu_call"
+        android:inputType="phone"
+        android:textSize="14sp"
+        android:layout_marginBottom="12dp"/>
+
 
     <EditText
         android:id="@+id/customer_email"
@@ -44,8 +56,17 @@
         android:inputType="textEmailAddress"
         android:padding="12dp"
         android:background="@android:drawable/editbox_background"
-        android:layout_marginBottom="12dp"/>
-
+        android:layout_marginBottom="12dp"
+        android:layoutDirection="rtl"/>
+    <EditText
+        android:id="@+id/customer_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="באיזה מוצר יש בעיה ?"
+        android:padding="12dp"
+        android:background="@android:drawable/editbox_background"
+        android:layout_marginBottom="12dp"
+        android:layoutDirection="rtl"/>
     <EditText
         android:id="@+id/customer_message"
         android:layout_width="match_parent"

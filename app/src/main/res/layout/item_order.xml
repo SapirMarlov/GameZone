@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="#FFFFFF"
+    android:layout_marginBottom="12dp"
+    android:elevation="2dp"
+    android:layoutDirection="rtl">
+
+    <TextView
+        android:id="@+id/order_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="מס' הזמנה: A123"
+        android:textStyle="bold"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/order_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="תאריך: 2024-12-01"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/total_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="סכום: ₪120.0"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/order_items"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="• משחק1\n• משחק2"
+        android:textSize="14sp"
+        android:layout_marginTop="6dp"/>
+</LinearLayout>

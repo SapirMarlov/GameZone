@@ -2,254 +2,45 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:ndroid="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="#F3F4F6"
-    android:padding="16dp"
-    android:gravity="start|center_vertical">
-
+    android:padding="16dp">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#2D3748"
-        android:gravity="center_vertical"
-        android:layoutDirection="rtl"
-        android:padding="12dp">
+        android:padding="12dp"
+        android:layoutDirection="rtl">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/פניות_לקוחות"
+            android:text="פניות לקוחות"
             android:textColor="@android:color/white"
             android:textSize="22sp"
-            android:textStyle="bold" />
-
+            android:textStyle="bold"
+            android:layout_gravity="center" />
     </androidx.appcompat.widget.Toolbar>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="#CBD5E1"
-        android:layout_marginTop="4dp"/>
-
-    <ScrollView
+    <!-- פילטר סטטוס -->
+    <Spinner
+        android:id="@+id/filter_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="8dp">
+        android:layout_marginTop="8dp"
+        android:padding="8dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="8dp"
-                android:background="#ffffff"
-                android:elevation="6dp"
-                android:layout_marginBottom="8dp">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_inquiries"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="8dp"
+        android:clipToPadding="false"
+        android:padding="8dp"
+        android:scrollbars="vertical" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="מצב פנייה: ממתין"
-                    android:textSize="14sp"
-                    android:textColor="#F6AD55"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="פנייה #5678"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="#000"
-                    android:layout_gravity="end"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="שם לקוח: יוסי כהן"
-                    android:textSize="14sp"
-                    android:textColor="#3182CE"
-                    android:layout_gravity="end"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="מוצר: מיני קונסולת גיימינג"
-                    android:textSize="14sp"
-                    android:textColor="#000"
-                    android:layout_gravity="end"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="תוכן הפנייה: המיני קונסולה לא פועלת כראוי אחרי עדכון גרסה."
-                    android:textSize="14sp"
-                    android:textColor="#000"
-                    android:layout_gravity="end"/>
-
-                <Button
-                    android:id="@+id/manage_request_button_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/כפתור_ניהול_פנייה"
-                    android:backgroundTint="#3182CE"
-                    android:textColor="#ffffff"
-                    android:padding="8dp"
-                    android:textSize="14sp"
-                    android:layout_marginTop="8dp"
-                    android:layout_gravity="start"/>
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#CBD5E1"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="8dp"
-                android:background="#ffffff"
-                android:elevation="6dp"
-                android:layout_marginBottom="8dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="מצב פנייה: אזהרה"
-                    android:textSize="14sp"
-                    android:textColor="#E53E3E"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="פנייה #7890"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="#000"
-                    android:layout_gravity="end"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="שם לקוח: דניאל יצחק"
-                    android:textSize="14sp"
-                    android:textColor="#3182CE"
-                    android:layout_gravity="end"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="מוצר: מערכת קולנוע ביתי"
-                    android:textSize="14sp"
-                    android:textColor="#000"
-                    android:layout_gravity="end"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="תוכן הפנייה: מערכת הקולנוע לא מפיקה סאונד לאחר ההתקנה."
-                    android:textSize="14sp"
-                    android:textColor="#000"
-                    android:layout_gravity="end"/>
-
-                <Button
-                    android:id="@+id/manage_request_button_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/כפתור_ניהול_פנייה"
-                    android:backgroundTint="#E53E3E"
-                    android:textColor="#ffffff"
-                    android:padding="8dp"
-                    android:textSize="14sp"
-                    android:layout_marginTop="8dp"
-                    android:layout_gravity="start"/>
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#CBD5E1"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="8dp"
-                android:background="#ffffff"
-                android:elevation="6dp"
-                android:layout_marginBottom="8dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="מצב פנייה: הושלמה"
-                    android:textSize="14sp"
-                    android:textColor="#38A169"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="פנייה #1234"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="#000"
-                    android:layout_gravity="end"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="שם לקוח: דוד ברק"
-                    android:textSize="14sp"
-                    android:textColor="#3182CE"
-                    android:layout_gravity="end"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="מוצר: גיימפד חדש"
-                    android:textSize="14sp"
-                    android:textColor="#000"
-                    android:layout_gravity="end"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="תוכן הפנייה: הגיימפד מצוין! השירות היה נהדר והכל עובד כמצופה."
-                    android:textSize="14sp"
-                    android:textColor="#000"
-                    android:layout_gravity="end"/>
-
-                <Button
-                    android:id="@+id/manage_request_button_3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/כפתור_ניהול_פנייה"
-                    android:backgroundTint="#3182CE"
-                    android:textColor="#ffffff"
-                    android:padding="8dp"
-                    android:textSize="14sp"
-                    android:layout_marginTop="8dp"
-                    android:layout_gravity="start"/>
-            </LinearLayout>
-
-        </LinearLayout>
-    </ScrollView>
 </LinearLayout>

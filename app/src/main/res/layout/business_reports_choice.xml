@@ -1,488 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#F3F4F6"
+    android:padding="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#F3F4F6"
-        android:padding="16dp">
-
-
-        <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#2D3748"
-            android:gravity="center_vertical"
-            android:layoutDirection="rtl"
-            android:padding="12dp">
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:text="@string/בחר_דוח_עסקי_מהרשימה"
-                android:textColor="#3182CE"
-                android:layout_gravity="center"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-        </androidx.appcompat.widget.Toolbar>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="#CBD5E1"
-            android:layout_marginTop="4dp"/>
-
-        <Spinner
-            android:id="@+id/report_type_spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/חפש_דוח"
-            android:layout_margin="8dp"
-            android:background="?android:attr/selectableItemBackground"
-            android:entries="@array/graph"
-            android:padding="8dp" />
+        android:gravity="right"
+        android:layoutDirection="rtl">
 
         <TextView
+            android:id="@+id/report_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/דוח_מכירות"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:textColor="#000"
-            android:gravity="center"
-            android:layout_marginTop="12dp"/>
-
-        <ImageView
-            android:id="@+id/report_chart"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginTop="8dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/graph"
-            android:contentDescription="@string/גרף_מכירות"/>
+            android:text="\uD83D\uDCCA הינך צופה בדוח ..."
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:layout_marginBottom="12dp" />
 
         <TextView
+            android:id="@+id/text_summary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/נתוני_מכירות_יומיים"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#000"
-            android:gravity="center"
-            android:layout_marginTop="16dp"/>
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:fillViewport="true">
-
-            <TableLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:background="#ffffff"
-                android:divider="@android:color/darker_gray"
-                android:dividerHeight="1dp"
-                android:padding="8dp"
-                android:showDividers="middle">
-
-                <TableRow android:background="#E2E8F0">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="@string/מוצר"
-                        android:textColor="#2D3748"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="@string/כמות"
-                        android:textColor="#2D3748"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="@string/יעד_מכירות"
-                        android:textColor="#2D3748"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-                </TableRow>
-
-                <TableRow>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="Laptop HP"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="7"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="10"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-                </TableRow>
-
-                <TableRow>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="Samsung Galaxy"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="5"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="12"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-                </TableRow>
-
-                <TableRow>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="sony 5 "
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="12"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="12"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-                </TableRow>
-
-                <TableRow>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="Laptop DELL"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="19"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="10"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-                </TableRow>
-
-                <TableRow>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="Samsung NOTE"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="0"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="3"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-                </TableRow>
-
-                <TableRow>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="Nintendo"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="19"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="10"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-                </TableRow>
-
-                <TableRow>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text=" HP מדפסת"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="1"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="1"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-                </TableRow>
-
-                <TableRow>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="אוזניות אפל"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="5"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="3"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-                </TableRow>
-
-                <TableRow>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="Iphone 16"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="3"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="4"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-                </TableRow>
-
-                <TableRow>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="עכבר גיימינג"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="2"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="0"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-                </TableRow>
-
-                <TableRow>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="משטח LOGI"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="2"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="12"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-                </TableRow>
-
-                <TableRow>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text=" XBOX - ONE "
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="81"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="120"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-                </TableRow>
-
-                <TableRow android:layout_height="43dp">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="מקלדת "
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="0"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="12"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-                </TableRow>
-            </TableLayout>
-        </ScrollView>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="יעד חנות: 20,000 ₪ | נותר לסגירה: 1,000 ₪"
+            android:text="טוען סיכום דוח..."
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="#FF0000"
-            android:gravity="center"
-            android:layout_marginTop="16dp"/>
+            android:textColor="#333"
+            android:layout_marginBottom="16dp" />
 
+        <TextView
+            android:id="@+id/choose_report_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="אנא בחר את סוג הדוח שתרצה לראות"
+            android:textSize="16sp"
+            android:textColor="#000"
+            android:layout_marginBottom="8dp" />
+
+        <Spinner
+            android:id="@+id/report_category_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:entries="@array/report_category_spinner" />
+
+<!--        <Button-->
+<!--            android:id="@+id/switch_chart_button"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="החלף תצוגה \uD83D\uDCCA/\uD83E\uDD67"-->
+<!--            android:layout_marginBottom="12dp"-->
+<!--            android:backgroundTint="#3182CE"-->
+<!--            android:textColor="#FFFFFF" />-->
+
+        <LinearLayout
+            android:id="@+id/chart_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/bar_chart"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginBottom="16dp" />
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pie_chart"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginBottom="16dp" />
+        </LinearLayout>
+
+        <TableLayout
+            android:id="@+id/table_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:stretchColumns="1"
+            android:layout_marginTop="8dp"
+            android:background="#FFFFFF"
+            android:padding="12dp" />
+
+        <Button
+            android:id="@+id/close_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="חזרה לבחירת דוח תקופתי אחר "
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="#DC3545"
+            android:textColor="#FFFFFF" />
 
     </LinearLayout>
 </ScrollView>

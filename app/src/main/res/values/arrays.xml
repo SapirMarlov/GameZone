@@ -14,16 +14,32 @@
 
 
     <string-array name="reports">
-        <item>יומי</item>
-        <item>חודשי</item>
-        <item>שנתי</item>
+        <item>דו"ח יומי</item>
+        <item>דו"ח חודשי</item>
+        <item>דו"ח רבעוני</item>
+        <item>דו"ח שנתי</item>
     </string-array>
+
+
+    <string-array name="report_category_spinner">
+            <item>📈 דוח מכירות</item>
+            <item>📦 דוח מלאי</item>
+    </string-array>
+
 
 
     <string-array name="user_roles">
             <item>עובד</item>
             <item>מנהל</item>
     </string-array>
+
+    <string-array name="status_filter_options">
+        <item>כל הפניות</item>
+        <item>בטיפול</item>
+        <item>הושלמה</item>
+        <item>new</item>
+    </string-array>
+
 
 
 </resources>

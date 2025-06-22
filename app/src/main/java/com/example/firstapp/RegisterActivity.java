@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -44,7 +45,6 @@ public class RegisterActivity extends AppCompatActivity {
         String email = emailInput.getText().toString().trim();
         String password = passwordInput.getText().toString().trim();
 
-        // בדיקת תקינות
         if (username.isEmpty() || email.isEmpty() || password.isEmpty()) {
             Toast.makeText(this, "אנא מלא את כל השדות", Toast.LENGTH_SHORT).show();
             return;
@@ -55,7 +55,6 @@ public class RegisterActivity extends AppCompatActivity {
             return;
         }
 
-        // יצירת המשתמש ב-Firebase Authentication
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
@@ -63,10 +62,13 @@ public class RegisterActivity extends AppCompatActivity {
                         if (user != null) {
                             String uid = user.getUid();
 
-                            // יצירת מסמך משתמש ב-Firestore
                             Map<String, Object> userMap = new HashMap<>();
                             userMap.put("username", username);
                             userMap.put("email", email);
+                            userMap.put("createdAt", Timestamp.now());
+
+                            // הדפסת בדיקה
+                            android.util.Log.d("Register", "Saving username: " + username);
 
                             db.collection("users").document(uid).set(userMap)
                                     .addOnSuccessListener(aVoid -> {
@@ -79,9 +81,9 @@ public class RegisterActivity extends AppCompatActivity {
                                     });
                         }
                     } else {
-                        Toast.makeText(this, "שגיאה ברישום: " + task.getException().getMessage(),
-                                Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, "שגיאה ברישום: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
     }
+
 }

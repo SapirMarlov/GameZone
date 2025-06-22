@@ -2,364 +2,292 @@ package com.example.firstapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
-import android.widget.HorizontalScrollView;
-import android.widget.ImageView;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.ListenerRegistration;
+import com.google.firebase.firestore.SetOptions;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button loginButton;
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
+    private TextView cartCounterTextView;
+    private EditText searchBar;
+    private ListenerRegistration cartListener;
+
+    private List<DocumentSnapshot> allProducts = new ArrayList<>();
+    private HomeProductAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main); // activity_main.xml
+        setContentView(R.layout.activity_main);
 
-        // אתחול Firebase Authentication
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
-        Button add_ps5_to_cart = findViewById(R.id.add_ps5_to_cart);
-        Button add_nintendo_to_cart = findViewById(R.id.add_nintendo_to_cart);
-        Button add_asus_to_cart = findViewById(R.id.add_asus_to_cart);
-        Button add_razer_to_cart = findViewById(R.id.add_razer_to_cart);
-
-        // כפתור התחברות
         loginButton = findViewById(R.id.login_button);
+        cartCounterTextView = findViewById(R.id.cart_counter);
+        searchBar = findViewById(R.id.search_bar);
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (isUserLoggedIn()) {
-                    // בדיקה אם המשתמש הוא מנהל ומעבר לאזור המתאים
-                    checkUserRoleAndNavigate();
-                } else {
-                    // אם לא מחובר, נעבור למסך התחברות
-                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                    startActivity(intent);
-                }
-            }
-        });
+        RecyclerView recyclerView = findViewById(R.id.recycler_home_products);
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+        adapter = new HomeProductAdapter(this, allProducts);
+        recyclerView.setAdapter(adapter);
 
-        // כפתור אזור אישי - רק אם מחובר
-        Button userProfileButton = findViewById(R.id.user_profile_button);
-        userProfileButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (isUserLoggedIn()) {
-                    // בדיקה אם המשתמש הוא מנהל ומעבר לאזור האישי המתאים
-                    checkUserRoleAndNavigate();
-                } else {
-                    Toast.makeText(MainActivity.this, "עליך להתחבר כדי לגשת לאזור האישי", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                    startActivity(intent);
-                }
-            }
-        });
-
-        // כפתור עגלה
-        Button cartbutton = findViewById(R.id.cart_button);
-        cartbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // בדוק אם CartActivity קיים
-                try {
-                    Intent intent = new Intent(MainActivity.this, CartActivity.class);
-                    startActivity(intent);
-                } catch (Exception e) {
-                    Toast.makeText(MainActivity.this, "עגלת קניות - בפיתוח", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-        // כפתור קטגוריות
-        Button categoriessbutton = findViewById(R.id.categories_button);
-        categoriessbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    Intent intent = new Intent(MainActivity.this, CategoriesActivity.class);
-                    startActivity(intent);
-                } catch (Exception e) {
-                    Toast.makeText(MainActivity.this, "קטגוריות - בפיתוח", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-        // כפתור מבצעים
-        Button promotionsbutton = findViewById(R.id.promotions_button);
-        promotionsbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    Intent intent = new Intent(MainActivity.this, PromotionsActivity.class);
-                    startActivity(intent);
-                } catch (Exception e) {
-                    Toast.makeText(MainActivity.this, "מבצעים - בפיתוח", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-        // כפתור חיפוש שחקנים
-        Button searchplayersbutton = findViewById(R.id.search_players_button);
-        searchplayersbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    Intent intent = new Intent(MainActivity.this, GamePartnerActivity.class);
-                    startActivity(intent);
-                } catch (Exception e) {
-                    Toast.makeText(MainActivity.this, "חיפוש שחקנים - בפיתוח", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-        // תמונת PS5 עם מעבר לדף פרטי מוצר
-        ImageView ps5Image = findViewById(R.id.ps5_image);
-        ps5Image.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    Intent intent = new Intent(MainActivity.this, ProductDetailsActivity.class);
-                    startActivity(intent);
-                } catch (Exception e) {
-                    Toast.makeText(MainActivity.this, "פרטי מוצר - בפיתוח", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-        // הוספה לעגלה - PS5
-        add_ps5_to_cart.setOnClickListener(v ->
-                Toast.makeText(MainActivity.this, "PS5 נוסף לעגלה!", Toast.LENGTH_SHORT).show()
-        );
-
-        // הוספה לעגלה - Nintendo
-        add_nintendo_to_cart.setOnClickListener(v ->
-                Toast.makeText(MainActivity.this, "Nintendo נוסף לעגלה!", Toast.LENGTH_SHORT).show()
-        );
-
-        // הוספה לעגלה - ASUS
-        add_asus_to_cart.setOnClickListener(v ->
-                Toast.makeText(MainActivity.this, "ASUS נוסף לעגלה!", Toast.LENGTH_SHORT).show()
-        );
-
-        // הוספה לעגלה - Razer
-        add_razer_to_cart.setOnClickListener(v ->
-                Toast.makeText(MainActivity.this, "Razer נוסף לעגלה!", Toast.LENGTH_SHORT).show()
-        );
+        setupListeners();
+        loadProducts();
     }
 
-    // בדיקה אם המשתמש מחובר באמצעות Firebase
+    private void setupListeners() {
+        loginButton.setOnClickListener(v -> {
+            if (isUserLoggedIn()) {
+                checkUserRoleAndNavigate();
+            } else {
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            }
+        });
+
+        findViewById(R.id.user_profile_button).setOnClickListener(v -> {
+            if (isUserLoggedIn()) {
+                checkUserRoleAndNavigate();
+            } else {
+                Toast.makeText(this, "עליך להתחבר כדי לגשת לאזור האישי", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, LoginActivity.class));
+            }
+        });
+
+        findViewById(R.id.cart_button).setOnClickListener(v -> {
+            try {
+                startActivity(new Intent(this, CartActivity.class));
+            } catch (Exception e) {
+                Toast.makeText(this, "עגלת קניות - בפיתוח", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        findViewById(R.id.categories_button).setOnClickListener(v -> {
+            try {
+                startActivity(new Intent(this, CategoriesActivity.class));
+            } catch (Exception e) {
+                Toast.makeText(this, "קטגוריות - בפיתוח", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        findViewById(R.id.promotions_button).setOnClickListener(v -> {
+            try {
+                startActivity(new Intent(this, PromotionsActivity.class));
+            } catch (Exception e) {
+                Toast.makeText(this, "מבצעים - בפיתוח", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        findViewById(R.id.search_players_button).setOnClickListener(v -> {
+            try {
+                startActivity(new Intent(this, GamePartnerActivity.class));
+            } catch (Exception e) {
+                Toast.makeText(this, "חיפוש שחקנים - בפיתוח", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        searchBar.addTextChangedListener(new TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            @Override public void afterTextChanged(Editable s) {}
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                filterProducts(s.toString());
+            }
+        });
+    }
+
+    private void loadProducts() {
+        db.collection("product")
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    allProducts.clear();
+                    allProducts.addAll(queryDocumentSnapshots.getDocuments());
+                    adapter.updateData(allProducts);
+                })
+                .addOnFailureListener(e ->
+                        Toast.makeText(MainActivity.this, "שגיאה בטעינת מוצרים", Toast.LENGTH_SHORT).show());
+    }
+
+    private void filterProducts(String keyword) {
+        keyword = keyword.toLowerCase(Locale.ROOT);
+        List<DocumentSnapshot> filtered = new ArrayList<>();
+        for (DocumentSnapshot doc : allProducts) {
+            String name = doc.getString("name");
+            if (name != null && name.toLowerCase(Locale.ROOT).contains(keyword)) {
+                filtered.add(doc);
+            }
+        }
+        adapter.updateData(filtered);
+    }
+
+
     private boolean isUserLoggedIn() {
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        return currentUser != null;
+        return mAuth.getCurrentUser() != null;
     }
 
-    // בדיקה של תפקיד המשתמש ומעבר לאזור המתאים
     private void checkUserRoleAndNavigate() {
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser != null) {
-            String userId = currentUser.getUid();
+        if (currentUser == null) return;
 
-            // הוספת log כדי לראות מה קורה
-            android.util.Log.d("UserRole", "Checking role for user: " + userId);
-
-            // בדיקה ב-Firestore של תפקיד המשתמש
-            db.collection("users").document(userId)
-                    .get()
-                    .addOnCompleteListener(task -> {
-                        if (task.isSuccessful()) {
-                            DocumentSnapshot document = task.getResult();
-                            String userRole = "customer"; // ברירת מחדל - לקוח
-
-                            if (document.exists()) {
-                                // הוספת log כדי לראות מה יש במסמך
-                                android.util.Log.d("UserRole", "Document exists. Data: " + document.getData());
-
-                                // אם יש מסמך, נבדוק אם יש תפקיד
-                                String roleFromDB = document.getString("role");
-                                android.util.Log.d("UserRole", "Role from DB: " + roleFromDB);
-
-                                if (roleFromDB != null && !roleFromDB.isEmpty()) {
-                                    userRole = roleFromDB;
-                                    android.util.Log.d("UserRole", "Using role from DB: " + userRole);
-                                } else {
-                                    android.util.Log.d("UserRole", "No role found, using default: customer");
-                                }
-                            } else {
-                                // אם המסמך לא קיים, ניצור אותו כלקוח
-                                android.util.Log.d("UserRole", "Document doesn't exist, creating new user");
-                                createUserDocument(userId);
-                            }
-
-                            // הוספת log לפני הניווט
-                            android.util.Log.d("UserRole", "Final role decision: " + userRole);
-
-                            // ניווט לפי תפקיד
-                            navigateByRole(userRole);
-
-                        } else {
-                            // אם יש שגיאה בגישה ל-Firestore
-                            android.util.Log.e("UserRole", "Error getting document: " + task.getException());
-                            Toast.makeText(MainActivity.this, "שגיאה בבדיקת הרשאות", Toast.LENGTH_SHORT).show();
+        String userId = currentUser.getUid();
+        db.collection("users").document(userId).get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful() && task.getResult() != null) {
+                        DocumentSnapshot document = task.getResult();
+                        String role = document.getString("role");
+                        if (role == null || role.isEmpty()) {
+                            createUserDocument(userId);
+                            role = "customer";
                         }
-                    });
-        }
+                        navigateByRole(normalizeRole(role));
+                    } else {
+                        Toast.makeText(this, "שגיאה בבדיקת הרשאות", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
-    // פונקציה נפרדת לניווט לפי תפקיד
-    private void navigateByRole(String userRole) {
-        android.util.Log.d("UserRole", "Navigating with role: " + userRole);
-
-        // נרמול התפקיד - תמיכה בעברית ואנגלית
-        String normalizedRole = normalizeRole(userRole);
-        android.util.Log.d("UserRole", "Normalized role: " + normalizedRole);
-
-        switch (normalizedRole) {
-            case "admin":
-                android.util.Log.d("UserRole", "Navigating to AdminDashboard");
-                // מנהל - מעבר למסך AdminDashboard
-                try {
-                    Intent intent = new Intent(MainActivity.this, AdminDashboardActivity.class);
-                    startActivity(intent);
-                    Toast.makeText(MainActivity.this, "ברוך הבא לאזור המנהל", Toast.LENGTH_SHORT).show();
-                } catch (Exception e) {
-                    android.util.Log.e("UserRole", "Error starting AdminDashboard: " + e.getMessage());
-                    Toast.makeText(MainActivity.this, "מסך מנהל - בפיתוח", Toast.LENGTH_SHORT).show();
-                }
-                break;
-
-            case "employee":
-                android.util.Log.d("UserRole", "Navigating to EmployeeDashboard");
-                // עובד - מעבר למסך Employee
-                try {
-                    Intent intent = new Intent(MainActivity.this, EmployeeHomeActivity.class);
-                    startActivity(intent);
-                    Toast.makeText(MainActivity.this, "ברוך הבא לאזור העובד", Toast.LENGTH_SHORT).show();
-                } catch (Exception e) {
-                    android.util.Log.e("UserRole", "Error starting EmployeeDashboard: " + e.getMessage());
-                    Toast.makeText(MainActivity.this, "מסך עובד - בפיתוח", Toast.LENGTH_SHORT).show();
-                }
-                break;
-
-            case "customer":
-            default:
-                android.util.Log.d("UserRole", "Navigating to CustomerHome");
-                // לקוח רגיל (ברירת מחדל לכל מי שאין לו תפקיד מוגדר)
-                try {
-                    Intent intent = new Intent(MainActivity.this, CustomerHomeActivity.class);
-                    startActivity(intent);
-                    Toast.makeText(MainActivity.this, "ברוך הבא לאזור האישי", Toast.LENGTH_SHORT).show();
-                } catch (Exception e) {
-                    android.util.Log.e("UserRole", "Error starting CustomerHome: " + e.getMessage());
-                    Toast.makeText(MainActivity.this, "אזור אישי לקוח - בפיתוח", Toast.LENGTH_SHORT).show();
-                }
-                break;
-        }
-    }
-
-    // נרמול תפקיד - המרה מעברית לאנגלית
     private String normalizeRole(String role) {
-        if (role == null || role.isEmpty()) {
-            return "customer";
-        }
-
-        switch (role.toLowerCase().trim()) {
-            case "מנהל":
+        if (role == null) return "customer";
+        switch (role.toLowerCase(Locale.ROOT)) {
             case "admin":
-            case "administrator":
+            case "מנהל":
                 return "admin";
-
-            case "עובד":
             case "employee":
-            case "worker":
+            case "עובד":
                 return "employee";
-
-            case "לקוח":
             case "customer":
-            case "client":
+            case "לקוח":
             default:
                 return "customer";
         }
     }
 
-    // יצירת מסמך משתמש חדש ב-Firestore (ללא תפקיד - יהיה לקוח בברירת מחדל)
+    private void navigateByRole(String role) {
+        Intent intent;
+        switch (role) {
+            case "admin":
+                intent = new Intent(this, AdminDashboardActivity.class);
+                Toast.makeText(this, "ברוך הבא לאזור המנהל", Toast.LENGTH_SHORT).show();
+                break;
+            case "employee":
+                intent = new Intent(this, EmployeeHomeActivity.class);
+                Toast.makeText(this, "ברוך הבא לאזור העובד", Toast.LENGTH_SHORT).show();
+                break;
+            case "customer":
+            default:
+                intent = new Intent(this, CustomerHomeActivity.class);
+                Toast.makeText(this, "ברוך הבא לאזור האישי", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        startActivity(intent);
+    }
+
     private void createUserDocument(String userId) {
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser != null) {
-            String email = currentUser.getEmail();
-            String displayName = currentUser.getDisplayName();
+        if (currentUser == null) return;
 
-            // יצירת אובייקט משתמש - ללא שדה role כדי שיהיה לקוח בברירת מחדל
-            java.util.Map<String, Object> user = new java.util.HashMap<>();
-            user.put("email", email);
-            user.put("username", displayName);
-            user.put("createdAt", com.google.firebase.Timestamp.now());
-            // בכוונה לא מוסיפים שדה "role" - כך הוא יהיה לקוח בברירת מחדל
+        Map<String, Object> user = new HashMap<>();
+        user.put("email", currentUser.getEmail());
+        user.put("createdAt", Timestamp.now());
 
-            // שמירה ב-Firestore
-            db.collection("users").document(userId)
-                    .set(user)
-                    .addOnSuccessListener(aVoid -> {
-                        // המסמך נוצר בהצלחה ללא תפקיד (= לקוח)
-                    })
-                    .addOnFailureListener(e -> {
-                        Toast.makeText(MainActivity.this, "שגיאה ביצירת פרופיל משתמש", Toast.LENGTH_SHORT).show();
-                    });
-        }
+        // 👇 שמירה רק אם אין כבר username
+        db.collection("users").document(userId)
+                .set(user, SetOptions.merge()) // ✅ לא מוחק שדות קיימים
+                .addOnFailureListener(e ->
+                        Toast.makeText(this, "שגיאה ביצירת פרופיל משתמש", Toast.LENGTH_SHORT).show()
+                );
     }
 
-    // עדכון מצב כפתור ההתחברות בהתאם למצב ההתחברות
     private void updateLoginButtonState() {
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser != null) {
-            String uid = currentUser.getUid();
-
-            db.collection("users").document(uid).get()
-                    .addOnSuccessListener(documentSnapshot -> {
-                        if (documentSnapshot.exists()) {
-                            String username = documentSnapshot.getString("username");
-                            if (username != null && !username.isEmpty()) {
-                                loginButton.setText("שלום " + username);
-                            } else {
-                                loginButton.setText("שלום משתמש");
-                            }
-                        } else {
-                            loginButton.setText("שלום משתמש");
-                        }
-                    })
-                    .addOnFailureListener(e -> {
-                        loginButton.setText("שלום משתמש");
-                    });
-        } else {
+        if (currentUser == null) {
             loginButton.setText("התחבר");
+            return;
         }
-    }
 
+        db.collection("users").document(currentUser.getUid()).get()
+                .addOnSuccessListener(document -> {
+                    String name = document.getString("username");
+                    if (name != null && !name.isEmpty()) {
+                        loginButton.setText("שלום " + name);
+                    } else {
+                        loginButton.setText("שלום משתמש");
+                    }
+                })
+                .addOnFailureListener(e -> loginButton.setText("שלום משתמש"));
+    }
 
     @Override
     protected void onStart() {
         super.onStart();
-        // בדיקת מצב ההתחברות בכל פעם שהאפליקציה נפתחת
-        updateLoginButtonState();
+        updateLoginButtonState();     // תמיד טוען שם המשתמש
+        setupCartCounterListener();   // מאזין לעגלה
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        // עדכון מצב כפתור ההתחברות בכל חזרה למסך
-        updateLoginButtonState();
+        updateLoginButtonState();     // גם כשחוזרים ממסכים אחרים
+        setupCartCounterListener();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (cartListener != null) {
+            cartListener.remove();
+        }
+    }
+    private void setupCartCounterListener() {
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user == null) {
+            cartCounterTextView.setVisibility(View.GONE);
+            return;
+        }
+
+        // מאזין לשדה cartCount במסמך orders/userId
+        cartListener = db.collection("orders")
+                .document(user.getUid())
+                .addSnapshotListener((snapshot, error) -> {
+                    if (error != null || snapshot == null || !snapshot.exists()) {
+                        cartCounterTextView.setVisibility(View.GONE);
+                        return;
+                    }
+
+                    Long count = snapshot.getLong("cartCount");
+                    if (count != null && count > 0) {
+                        cartCounterTextView.setText(String.valueOf(count));
+                        cartCounterTextView.setVisibility(View.VISIBLE);
+                    } else {
+                        cartCounterTextView.setVisibility(View.GONE);
+                    }
+                });
     }
 
 }
